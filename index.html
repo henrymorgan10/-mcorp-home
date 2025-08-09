@@ -6,16 +6,12 @@
 <title>M‑Corp — Rights‑Based Wearable AI</title>
 <meta name="description" content="Non‑profit. Data‑free. Dignity‑first technology. One‑page brief with a live impact simulator." />
 <style>
-  :root{
-    --ink:#0f2e4f; --fg:#e6eef8; --muted:#94a3b8; --panel:#0b1220; --line:#334155; --accent:#1c64f2; --ok:#22c55e; --bad:#ef4444; --info:#60a5fa;
-  }
+  :root{--ink:#0f2e4f;--fg:#e6eef8;--muted:#94a3b8;--panel:#0b1220;--line:#334155;--ok:#22c55e;--bad:#ef4444;--info:#60a5fa}
   *{box-sizing:border-box}
-  html,body{margin:0;background:linear-gradient(180deg,#f7fbff,#ffffff);color:#0b1220;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial}
+  html,body{margin:0;background:linear-gradient(180deg,#f7fbff,#fff);color:#0b1220;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial}
   .page{max-width:1120px;margin:0 auto;padding:24px}
   .nav{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px}
-  .brand{font-weight:800;color:var(--ink);letter-spacing:.2px}
-
-  /* hero */
+  .brand{font-weight:800;color:var(--ink)}
   .hero{display:grid;gap:16px;padding:24px;border:1px solid #d6e9ff;border-radius:20px;background:linear-gradient(135deg,#f4f9ff,#eaf4ff)}
   @media(min-width:900px){.hero{grid-template-columns:1.2fr 1fr}}
   .h-title{margin:0 0 4px 0;color:var(--ink);font-size:2.1rem}
@@ -25,14 +21,12 @@
   .badges{display:flex;gap:8px;flex-wrap:wrap;margin-top:6px}
   .badge{font-size:.78rem;color:#093050;background:#e2f0ff;border:1px solid #cfe6ff;border-radius:999px;padding:6px 10px}
 
-  /* KPI */
   .sum{display:grid;gap:14px;margin-top:14px}
   @media(min-width:900px){.sum{grid-template-columns:repeat(3,1fr)}}
   .kpi{background:#fff;border:1px solid #e6edf4;border-radius:16px;padding:14px}
   .kpi .t{color:#4a6078;font-size:.92rem}
   .kpi .n{font-size:1.4rem;font-weight:800;color:#0f2e4f}
 
-  /* dark module */
   .mc .wrap{background:var(--panel);color:var(--fg);border-radius:18px;margin-top:18px;padding:22px;box-shadow:0 10px 24px rgba(2,6,23,.28)}
   .mc .title{color:var(--muted);font-size:.95rem}
   .mc .num{color:var(--fg);font-weight:800;font-size:1.35rem;letter-spacing:.2px}
@@ -43,20 +37,11 @@
   .mc .badge{display:inline-flex;gap:6px;align-items:center;background:#052e1d;color:#86efac;border:1px solid #14532d;padding:6px 10px;border-radius:999px;font-size:.78rem}
   .mc .btn{cursor:pointer;border:1px solid var(--line);background:var(--panel);color:var(--fg);padding:9px 12px;border-radius:10px}
   .mc .btn.primary{background:linear-gradient(180deg,#16a34a,#15803d);border-color:#166534}
-
-  /* inputs — ensure numbers are VISIBLE on dark bg */
   .mc label{display:block;margin-bottom:4px;color:var(--muted);font-size:.92rem}
-  .mc input[type=number], .mc input[type=range]{
-    width:100%;padding:10px 12px;border-radius:10px;border:1px solid var(--line);background:#0e172a;color:var(--fg);
-    font-weight:700;outline:none;caret-color:var(--fg);
-    -webkit-text-fill-color: var(--fg); /* Safari/Chrome ensure high-contrast value color */
-  }
+  .mc input[type=number], .mc input[type=range]{width:100%;padding:10px 12px;border-radius:10px;border:1px solid var(--line);background:#0e172a;color:var(--fg);font-weight:700;outline:none;caret-color:var(--fg);-webkit-text-fill-color:var(--fg)}
   .mc input::placeholder{color:#94a3b86e}
-  .mc input::-webkit-outer-spin-button, .mc input::-webkit-inner-spin-button{opacity:1}
-
   canvas{width:100%;height:180px;background:#0b1220;border-radius:10px}
   textarea{width:100%;min-height:120px;background:#0e172a;color:var(--fg);border:1px solid var(--line);border-radius:10px;padding:10px}
-
   .foot{margin:22px 0 6px;color:#606b79;font-size:.9rem}
 </style>
 </head>
@@ -76,9 +61,9 @@
   </section>
 
   <section class="sum">
-    <div class="kpi"><div class="t">Workers (sample)</div><div class="n" id="sum_workers">4</div></div>
-    <div class="kpi"><div class="t">Total wages per month</div><div class="n" id="sum_wages">$1,200</div></div>
-    <div class="kpi"><div class="t">Per‑capita monthly contribution</div><div class="n" id="sum_pc">$0.24</div></div>
+    <div class="kpi"><div class="t">Workers (sample)</div><div class="n" id="sum_workers">0</div></div>
+    <div class="kpi"><div class="t">Total wages per month</div><div class="n" id="sum_wages">$0</div></div>
+    <div class="kpi"><div class="t">Per‑capita monthly contribution</div><div class="n" id="sum_pc">$0.00</div></div>
   </section>
 
   <section id="diplomatic" class="sum" style="margin-top:18px">
@@ -92,19 +77,19 @@
       <div class="grid cols-2" style="margin-top:10px">
         <div>
           <div class="grid cols-3">
-            <div><label>Number of tents</label><input id="tents" type="number" min="1" value="1" oninput="MC.calc()" /></div>
-            <div><label>Workers per tent</label><input id="workersPerTent" type="number" min="1" value="4" oninput="MC.calc()" /></div>
-            <div><label>Operating period (months)</label><input id="months" type="number" min="1" value="6" oninput="MC.calc()" /></div>
+            <div><label>Number of tents</label><input data-role="sim-input" id="tents" type="number" min="1" value="1" /></div>
+            <div><label>Workers per tent</label><input data-role="sim-input" id="workersPerTent" type="number" min="1" value="4" /></div>
+            <div><label>Operating period (months)</label><input data-role="sim-input" id="months" type="number" min="1" value="6" /></div>
           </div>
           <div class="grid cols-3" style="margin-top:10px">
-            <div><label>Units per worker per week</label><input id="unitsPerWorkerWeek" type="number" min="1" value="3" oninput="MC.calc()" /></div>
-            <div><label>Premium share (%)</label><input id="premiumShare" type="range" min="0" max="100" value="25" oninput="MC.syncShare(this.value)" /></div>
-            <div><label>Camp population</label><input id="campPop" type="number" min="1" value="5000" oninput="MC.calc()" /></div>
+            <div><label>Units per worker per week</label><input data-role="sim-input" id="unitsPerWorkerWeek" type="number" min="1" value="3" /></div>
+            <div><label>Premium share (%)</label><input data-role="sim-input" id="premiumShare" type="range" min="0" max="100" value="25" /></div>
+            <div><label>Camp population</label><input data-role="sim-input" id="campPop" type="number" min="1" value="5000" /></div>
           </div>
           <div class="grid cols-3" style="margin-top:10px">
-            <div><label>Micro‑loan per tent (USD)</label><input id="loanPerTent" type="number" min="0" value="1000" oninput="MC.calc()" /></div>
-            <div><label>Payout ratio (%)</label><input id="payoutRatio" type="number" min="0" max="100" value="50" oninput="MC.calc()" /></div>
-            <div><label>Dividend per household (USD)</label><input id="dividendUnit" type="number" min="1" value="50" oninput="MC.calc()" /></div>
+            <div><label>Micro‑loan per tent (USD)</label><input data-role="sim-input" id="loanPerTent" type="number" min="0" value="1000" /></div>
+            <div><label>Payout ratio (%)</label><input data-role="sim-input" id="payoutRatio" type="number" min="0" max="100" value="50" /></div>
+            <div><label>Dividend per household (USD)</label><input data-role="sim-input" id="dividendUnit" type="number" min="1" value="50" /></div>
           </div>
         </div>
         <div>
@@ -124,32 +109,32 @@
       <div class="card" style="margin-top:12px">
         <div class="title">Product Mix & Cost Assumptions</div>
         <div class="grid cols-3" style="margin-top:10px">
-          <div><label>Budget price (USD)</label><input id="priceBudget" type="number" min="1" value="20" oninput="MC.calc()" /></div>
-          <div><label>Budget BOM+other (USD)</label><input id="costBudget" type="number" min="0" value="12" oninput="MC.calc()" /></div>
+          <div><label>Budget price (USD)</label><input data-role="sim-input" id="priceBudget" type="number" min="1" value="20" /></div>
+          <div><label>Budget BOM+other (USD)</label><input data-role="sim-input" id="costBudget" type="number" min="0" value="12" /></div>
           <div><label>Budget share (%)</label><input id="budgetShare" type="number" value="75" readonly /></div>
         </div>
         <div class="grid cols-3" style="margin-top:10px">
-          <div><label>Premium price (USD)</label><input id="pricePremium" type="number" min="1" value="200" oninput="MC.calc()" /></div>
-          <div><label>Premium BOM+other (USD)</label><input id="costPremium" type="number" min="0" value="120" oninput="MC.calc()" /></div>
+          <div><label>Premium price (USD)</label><input data-role="sim-input" id="pricePremium" type="number" min="1" value="200" /></div>
+          <div><label>Premium BOM+other (USD)</label><input data-role="sim-input" id="costPremium" type="number" min="0" value="120" /></div>
           <div><label>Premium share (%)</label><input id="premiumShareNum" type="number" value="25" readonly /></div>
         </div>
         <div class="grid cols-3" style="margin-top:10px">
-          <div><label>Monthly wage per worker (USD)</label><input id="monthlyWage" type="number" min="0" value="300" oninput="MC.calc()" /></div>
-          <div><label>Wage target rate of sales (%)</label><input id="wageTargetRate" type="number" min="0" max="100" value="10" oninput="MC.calc()" /></div>
-          <div><label>Weeks per month (for conversion)</label><input id="weeksPerMonth" type="number" min="1" step="0.1" value="4" oninput="MC.calc()" /></div>
+          <div><label>Monthly wage per worker (USD)</label><input data-role="sim-input" id="monthlyWage" type="number" min="0" value="300" /></div>
+          <div><label>Wage target rate of sales (%)</label><input data-role="sim-input" id="wageTargetRate" type="number" min="0" max="100" value="10" /></div>
+          <div><label>Weeks per month (for conversion)</label><input data-role="sim-input" id="weeksPerMonth" type="number" min="1" step="0.1" value="4" /></div>
         </div>
       </div>
 
       <div class="card" style="margin-top:12px">
         <div class="title">Cumulative Financials</div>
         <canvas id="chart" width="640" height="180"></canvas>
-        <div class="row" style="margin-top:8px"><button class="btn" onclick="MC.copy()">Copy summary</button></div>
+        <div class="row" style="margin-top:8px"><button class="btn" id="copySummary">Copy summary</button></div>
       </div>
 
       <div class="card" style="margin-top:12px">
         <div class="title">Optimization test prompt</div>
         <textarea id="optPrompt" readonly></textarea>
-        <div class="row" style="margin-top:8px"><button class="btn primary" onclick="MC.copyOpt()">Copy prompt</button></div>
+        <div class="row" style="margin-top:8px"><button class="btn primary" id="copyPrompt">Copy prompt</button></div>
       </div>
     </div>
   </section>
@@ -162,11 +147,23 @@
   const fmt = (n,cur)=> cur? '$'+Math.round(n).toLocaleString(): Math.round(n).toLocaleString();
 
   const MC = {
-    syncShare(v){ $('premiumShareNum').value = +v; $('budgetShare').value = 100 - (+v); MC.calc(); },
+    bind(){
+      document.querySelectorAll('[data-role="sim-input"]').forEach(el=>{
+        el.addEventListener('input', MC.calc);
+        el.addEventListener('change', MC.calc);
+      });
+      // keep shares in sync
+      $('premiumShare').addEventListener('input', e=>{
+        const v = +e.target.value; $('premiumShareNum').value = v; $('budgetShare').value = 100 - v; MC.calc();
+      });
+      $('copySummary').addEventListener('click', MC.copy);
+      $('copyPrompt').addEventListener('click', MC.copyOpt);
+      MC.calc();
+    },
     calc(){
       const tents = +$('tents').value;
       const workersPerTent = +$('workersPerTent').value;
-      const months = +$('months').value;
+      const months = Math.max(1,+$('months').value);
       const unitsPerWorkerWeek = +$('unitsPerWorkerWeek').value;
       const weeksPerMonth = +$('weeksPerMonth').value;
       const priceB = +$('priceBudget').value;
@@ -191,22 +188,22 @@
       const directCosts = unitsB*costB + unitsP*costP;
       const wagePool = totalWorkers * monthlyWagePerWorker * months;
       const wageTarget = revenue * wageTargetRate;
-
       const marginBeforePayout = revenue - directCosts - wagePool;
       const dividendPool = Math.max(0, marginBeforePayout * payoutRatio);
       const households = Math.floor(dividendPool / dividendUnit);
-
       const reinvest = Math.max(0, marginBeforePayout - dividendPool);
+
       const loanTotal = tents * loanPerTent;
       const weeklyReinvest = totalWeeks>0 ? reinvest / totalWeeks : 0;
       const weeksToRepay = weeklyReinvest>0 ? Math.ceil(loanTotal / weeklyReinvest) : '—';
 
-      const monthlyDiv = months>0 ? dividendPool / months : 0;
+      const monthlyDiv = dividendPool / months;
       const monthlyDistrib = (wagePool / months) + monthlyDiv;
       const gdpPerCapMonthly = monthlyDistrib / campPop;
       const gdpPerCapAnnual = gdpPerCapMonthly * 12;
-      const avgPerWorkerMonthly = months>0 && totalWorkers>0 ? (wagePool / months)/ totalWorkers : 0;
+      const avgPerWorkerMonthly = totalWorkers>0 ? (wagePool / months) / totalWorkers : 0;
 
+      // right panel outputs
       $('out_workers').textContent = fmt(totalWorkers);
       $('out_units').textContent = fmt(totalUnits);
       $('out_revenue').textContent = fmt(revenue,true);
@@ -220,12 +217,13 @@
       $('out_gdpPerCapAnnual').textContent = '$' + gdpPerCapAnnual.toFixed(2);
       $('out_avgPerWorker').textContent = fmt(avgPerWorkerMonthly,true);
 
+      // top KPIs — ensure they always mirror latest numbers
+      $('sum_workers').textContent = fmt(totalWorkers);
+      $('sum_wages').textContent = fmt(wagePool/months, true);
+      $('sum_pc').textContent = '$' + gdpPerCapMonthly.toFixed(2);
+
       MC.draw(revenue, directCosts + wagePool, reinvest);
       MC.buildPrompt({tents,workersPerTent,months,unitsPerWorkerWeek,weeksPerMonth,priceB,priceP,costB,costP,shareB,shareP,monthlyWagePerWorker,wageTargetRate,payoutRatio,dividendUnit,loanPerTent,campPop,totalWorkers,totalUnits,revenue,directCosts,wagePool,dividendPool,households,reinvest,weeksToRepay,gdpPerCapMonthly,gdpPerCapAnnual});
-
-      $('sum_workers').textContent = fmt(totalWorkers);
-      $('sum_wages').textContent = fmt(wagePool/months || 0, true);
-      $('sum_pc').textContent = '$' + gdpPerCapMonthly.toFixed(2);
     },
     draw(rev,cost,rein){
       const c=$('chart'), ctx=c.getContext('2d');
@@ -237,12 +235,12 @@
       data.forEach((d,i)=>{
         const x=pad+i*(bw+20); const h=d.v/max*(H-40); const y=H-20-h;
         ctx.fillStyle=d.c; ctx.fillRect(x,y,bw,h);
-        ctx.fillStyle='#94a3b8'; ctx.font='12px system-ui';
+        ctx.fillStyle:'#94a3b8'; ctx.font='12px system-ui';
         ctx.fillText(d.l,x,H-6); ctx.fillText('$'+Math.round(d.v).toLocaleString(),x,y-6);
       });
     },
     copy(){
-      const text=[
+      const text = [
         'M‑Corp Impact Summary',
         `1. Workers: ${$('out_workers').textContent}, Units: ${$('out_units').textContent}`,
         `2. Revenue: ${$('out_revenue').textContent}, Wages: ${$('out_wagePool').textContent} (coverage: ${$('out_wageCoverage').textContent})`,
@@ -275,11 +273,7 @@
     copyOpt(){ $('optPrompt').select(); document.execCommand('copy'); alert('Prompt copied.'); }
   };
 
-  (function(){
-    $('premiumShareNum').value = +$('premiumShare').value;
-    $('budgetShare').value = 100 - (+$('premiumShare').value);
-    MC.calc();
-  })();
+  window.addEventListener('DOMContentLoaded', MC.bind);
 </script>
 </body>
 </html>
