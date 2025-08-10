@@ -1,279 +1,419 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>M‑Corp — Rights‑Based Wearable AI</title>
-<meta name="description" content="Non‑profit. Data‑free. Dignity‑first technology. One‑page brief with a live impact simulator." />
-<style>
-  :root{--ink:#0f2e4f;--fg:#e6eef8;--muted:#94a3b8;--panel:#0b1220;--line:#334155;--ok:#22c55e;--bad:#ef4444;--info:#60a5fa}
-  *{box-sizing:border-box}
-  html,body{margin:0;background:linear-gradient(180deg,#f7fbff,#fff);color:#0b1220;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial}
-  .page{max-width:1120px;margin:0 auto;padding:24px}
-  .nav{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px}
-  .brand{font-weight:800;color:var(--ink)}
-  .hero{display:grid;gap:16px;padding:24px;border:1px solid #d6e9ff;border-radius:20px;background:linear-gradient(135deg,#f4f9ff,#eaf4ff)}
-  @media(min-width:900px){.hero{grid-template-columns:1.2fr 1fr}}
-  .h-title{margin:0 0 4px 0;color:var(--ink);font-size:2.1rem}
-  .h-lead{margin:0 0 8px 0;color:#2b3f52}
-  .btn{display:inline-block;padding:10px 14px;border-radius:12px;border:1px solid var(--ink);background:var(--ink);color:#fff;text-decoration:none;margin-right:8px}
-  .btn.ghost{background:#fff;color:var(--ink)}
-  .badges{display:flex;gap:8px;flex-wrap:wrap;margin-top:6px}
-  .badge{font-size:.78rem;color:#093050;background:#e2f0ff;border:1px solid #cfe6ff;border-radius:999px;padding:6px 10px}
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>M Corp AI — Public Interest Message + Impact Simulator</title>
+  <meta name="description" content="Not for Profit. Not for Data. Built for Dignity — Rights‑based wearable AI and refugee self‑reliance, with an in‑browser impact simulator." />
+  <style>
+    :root{
+      --bg:#f5faff;        /* diplomatic light blue */
+      --bg2:#ffffff;       /* card surface */
+      --ink:#0f2e4f;       /* deep blue text */
+      --muted:#4b5563;     /* secondary text */
+      --accent:#0b77d5;    /* link/brand */
+      --accent-soft:#eaf4ff;
+      --line:#d8e6fb;
+      --shadow:0 10px 30px rgba(15,46,79,.08);
+    }
+    html,body{margin:0;padding:0;background:linear-gradient(180deg,var(--bg),#fff 60%);color:var(--ink);font-family:Arial,system-ui,-apple-system,"Segoe UI",Roboto}
+    .page{max-width:1080px;margin:0 auto;padding:28px}
 
-  .sum{display:grid;gap:14px;margin-top:14px}
-  @media(min-width:900px){.sum{grid-template-columns:repeat(3,1fr)}}
-  .kpi{background:#fff;border:1px solid #e6edf4;border-radius:16px;padding:14px}
-  .kpi .t{color:#4a6078;font-size:.92rem}
-  .kpi .n{font-size:1.4rem;font-weight:800;color:#0f2e4f}
+    /* Top nav */
+    .nav{display:flex;justify-content:space-between;align-items:center;background:var(--accent-soft);border:1px solid var(--line);border-radius:16px;padding:10px 14px;box-shadow:var(--shadow)}
+    .brand{font-weight:800;letter-spacing:.2px}
+    .links{display:flex;gap:8px;flex-wrap:wrap}
+    .links a{display:inline-block;text-decoration:none;border:1px solid var(--line);background:#fff;border-radius:12px;padding:8px 12px;color:var(--ink)}
+    .links a:hover{border-color:#b9d6fb;box-shadow:0 6px 16px rgba(11,119,213,.12)}
 
-  .mc .wrap{background:var(--panel);color:var(--fg);border-radius:18px;margin-top:18px;padding:22px;box-shadow:0 10px 24px rgba(2,6,23,.28)}
-  .mc .title{color:var(--muted);font-size:.95rem}
-  .mc .num{color:var(--fg);font-weight:800;font-size:1.35rem;letter-spacing:.2px}
-  .mc .grid{display:grid;gap:12px}
-  @media(min-width:920px){.mc .cols-3{grid-template-columns:repeat(3,1fr)}.mc .cols-2{grid-template-columns:1.2fr 1fr}}
-  .mc .card{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:12px}
-  .mc .row{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
-  .mc .badge{display:inline-flex;gap:6px;align-items:center;background:#052e1d;color:#86efac;border:1px solid #14532d;padding:6px 10px;border-radius:999px;font-size:.78rem}
-  .mc .btn{cursor:pointer;border:1px solid var(--line);background:var(--panel);color:var(--fg);padding:9px 12px;border-radius:10px}
-  .mc .btn.primary{background:linear-gradient(180deg,#16a34a,#15803d);border-color:#166534}
-  .mc label{display:block;margin-bottom:4px;color:var(--muted);font-size:.92rem}
-  .mc input[type=number], .mc input[type=range]{width:100%;padding:10px 12px;border-radius:10px;border:1px solid var(--line);background:#0e172a;color:var(--fg);font-weight:700;outline:none;caret-color:var(--fg);-webkit-text-fill-color:var(--fg)}
-  .mc input::placeholder{color:#94a3b86e}
-  canvas{width:100%;height:180px;background:#0b1220;border-radius:10px}
-  textarea{width:100%;min-height:120px;background:#0e172a;color:var(--fg);border:1px solid var(--line);border-radius:10px;padding:10px}
-  .foot{margin:22px 0 6px;color:#606b79;font-size:.9rem}
-</style>
+    /* Letter */
+    .lead{background:var(--bg2);border:1px solid var(--line);border-radius:18px;padding:22px;margin-top:18px;box-shadow:var(--shadow)}
+    .lead h1{margin:.2rem 0 0 0;font-size:1.9rem}
+    .lead h2{margin:.4rem 0 1rem 0;font-size:1.2rem;color:#1f3a5b}
+    .lead p strong{font-weight:700}
+    .lead ol{padding-left:1.2rem}
+    .lead a{color:var(--accent);text-decoration:underline}
+
+    /* Simulator — dark island */
+    .mc{--bg:#0f172a;--fg:#e2e8f0;--soft:#1e293b;--muted:#94a3b8;--line:#334155;--ok:#22c55e;--bad:#ef4444;--info:#60a5fa}
+    .mc .wrap{background:var(--bg);color:var(--fg);border-radius:18px;margin-top:26px;padding:22px;box-shadow:0 18px 38px rgba(2,6,23,.25)}
+    .mc h3{margin:0 0 .25rem 0}
+    .mc p{color:var(--muted);margin:.25rem 0 .75rem}
+    .mc .highlight{background:#022c22;border:1px solid #14532d;padding:12px;border-radius:12px;color:#bbf7d0;margin:10px 0;line-height:1.55}
+    .mc .grid{display:grid;gap:12px}
+    @media(min-width:920px){.mc .cols-3{grid-template-columns:repeat(3,1fr)}.mc .cols-2{grid-template-columns:1.2fr 1fr}}
+    .mc label{display:block;font-size:.9rem;color:var(--muted);margin-bottom:4px}
+    .mc input[type=number], .mc input[type=range]{width:100%;padding:10px 12px;border-radius:10px;border:1px solid var(--line);background:#0b1220;color:var(--fg);outline:none}
+    .mc input[readonly]{opacity:.9}
+    .mc .kpi{display:grid;gap:10px}
+    @media(min-width:720px){.mc .kpi{grid-template-columns:repeat(3,1fr)}}
+    .mc .card{background:#0b1220;border:1px solid var(--line);border-radius:12px;padding:12px}
+    .mc .title{font-size:.95rem;color:var(--muted)}
+    .mc .num{font-size:1.35rem;font-weight:800}
+    .mc .row{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+    .mc .badge{display:inline-flex;gap:6px;align-items:center;background:#052e1d;color:#86efac;border:1px solid #14532d;padding:6px 10px;border-radius:999px;font-size:.78rem}
+    .mc .btn{cursor:pointer;border:1px solid var(--line);background:#0b1220;color:var(--fg);padding:9px 12px;border-radius:10px;font-size:.92rem}
+    .mc .btn.primary{background:linear-gradient(180deg,#16a34a,#15803d);border-color:#166534}
+    .mc canvas{width:100%;height:180px;background:#0b1220;border-radius:10px}
+    .mc textarea{width:100%;min-height:140px;background:#0b1220;color:var(--fg);border:1px solid var(--line);border-radius:10px;padding:10px}
+
+    /* Diplomatic notice */
+    .notice{background:linear-gradient(135deg, #f4f9ff, #eaf4ff); border:1px solid #91c9ff; border-radius:14px; padding:18px 20px; margin:20px 0; color:#0f2e4f; line-height:1.7; box-shadow:0 2px 6px rgba(0,0,0,0.05)}
+    .notice h2{margin:0 0 10px 0; font-size:1.2rem; font-weight:bold; letter-spacing:0.5px; border-bottom:1px solid #91c9ff; padding-bottom:5px}
+
+    .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,1px,1px);white-space:nowrap;border:0}
+  </style>
 </head>
 <body>
-<main class="page">
-  <header class="nav"><div class="brand">M‑Corp</div></header>
+  <main class="page">
+    <!-- Top navigation with three external domains -->
+    <nav class="nav" aria-label="Primary">
+      <div class="brand">M Corp AI</div>
+      <div class="links" role="navigation">
+        <a href="https://www.mcorp-ai.com" target="_blank" rel="noopener noreferrer" title="Opens in a new tab">A. mcorp-ai.com</a>
+        <a href="https://mcorpai.org" target="_blank" rel="noopener noreferrer" title="Opens in a new tab">B. mcorpai.org</a>
+        <a href="https://www.mcorp.ai.kr" target="_blank" rel="noopener noreferrer" title="Opens in a new tab">C. mcorp.ai.kr</a>
+      </div>
+    </nav>
 
-  <section class="hero">
-    <div>
-      <h1 class="h-title">Not for Profit. Not for Data. Built for Dignity.</h1>
-      <p class="h-lead">A rights‑based wearable AI for children with disabilities and displaced communities. Use the button below to explore impact.</p>
-      <a class="btn" href="#sim">View Impact</a>
-      <a class="btn ghost" href="#diplomatic">Diplomatic Brief</a>
-      <div class="badges"><span class="badge">Data‑Free</span><span class="badge">Refugee‑Led</span><span class="badge">Disability‑Inclusive</span><span class="badge">Ecological</span></div>
-    </div>
-    <div class="kpi"><div class="t">About</div><div style="color:#2b3f52">We assemble offline AI safety necklaces via a “$1,000 tent factory” model. Workers earn $300/month and half of net profit is paid to families at $50/household.</div></div>
-  </section>
+    <!-- Public‑interest letter -->
+    <section class="lead" aria-labelledby="letterTitle">
+      <h1 id="letterTitle">Not for Profit. Not for Data. Built for Dignity</h1>
+      <h2>A rights-based wearable AI initiative for children with disabilities and displaced communities</h2>
+      <p><strong>All contents of this message may be freely shared.</strong></p>
+      <p>I hope this message finds you well.<br>
+      I am an independent public-interest technologist based in the Republic of Korea, currently leading a humanitarian initiative that brings together disability-inclusive design, refugee-led manufacturing, and ecological self-reliance. This is not simply a technology pilot—it is a rights-based model that integrates ethical AI, digital inclusion, and community-driven sustainability in fragile and low-resource contexts.</p>
+      <p>To avoid email filters, I am providing an overview through dedicated domains rather than file attachments. The following platform structure has already been secured and will be developed in phases:</p>
+      <p><strong>M Corp</strong> aspires to become a more ethically grounded certification framework than the B Corp model.<br>
+      The name stands for <strong>Morgan J. Refugee Self-Reliance Cooperative</strong>, with “Morgan J” being a simplified international rendering of my Korean name, Jeon Gyu-min. By putting my name on this initiative, I assume full personal responsibility for its integrity, accountability, and long-term execution.</p>
+      <h3>The project is anchored in three core domains:</h3>
+      <ol>
+        <li><strong>A. <a href="https://www.mcorp-ai.com" target="_blank" rel="noopener noreferrer">www.mcorp-ai.com</a></strong><br>
+          This nonprofit platform provides interest-free $1,000 microloans to refugees who voluntarily participate in localized AI assembly efforts. With this funding, they can establish tent-based production spaces to assemble wearable AI safety devices for children with disabilities. The platform directly links refugee livelihoods with meaningful, decentralized manufacturing.</li>
+        <li><strong>B. <a href="https://mcorpai.org" target="_blank" rel="noopener noreferrer">www.mcorpai.org</a></strong><br>
+          This is the central public-interest site dedicated to the AI Safety Necklace—an offline, data-free wearable device that provides audio guidance and alerts to support children with developmental and physical disabilities. The site will host technical documentation, ethical design principles, and online ordering in future phases. It serves as the moral and informational core of the initiative.</li>
+        <li><strong>C. <a href="https://www.mcorp.ai.kr" target="_blank" rel="noopener noreferrer">www.mcorp.ai.kr</a></strong><br>
+          A Korean-language portal that will engage domestic stakeholders, including angel investors and ESG-oriented companies. This site will function as a national hub for communication, advocacy, and public participation in the refugee self-reliance program.</li>
+      </ol>
+      <p><strong>Note:</strong> www.mcorpai.com is an unrelated domain and not affiliated with this initiative.</p>
+      <p>This initiative is closely aligned with your institution’s work in digital inclusion, community-based resilience, and technology-for-refugees programming. We are fully prepared to engage in conversations with partner institutions interested in co-developing and piloting this model through joint implementation or technical support.</p>
+      <p><strong>This is not a charitable campaign.</strong><br>
+      It is a scalable public-interest ecosystem that combines offline AI safety tools, cooperative refugee employment, zero-interest capital access, ecological infrastructure, and ethical wealth redistribution. All technology is designed to function without internet access, collects no personal data, and adheres to international standards including the GDPR, SDGs, and the Social and Solidarity Economy (SSE) framework.</p>
+      <p>We warmly welcome any form of collaboration—strategic, technical, or operational. Further details can be transparently accessed and shared through the domains listed above.</p>
+      <p>Respectfully,<br>
+        Gyu-min Jeon (also known as Morgan J.)<br>
+        I was born on January 17, 1982.<br>
+        Email: gyumin.jeon.childsafe@gmail.com<br>
+        My backup email is jekymin2@naver.com<br>
+        As I am not fully fluent in English, I kindly request that all responses be made in writing, preferably via email.</p>
+      <p>Supporting refugees is not merely an act of charity, but a shared responsibility of the global community. Refugees are not passive recipients of aid—they are potential economic actors capable of contributing meaningfully to the communities in which they live. We firmly believe that the true path to support lies in building ecosystems that enable self-reliance, dignity, and long-term opportunity. With this conviction, I trust that ethical investors and collaborative partners dedicated to refugee self-sufficiency can be found across the world, and I look forward to engaging with them in solidarity and shared purpose.</p>
+    </section>
 
-  <section class="sum">
-    <div class="kpi"><div class="t">Workers (sample)</div><div class="n" id="sum_workers">0</div></div>
-    <div class="kpi"><div class="t">Total wages per month</div><div class="n" id="sum_wages">$0</div></div>
-    <div class="kpi"><div class="t">Per‑capita monthly contribution</div><div class="n" id="sum_pc">$0.00</div></div>
-  </section>
+    <!-- Impact Simulator (unchanged logic, polished container) -->
+    <section class="mc" aria-labelledby="simTitle">
+      <div class="wrap">
+        <div class="row" style="justify-content:space-between">
+          <div>
+            <h3 id="simTitle">M‑Corp Impact Simulator — "$1,000 Tent Factory"</h3>
+            <p>All calculations run in your browser only. No data is sent anywhere.</p>
+          </div>
+          <span class="badge">🔒 Zero‑data, in‑browser</span>
+        </div>
 
-  <section id="diplomatic" class="sum" style="margin-top:18px">
-    <div class="kpi" style="grid-column:1/-1"><div class="t">Diplomatic notice</div><div>Refugee‑Camp Self‑Reliance Model PDF available on request. Email <a href="mailto:gyumin.jeon.childsafe@gmail.com">gyumin.jeon.childsafe@gmail.com</a> (backup <a href="mailto:jekymin2@naver.com">jekymin2@naver.com</a>).</div></div>
-  </section>
+        <div class="highlight" role="note" aria-label="wage and dividend model">
+          <strong>How wages and family dividends work</strong><br />
+          If a refugee participates, they receive <strong>$300 per month</strong> as income.<br />
+          In addition, a share of net profit (default <strong>50%</strong>) is paid to the worker’s family or relatives as dividends at <strong>$50 per household per month</strong>.<br />
+          Example: With one tent and 4 workers, all 4 workers receive $300 per month each, and their family/relatives receive $50 per household per month from the dividend pool.
+        </div>
 
-  <section id="sim" class="mc">
-    <div class="wrap">
-      <div class="row" style="justify-content:space-between"><div><h3>Impact Simulator — “$1,000 Tent Factory”</h3><div class="title">All calculations run locally in your browser; no data is sent.</div></div><span class="badge">🔒 Zero‑data, in‑browser</span></div>
+        <!-- Inputs -->
+        <div class="grid cols-2" style="margin-top:10px">
+          <div>
+            <div class="grid cols-3">
+              <div>
+                <label>Tents</label>
+                <input id="tents" type="number" min="1" value="1" oninput="MC.calc()" />
+              </div>
+              <div>
+                <label>Workers per tent</label>
+                <input id="workersPerTent" type="number" min="1" value="4" oninput="MC.calc()" />
+              </div>
+              <div>
+                <label>Duration (months)</label>
+                <input id="months" type="number" min="1" value="6" oninput="MC.calc()" />
+              </div>
+            </div>
 
-      <div class="grid cols-2" style="margin-top:10px">
-        <div>
-          <div class="grid cols-3">
-            <div><label>Number of tents</label><input data-role="sim-input" id="tents" type="number" min="1" value="1" /></div>
-            <div><label>Workers per tent</label><input data-role="sim-input" id="workersPerTent" type="number" min="1" value="4" /></div>
-            <div><label>Operating period (months)</label><input data-role="sim-input" id="months" type="number" min="1" value="6" /></div>
+            <div class="grid cols-3" style="margin-top:10px">
+              <div>
+                <label>Units per worker per week</label>
+                <input id="unitsPerWorkerWeek" type="number" min="1" value="3" oninput="MC.calc()" />
+              </div>
+              <div>
+                <label>Premium share (%)</label>
+                <input id="premiumShare" type="range" min="0" max="100" value="25" oninput="MC.syncShare(this.value)" />
+              </div>
+              <div>
+                <label>Camp population</label>
+                <input id="campPop" type="number" min="1" value="5000" oninput="MC.calc()" />
+              </div>
+            </div>
+
+            <div class="grid cols-3" style="margin-top:10px">
+              <div>
+                <label>Microloan per tent (USD)</label>
+                <input id="loanPerTent" type="number" min="0" value="1000" oninput="MC.calc()" />
+              </div>
+              <div>
+                <label>Payout ratio (%)</label>
+                <input id="payoutRatio" type="number" min="0" max="100" value="50" oninput="MC.calc()" />
+              </div>
+              <div>
+                <label>Dividend per household (USD)</label>
+                <input id="dividendUnit" type="number" min="1" value="50" oninput="MC.calc()" />
+              </div>
+            </div>
+
+            <p class="sr-only" id="a11y-note">Adjust any value to match local reality. Mix, costs, and population are configurable.</p>
+          </div>
+
+          <!-- KPIs -->
+          <div>
+            <div class="kpi">
+              <div class="card"><div class="title">Total workers</div><div id="out_workers" class="num">—</div></div>
+              <div class="card"><div class="title">Total units</div><div id="out_units" class="num">—</div></div>
+              <div class="card"><div class="title">Revenue</div><div id="out_revenue" class="num">$0</div></div>
+            </div>
+            <div class="kpi" style="margin-top:10px">
+              <div class="card"><div class="title">Wage pool</div><div id="out_wagePool" class="num">$0</div><div class="title">Wage coverage vs 10% of sales: <span id="out_wageCoverage">—</span></div></div>
+              <div class="card"><div class="title">Dividend pool</div><div id="out_divPool" class="num">$0</div><div class="title">Beneficiary households: <span id="out_divHouseholds">—</span></div></div>
+              <div class="card"><div class="title">Reinvestment and loan</div><div id="out_weeksToRepay" class="num">—</div><div class="title">Reinvestment: <span id="out_margin">$0</span></div></div>
+            </div>
+            <div class="kpi" style="margin-top:10px">
+              <div class="card"><div class="title">GDP per capita (monthly)</div><div id="out_gdpPerCapMonthly" class="num">$0</div></div>
+              <div class="card"><div class="title">GDP per capita (annual)</div><div id="out_gdpPerCapAnnual" class="num">$0</div></div>
+              <div class="card"><div class="title">Avg. per participating worker (monthly)</div><div id="out_avgPerWorker" class="num">$0</div></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Product & cost block -->
+        <div class="card" style="margin-top:12px">
+          <div class="title">Product mix and costs</div>
+          <div class="grid cols-3" style="margin-top:10px">
+            <div>
+              <label>Budget price (USD)</label>
+              <input id="priceBudget" type="number" min="1" value="20" oninput="MC.calc()" />
+            </div>
+            <div>
+              <label>Budget BOM+other (USD)</label>
+              <input id="costBudget" type="number" min="0" value="12" oninput="MC.calc()" />
+            </div>
+            <div>
+              <label>Budget share (%)</label>
+              <input id="budgetShare" type="number" readonly value="75" />
+            </div>
           </div>
           <div class="grid cols-3" style="margin-top:10px">
-            <div><label>Units per worker per week</label><input data-role="sim-input" id="unitsPerWorkerWeek" type="number" min="1" value="3" /></div>
-            <div><label>Premium share (%)</label><input data-role="sim-input" id="premiumShare" type="range" min="0" max="100" value="25" /></div>
-            <div><label>Camp population</label><input data-role="sim-input" id="campPop" type="number" min="1" value="5000" /></div>
+            <div>
+              <label>Premium price (USD)</label>
+              <input id="pricePremium" type="number" min="1" value="200" oninput="MC.calc()" />
+            </div>
+            <div>
+              <label>Premium BOM+other (USD)</label>
+              <input id="costPremium" type="number" min="0" value="120" oninput="MC.calc()" />
+            </div>
+            <div>
+              <label>Premium share (%)</label>
+              <input id="premiumShareNum" type="number" readonly value="25" />
+            </div>
           </div>
           <div class="grid cols-3" style="margin-top:10px">
-            <div><label>Micro‑loan per tent (USD)</label><input data-role="sim-input" id="loanPerTent" type="number" min="0" value="1000" /></div>
-            <div><label>Payout ratio (%)</label><input data-role="sim-input" id="payoutRatio" type="number" min="0" max="100" value="50" /></div>
-            <div><label>Dividend per household (USD)</label><input data-role="sim-input" id="dividendUnit" type="number" min="1" value="50" /></div>
+            <div>
+              <label>Monthly wage per worker (USD)</label>
+              <input id="monthlyWage" type="number" min="0" value="300" oninput="MC.calc()" />
+            </div>
+            <div>
+              <label>Wage target rate of sales (%)</label>
+              <input id="wageTargetRate" type="number" min="0" max="100" value="10" oninput="MC.calc()" />
+            </div>
+            <div>
+              <label>Weeks per month (for conversion)</label>
+              <input id="weeksPerMonth" type="number" min="1" step="0.1" value="4" oninput="MC.calc()" />
+            </div>
           </div>
         </div>
-        <div>
-          <div class="grid cols-3">
-            <div class="card"><div class="title">Total workers</div><div id="out_workers" class="num">0</div></div>
-            <div class="card"><div class="title">Total units produced</div><div id="out_units" class="num">0</div></div>
-            <div class="card"><div class="title">Total revenue</div><div id="out_revenue" class="num">$0</div></div>
-          </div>
-          <div class="grid cols-3" style="margin-top:10px">
-            <div class="card"><div class="title">Total wage pool</div><div id="out_wagePool" class="num">$0</div><div class="title">Wage coverage vs 10% of sales: <span id="out_wageCoverage">—</span></div></div>
-            <div class="card"><div class="title">Dividend pool</div><div id="out_divPool" class="num">$0</div><div class="title">Households receiving dividends: <span id="out_divHouseholds">—</span></div></div>
-            <div class="card"><div class="title">Reinvestment and repayment</div><div id="out_weeksToRepay" class="num">—</div><div class="title">Amount available for reinvestment: <span id="out_margin">$0</span></div></div>
-          </div>
+
+        <!-- Chart and actions -->
+        <div class="card" style="margin-top:12px">
+          <div class="title">Cumulative financials</div>
+          <canvas id="chart" width="640" height="180" aria-label="financial chart"></canvas>
+          <div class="row" style="margin-top:8px"><button class="btn" onclick="MC.copy()">Copy summary</button></div>
+        </div>
+
+        <!-- GPT prompt helper -->
+        <div class="card" style="margin-top:12px">
+          <div class="title">Prompt helper</div>
+          <p>Click the button to copy a prompt pre‑filled with current simulation values. </p>
+          <textarea id="gptPrompt" readonly></textarea>
+          <div class="row" style="margin-top:8px"><button class="btn primary" onclick="MC.copyGPT()">Copy prompt</button></div>
         </div>
       </div>
+    </section>
 
-      <div class="card" style="margin-top:12px">
-        <div class="title">Product Mix & Cost Assumptions</div>
-        <div class="grid cols-3" style="margin-top:10px">
-          <div><label>Budget price (USD)</label><input data-role="sim-input" id="priceBudget" type="number" min="1" value="20" /></div>
-          <div><label>Budget BOM+other (USD)</label><input data-role="sim-input" id="costBudget" type="number" min="0" value="12" /></div>
-          <div><label>Budget share (%)</label><input id="budgetShare" type="number" value="75" readonly /></div>
-        </div>
-        <div class="grid cols-3" style="margin-top:10px">
-          <div><label>Premium price (USD)</label><input data-role="sim-input" id="pricePremium" type="number" min="1" value="200" /></div>
-          <div><label>Premium BOM+other (USD)</label><input data-role="sim-input" id="costPremium" type="number" min="0" value="120" /></div>
-          <div><label>Premium share (%)</label><input id="premiumShareNum" type="number" value="25" readonly /></div>
-        </div>
-        <div class="grid cols-3" style="margin-top:10px">
-          <div><label>Monthly wage per worker (USD)</label><input data-role="sim-input" id="monthlyWage" type="number" min="0" value="300" /></div>
-          <div><label>Wage target rate of sales (%)</label><input data-role="sim-input" id="wageTargetRate" type="number" min="0" max="100" value="10" /></div>
-          <div><label>Weeks per month (for conversion)</label><input data-role="sim-input" id="weeksPerMonth" type="number" min="1" step="0.1" value="4" /></div>
-        </div>
+    <!-- Diplomatic Contact Notice (English, Styled) -->
+    <section class="notice" aria-label="Diplomatic PDF Offer">
+      <h2>Diplomatic Notice</h2>
+      <p>We stand ready to provide the Refugee-Camp Self-Reliance Model for your institution’s review in PDF format at any time. Should you wish to receive the dossier, we would be grateful to receive a written request by email.</p>
+      <div style="display:flex; flex-direction:column; gap:4px;">
+        <span>Email: <a href="mailto:gyumin.jeon.childsafe@gmail.com">gyumin.jeon.childsafe@gmail.com</a></span>
+        <span>Backup Email: <a href="mailto:jekymin2@naver.com">jekymin2@naver.com</a></span>
       </div>
+    </section>
+  </main>
 
-      <div class="card" style="margin-top:12px">
-        <div class="title">Cumulative Financials</div>
-        <canvas id="chart" width="640" height="180"></canvas>
-        <div class="row" style="margin-top:8px"><button class="btn" id="copySummary">Copy summary</button></div>
-      </div>
+  <script>
+    const $ = id => document.getElementById(id);
+    const fmt = (n,cur)=> cur? '$'+Math.round(n).toLocaleString(): Math.round(n).toLocaleString();
 
-      <div class="card" style="margin-top:12px">
-        <div class="title">Optimization test prompt</div>
-        <textarea id="optPrompt" readonly></textarea>
-        <div class="row" style="margin-top:8px"><button class="btn primary" id="copyPrompt">Copy prompt</button></div>
-      </div>
-    </div>
-  </section>
+    const MC = {
+      syncShare(v){
+        $('premiumShareNum').value = +v;
+        $('budgetShare').value = 100 - (+v);
+        MC.calc();
+      },
+      calc(){
+        const tents = +$('tents').value;
+        const workersPerTent = +$('workersPerTent').value;
+        const months = +$('months').value;
+        const unitsPerWorkerWeek = +$('unitsPerWorkerWeek').value;
+        const weeksPerMonth = +$('weeksPerMonth').value;
+        const priceB = +$('priceBudget').value;
+        const priceP = +$('pricePremium').value;
+        const costB = +$('costBudget').value;
+        const costP = +$('costPremium').value;
+        const shareP = +$('premiumShare').value/100;
+        const shareB = 1 - shareP;
+        const monthlyWagePerWorker = +$('monthlyWage').value; // 300
+        const wageTargetRate = +$('wageTargetRate').value/100; // 10%
+        const payoutRatio = +$('payoutRatio').value/100; // 50%
+        const dividendUnit = +$('dividendUnit').value; // $50 per household per month
+        const loanPerTent = +$('loanPerTent').value;
+        const campPop = Math.max(1,+$('campPop').value);
 
-  <footer class="foot">M‑Corp · Rights‑Based Wearable AI · Zero‑Data · Refugee‑Led · © 2025</footer>
-</main>
+        const totalWorkers = tents * workersPerTent;
+        const totalWeeks = months * weeksPerMonth;
+        const totalUnits = totalWorkers * unitsPerWorkerWeek * totalWeeks;
 
-<script>
-  const $ = id => document.getElementById(id);
-  const fmt = (n,cur)=> cur? '$'+Math.round(n).toLocaleString(): Math.round(n).toLocaleString();
+        const unitsB = totalUnits * shareB;
+        const unitsP = totalUnits * shareP;
 
-  const MC = {
-    bind(){
-      document.querySelectorAll('[data-role="sim-input"]').forEach(el=>{
-        el.addEventListener('input', MC.calc);
-        el.addEventListener('change', MC.calc);
-      });
-      // keep shares in sync
-      $('premiumShare').addEventListener('input', e=>{
-        const v = +e.target.value; $('premiumShareNum').value = v; $('budgetShare').value = 100 - v; MC.calc();
-      });
-      $('copySummary').addEventListener('click', MC.copy);
-      $('copyPrompt').addEventListener('click', MC.copyOpt);
+        const revenue = unitsB*priceB + unitsP*priceP;
+        const directCosts = unitsB*costB + unitsP*costP;
+
+        // Wage pool: participation-based fixed monthly $300 per active worker
+        const wagePool = totalWorkers * monthlyWagePerWorker * months;
+        const wageTarget = revenue * wageTargetRate; // 10% of sales target for wages
+
+        const marginBeforePayout = revenue - directCosts - wagePool; // net after wages
+        const dividendPool = Math.max(0, marginBeforePayout * payoutRatio);
+        const households = Math.floor(dividendPool / dividendUnit);
+
+        // Reinvestment = net profit - dividends
+        const reinvest = Math.max(0, marginBeforePayout - dividendPool);
+
+        // Loan repayment estimate (weeks)
+        const loanTotal = tents * loanPerTent;
+        const weeks = totalWeeks; // already weeks
+        const weeklyReinvest = weeks>0 ? reinvest / weeks : 0;
+        const weeksToRepay = weeklyReinvest>0 ? Math.ceil(loanTotal / weeklyReinvest) : '—';
+
+        // GDP per capita contribution (monthly and annual)
+        const monthlyDiv = months>0 ? dividendPool / months : 0;
+        const monthlyDistrib = (wagePool / months) + monthlyDiv; // distributed within camp
+        const gdpPerCapMonthly = monthlyDistrib / campPop;
+        const gdpPerCapAnnual = gdpPerCapMonthly * 12;
+
+        const avgPerWorkerMonthly = months>0 && totalWorkers>0 ? (wagePool / months)/ totalWorkers : 0;
+
+        // Outputs
+        $('out_workers').textContent = fmt(totalWorkers);
+        $('out_units').textContent = fmt(totalUnits);
+        $('out_revenue').textContent = fmt(revenue,true);
+        $('out_wagePool').textContent = fmt(wagePool,true);
+        $('out_wageCoverage').textContent = wageTarget>0 ? ((wagePool / wageTarget * 100).toFixed(1) + '%') : '—';
+        $('out_divPool').textContent = fmt(dividendPool,true);
+        $('out_divHouseholds').textContent = fmt(households);
+        $('out_margin').textContent = fmt(reinvest,true);
+        $('out_weeksToRepay').textContent = weeksToRepay;
+        $('out_gdpPerCapMonthly').textContent = '$' + gdpPerCapMonthly.toFixed(2);
+        $('out_gdpPerCapAnnual').textContent = '$' + gdpPerCapAnnual.toFixed(2);
+        $('out_avgPerWorker').textContent = fmt(avgPerWorkerMonthly,true);
+
+        MC.draw(revenue, directCosts + wagePool, reinvest);
+        MC.buildPrompt({tents,workersPerTent,months,unitsPerWorkerWeek,weeksPerMonth,priceB,priceP,costB,costP,shareB,shareP,monthlyWagePerWorker,wageTargetRate,payoutRatio,dividendUnit,loanPerTent,campPop,totalWorkers,totalUnits,revenue,directCosts,wagePool,dividendPool,households,reinvest,weeksToRepay,gdpPerCapMonthly,gdpPerCapAnnual});
+      },
+      draw(rev,cost,rein){
+        const c=$('chart'), ctx=c.getContext('2d');
+        const W=c.width, H=c.height; ctx.clearRect(0,0,W,H);
+        const data=[{l:'Revenue',v:rev,c:'#60a5fa'},{l:'Total cost (incl. wages)',v:cost,c:'#ef4444'},{l:'Reinvestment',v:rein,c:'#22c55e'}];
+        const max=Math.max(1,...data.map(d=>d.v));
+        const pad=30, bw=(W-pad*2)/data.length-20;
+        ctx.fillStyle='#0b1220'; ctx.fillRect(0,0,W,H);
+        data.forEach((d,i)=>{
+          const x=pad+i*(bw+20); const h=d.v/max*(H-40); const y=H-20-h;
+          ctx.fillStyle=d.c; ctx.fillRect(x,y,bw,h);
+          ctx.fillStyle='#94a3b8'; ctx.font='12px system-ui';
+          ctx.fillText(d.l,x,H-6); ctx.fillText('$'+Math.round(d.v).toLocaleString(),x,y-6);
+        });
+      },
+      copy(){
+        const text = [
+          'M‑Corp Impact Simulator summary',
+          `1. Workers: ${$('out_workers').textContent}, Units: ${$('out_units').textContent}`,
+          `2. Revenue: ${$('out_revenue').textContent}, Wage pool: ${$('out_wagePool').textContent} (coverage: ${$('out_wageCoverage').textContent})`,
+          `3. Dividends: ${$('out_divPool').textContent} -> households: ${$('out_divHouseholds').textContent}`,
+          `4. Reinvestment: ${$('out_margin').textContent}, Loan repayment ETA: ${$('out_weeksToRepay').textContent} weeks`,
+          `5. GDP/capita (monthly/annual): ${$('out_gdpPerCapMonthly').textContent} / ${$('out_gdpPerCapAnnual').textContent}`
+        ].join('\n');
+        navigator.clipboard.writeText(text).then(()=>alert('Summary copied to clipboard.'));
+      },
+      buildPrompt(s){
+        const shareP = Math.round(s.shareP*100);
+        const shareB = Math.round(s.shareB*100);
+        const prompt = `You are an inclusive-design and humanitarian operations expert. Given the following simulated plan, propose 3 concrete ways to maximize disability-inclusive impact while keeping the data-free, offline design.\n\n`+
+        `Context:\n`+
+        `- Tents: ${s.tents}, Workers/Tent: ${s.workersPerTent}, Months: ${s.months}\n`+
+        `- Units per worker per week: ${s.unitsPerWorkerWeek}, Weeks per month: ${s.weeksPerMonth}\n`+
+        `- Mix: Budget ${shareB}% at $${s.priceB} (cost $${s.costB}), Premium ${shareP}% at $${s.priceP} (cost $${s.costP})\n`+
+        `- Monthly wage per worker: $${s.monthlyWagePerWorker} (target ~${Math.round(s.wageTargetRate*100)}% of revenue)\n`+
+        `- Payout ratio: ${Math.round(s.payoutRatio*100)}% with $${s.dividendUnit} per beneficiary household\n`+
+        `- Microloan per tent: $${s.loanPerTent}\n`+
+        `- Camp population: ${s.campPop}\n\n`+
+        `Results:\n`+
+        `- Total workers: ${s.totalWorkers}, Total units: ${Math.round(s.totalUnits)}\n`+
+        `- Revenue: $${Math.round(s.revenue).toLocaleString()}, Direct costs: $${Math.round(s.directCosts).toLocaleString()}\n`+
+        `- Wage pool: $${Math.round(s.wagePool).toLocaleString()}, Dividend pool: $${Math.round(s.dividendPool).toLocaleString()} (households: ${s.households})\n`+
+        `- Reinvestment: $${Math.round(s.reinvest).toLocaleString()}, Weeks to repay loan: ${s.weeksToRepay}\n`+
+        `- GDP-per-capita contribution (monthly/annual): $${s.gdpPerCapMonthly.toFixed(2)} / $${s.gdpPerCapAnnual.toFixed(2)}\n\n`+
+        `Constraints: no personal data collection, offline-first design, rights-based approach.\n`+
+        `Output: a step-by-step plan with short justifications for each recommendation.`;
+        $('gptPrompt').value = prompt;
+      },
+      copyGPT(){
+        $('gptPrompt').select();
+        document.execCommand('copy');
+        alert('GPT prompt copied. Paste it into your GPT window.');
+      }
+    };
+
+    // init
+    (function(){
+      $('premiumShareNum').value = +$('premiumShare').value;
+      $('budgetShare').value = 100 - (+$('premiumShare').value);
       MC.calc();
-    },
-    calc(){
-      const tents = +$('tents').value;
-      const workersPerTent = +$('workersPerTent').value;
-      const months = Math.max(1,+$('months').value);
-      const unitsPerWorkerWeek = +$('unitsPerWorkerWeek').value;
-      const weeksPerMonth = +$('weeksPerMonth').value;
-      const priceB = +$('priceBudget').value;
-      const priceP = +$('pricePremium').value;
-      const costB = +$('costBudget').value;
-      const costP = +$('costPremium').value;
-      const shareP = +$('premiumShare').value/100;
-      const shareB = 1 - shareP;
-      const monthlyWagePerWorker = +$('monthlyWage').value;
-      const wageTargetRate = +$('wageTargetRate').value/100;
-      const payoutRatio = +$('payoutRatio').value/100;
-      const dividendUnit = +$('dividendUnit').value;
-      const loanPerTent = +$('loanPerTent').value;
-      const campPop = Math.max(1,+$('campPop').value);
-
-      const totalWorkers = tents * workersPerTent;
-      const totalWeeks = months * weeksPerMonth;
-      const totalUnits = totalWorkers * unitsPerWorkerWeek * totalWeeks;
-      const unitsB = totalUnits * shareB, unitsP = totalUnits * shareP;
-
-      const revenue = unitsB*priceB + unitsP*priceP;
-      const directCosts = unitsB*costB + unitsP*costP;
-      const wagePool = totalWorkers * monthlyWagePerWorker * months;
-      const wageTarget = revenue * wageTargetRate;
-      const marginBeforePayout = revenue - directCosts - wagePool;
-      const dividendPool = Math.max(0, marginBeforePayout * payoutRatio);
-      const households = Math.floor(dividendPool / dividendUnit);
-      const reinvest = Math.max(0, marginBeforePayout - dividendPool);
-
-      const loanTotal = tents * loanPerTent;
-      const weeklyReinvest = totalWeeks>0 ? reinvest / totalWeeks : 0;
-      const weeksToRepay = weeklyReinvest>0 ? Math.ceil(loanTotal / weeklyReinvest) : '—';
-
-      const monthlyDiv = dividendPool / months;
-      const monthlyDistrib = (wagePool / months) + monthlyDiv;
-      const gdpPerCapMonthly = monthlyDistrib / campPop;
-      const gdpPerCapAnnual = gdpPerCapMonthly * 12;
-      const avgPerWorkerMonthly = totalWorkers>0 ? (wagePool / months) / totalWorkers : 0;
-
-      // right panel outputs
-      $('out_workers').textContent = fmt(totalWorkers);
-      $('out_units').textContent = fmt(totalUnits);
-      $('out_revenue').textContent = fmt(revenue,true);
-      $('out_wagePool').textContent = fmt(wagePool,true);
-      $('out_wageCoverage').textContent = wageTarget>0 ? ((wagePool / wageTarget * 100).toFixed(1) + '%') : '—';
-      $('out_divPool').textContent = fmt(dividendPool,true);
-      $('out_divHouseholds').textContent = fmt(households);
-      $('out_margin').textContent = fmt(reinvest,true);
-      $('out_weeksToRepay').textContent = weeksToRepay;
-      $('out_gdpPerCapMonthly').textContent = '$' + gdpPerCapMonthly.toFixed(2);
-      $('out_gdpPerCapAnnual').textContent = '$' + gdpPerCapAnnual.toFixed(2);
-      $('out_avgPerWorker').textContent = fmt(avgPerWorkerMonthly,true);
-
-      // top KPIs — ensure they always mirror latest numbers
-      $('sum_workers').textContent = fmt(totalWorkers);
-      $('sum_wages').textContent = fmt(wagePool/months, true);
-      $('sum_pc').textContent = '$' + gdpPerCapMonthly.toFixed(2);
-
-      MC.draw(revenue, directCosts + wagePool, reinvest);
-      MC.buildPrompt({tents,workersPerTent,months,unitsPerWorkerWeek,weeksPerMonth,priceB,priceP,costB,costP,shareB,shareP,monthlyWagePerWorker,wageTargetRate,payoutRatio,dividendUnit,loanPerTent,campPop,totalWorkers,totalUnits,revenue,directCosts,wagePool,dividendPool,households,reinvest,weeksToRepay,gdpPerCapMonthly,gdpPerCapAnnual});
-    },
-    draw(rev,cost,rein){
-      const c=$('chart'), ctx=c.getContext('2d');
-      const W=c.width, H=c.height; ctx.clearRect(0,0,W,H);
-      const data=[{l:'Revenue',v:rev,c:'#60a5fa'},{l:'Total cost (incl. wages)',v:cost,c:'#ef4444'},{l:'Reinvestment',v:rein,c:'#22c55e'}];
-      const max=Math.max(1,...data.map(d=>d.v));
-      const pad=30, bw=(W-pad*2)/data.length-20;
-      ctx.fillStyle='#0b1220'; ctx.fillRect(0,0,W,H);
-      data.forEach((d,i)=>{
-        const x=pad+i*(bw+20); const h=d.v/max*(H-40); const y=H-20-h;
-        ctx.fillStyle=d.c; ctx.fillRect(x,y,bw,h);
-        ctx.fillStyle:'#94a3b8'; ctx.font='12px system-ui';
-        ctx.fillText(d.l,x,H-6); ctx.fillText('$'+Math.round(d.v).toLocaleString(),x,y-6);
-      });
-    },
-    copy(){
-      const text = [
-        'M‑Corp Impact Summary',
-        `1. Workers: ${$('out_workers').textContent}, Units: ${$('out_units').textContent}`,
-        `2. Revenue: ${$('out_revenue').textContent}, Wages: ${$('out_wagePool').textContent} (coverage: ${$('out_wageCoverage').textContent})`,
-        `3. Dividends: ${$('out_divPool').textContent}, Households: ${$('out_divHouseholds').textContent}`,
-        `4. Reinvestment: ${$('out_margin').textContent}, Loan repayment ETA: ${$('out_weeksToRepay').textContent} weeks`,
-        `5. Per‑capita monthly/annual: ${$('out_gdpPerCapMonthly').textContent} / ${$('out_gdpPerCapAnnual').textContent}`
-      ].join('\n');
-      navigator.clipboard.writeText(text).then(()=>alert('Summary copied.'));
-    },
-    buildPrompt(s){
-      const shareP = Math.round(s.shareP*100), shareB = Math.round(s.shareB*100);
-      const prompt = `You are an inclusive-design and humanitarian operations expert. Based on the simulated plan, propose 3 concrete improvements while keeping data-free, offline design.\n\n`+
-      `Context:\n`+
-      `- Tents: ${s.tents}, Workers/Tent: ${s.workersPerTent}, Months: ${s.months}\n`+
-      `- Units per worker per week: ${s.unitsPerWorkerWeek}, Weeks per month: ${s.weeksPerMonth}\n`+
-      `- Mix: Budget ${shareB}% at $${s.priceB} (cost $${s.costB}), Premium ${shareP}% at $${s.priceP} (cost $${s.costP})\n`+
-      `- Monthly wage per worker: $${s.monthlyWagePerWorker} (target ~${Math.round(s.wageTargetRate*100)}% of revenue)\n`+
-      `- Payout ratio: ${Math.round(s.payoutRatio*100)}% with $${s.dividendUnit}/household\n`+
-      `- Microloan/tent: $${s.loanPerTent}, Camp population: ${s.campPop}\n\n`+
-      `Results:\n`+
-      `- Workers: ${s.totalWorkers}, Units: ${Math.round(s.totalUnits)}\n`+
-      `- Revenue: $${Math.round(s.revenue).toLocaleString()}, Direct costs: $${Math.round(s.directCosts).toLocaleString()}\n`+
-      `- Wages: $${Math.round(s.wagePool).toLocaleString()}, Dividends: $${Math.round(s.dividendPool).toLocaleString()} (households: ${s.households})\n`+
-      `- Reinvestment: $${Math.round(s.reinvest).toLocaleString()}, Weeks to repay loan: ${s.weeksToRepay}\n`+
-      `- Per‑capita contribution (monthly/annual): $${s.gdpPerCapMonthly.toFixed(2)} / $${s.gdpPerCapAnnual.toFixed(2)}\n\n`+
-      `Constraints: rights-based approach; no personal data; offline-first.\n`+
-      `Output: a step-by-step plan with brief justifications.`;
-      $('optPrompt').value = prompt;
-    },
-    copyOpt(){ $('optPrompt').select(); document.execCommand('copy'); alert('Prompt copied.'); }
-  };
-
-  window.addEventListener('DOMContentLoaded', MC.bind);
-</script>
+    })();
+  </script>
 </body>
 </html>
