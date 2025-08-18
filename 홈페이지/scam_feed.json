@@ -1,0 +1,76 @@
+{
+  "source": "Manual feed for Scam-Compound index (editable)",
+  "last_updated": "2025-08-12T04:40:00+09:00",
+  "items": [
+    {
+      "country": "Cambodia",
+      "city": "Sihanoukville (various sites)",
+      "pattern": "Compelled online scams / document seizure",
+      "last": "2025-06-30",
+      "risk": "MED"
+    },
+    {
+      "country": "Laos",
+      "city": "Golden Triangle SEZ",
+      "pattern": "Coerced cyberfraud / movement restriction",
+      "last": "2025-07-20",
+      "risk": "HIGH"
+    },
+    {
+      "country": "Myanmar",
+      "city": "Myawaddy SEZ",
+      "pattern": "Human trafficking / fenced compounds / armed guards",
+      "last": "2025-07-29",
+      "risk": "HIGH"
+    },
+    {
+      "country": "Philippines",
+      "city": "Clark area (reports vary)",
+      "pattern": "Recruitment scams targeting foreign workers",
+      "last": "2025-06-12",
+      "risk": "MED"
+    },
+    {
+      "country": "Thailand",
+      "city": "Sakon Nakhon (border belt)",
+      "pattern": "Forced scamming / passport confiscation / confinement",
+      "last": "2025-07-10",
+      "risk": "HIGH"
+    },
+    {
+      "country": "UAE",
+      "city": "Dubai (front-office recruitment)",
+      "pattern": "Sham job offers leading to debt bondage",
+      "last": "2025-05-02",
+      "risk": "LOW"
+    },
+    {
+      "country": "Malaysia",
+      "city": "Johor Bahru (industrial zones)",
+      "pattern": "Call-center style scam workshops reported",
+      "last": "2025-07-05",
+      "risk": "MED"
+    },
+    {
+      "country": "Vietnam",
+      "city": "Ho Chi Minh City (suburban parks)",
+      "pattern": "Luring via tech-support vacancies; passport withholding",
+      "last": "2025-06-28",
+      "risk": "MED"
+    },
+    {
+      "country": "Indonesia",
+      "city": "Batam (free-trade zone)",
+      "pattern": "Cross-border cyberfraud crews recruiting foreigners",
+      "last": "2025-07-02",
+      "risk": "MED"
+    },
+    {
+      "country": "China",
+      "city": "Fujian (coastal clusters)",
+      "pattern": "Online romance-fraud hubs shifting locations",
+      "last": "2025-07-18",
+      "risk": "MED"
+    }
+  ]
+}

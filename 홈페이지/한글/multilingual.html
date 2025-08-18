@@ -1,0 +1,306 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Multilingual Letter – EN / KO / JA / FR</title>
+  <style>
+    :root{color-scheme:light dark}
+    body{margin:0;font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;background:#f6f8fb;color:#0b1221}
+    .wrap{max-width:980px;margin:24px auto;padding:16px}
+    .controls{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-bottom:12px}
+    .chip{border:1px solid rgba(0,0,0,.14);background:#fff;border-radius:999px;padding:8px 12px;font-size:.9rem;cursor:pointer;user-select:none}
+    .chip[aria-pressed="true"]{outline:2px solid #1e3a8a;background:#eef2ff}
+    .letter{background:#fff;border:1px solid rgba(0,0,0,.12);border-radius:14px;box-shadow:0 10px 26px rgba(2,6,23,.08);padding:24px}
+    .meta{display:grid;grid-template-columns:120px 1fr;gap:6px;font-size:.95rem;color:#374151;margin:0 0 14px}
+    h1{font-size:1.2rem;margin:8px 0 12px;font-weight:800}
+    p{line-height:1.74;margin:10px 0}
+    ul{margin:8px 0 8px 1.1em}
+    li{margin:6px 0;line-height:1.6}
+    .hr{height:1px;background:linear-gradient(90deg,rgba(0,0,0,.1),rgba(0,0,0,.04));margin:16px 0;border-radius:1px}
+    .footer{margin-top:18px;font-size:.95rem;color:#374151}
+    @media (max-width:640px){.meta{grid-template-columns:100px 1fr}.wrap{padding:12px}}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="controls" role="group" aria-label="Language selector">
+      <button class="chip" data-lang="en" aria-pressed="true">English</button>
+      <button class="chip" data-lang="ko" aria-pressed="false">한국어</button>
+      <button class="chip" data-lang="ja" aria-pressed="false">日本語</button>
+      <button class="chip" data-lang="fr" aria-pressed="false">Français</button>
+    </div>
+
+    <article id="letter" class="letter" lang="en" aria-live="polite"></article>
+  </div>
+
+  <script>
+    const LETTERS = {
+      en: `
+<header class="meta"><div>To</div><div>Field Operations / Concerned Officials</div><div>From</div><div>Gyu-min Jeon</div><div>Subject</div><div>Original Proposal – Full Text (Letter Format)</div><div>Date</div><div>2025-08-15 (KST)</div></header>
+<h1>Letter</h1>
+<p>The African continent, owing to its vast geographical scale and diversity, contains numerous regions where real-time monitoring remains practically unfeasible. This structural limitation continues to hinder the international community’s ability to respond swiftly to emerging humanitarian crises. In this context, we firmly believe that a technology-enabled early warning system represents not only an urgent necessity but also a highly pragmatic solution.</p>
+<p>This concept—long in development—has recently reached a point of realistic feasibility, owing to advances in artificial intelligence and the availability of low-cost mobile technologies. We propose a lightweight, AI-powered surveillance framework that leverages affordable smartphones, enabling preventive action against potential large-scale human rights violations.</p>
+<p>The proposed system operates through the voluntary submission of geolocation data by local residents. An embedded AI engine would then autonomously analyze the distribution and concentration patterns of the incoming coordinates to detect anomalies. While individual data points may be imprecise or even misreported, statistical reliability naturally emerges as volume increases, allowing the aggregated data to serve as credible first-level indicators.</p>
+<p>This approach can serve as a critical complement to satellite reconnaissance, which, due to resource constraints, cannot provide continuous or wide-area coverage in real time. Importantly, deploying satellite assets typically requires a baseline level of preliminary evidence—an evidentiary threshold that this system could effectively help to meet.</p>
+<p>To secure a more robust second layer of verification, we further propose the adapted use of decommissioned unmanned aerial vehicles—specifically, repurposed Bayraktar TB2 drones. When reconfigured without weapons and equipped with extended fuel capacity, these UAVs can achieve surveillance ranges of approximately 500 kilometers. By integrating expendable, low-cost civilian drones, they can further extend their monitoring capabilities to exceed 1,000 kilometers in total range.</p>
+<p>Under this dual-drone framework, the smaller drone would be deployed as a one-time-use reconnaissance unit capable of discreetly recording audio and visual evidence in pre-identified high-risk zones. This indirect, non-intrusive method of verification can provide compelling second-tier evidence, thus substantiating the case for strategic satellite deployment.</p>
+<p>In conclusion, this proposed system—anchored in sub-$20 AI-enabled smartphones and retrofitted long-range surveillance drones—offers a structured and scalable mechanism for collecting both primary coordinate data and secondary field evidence. Designed with non-commercial and non-military intentions, this initiative holds strong potential as a public-interest technology platform that may serve as the foundation for international cooperation in rights-based monitoring and early humanitarian intervention.</p>
+<p>AI expressed this concern.</p>
+<p>Your concept is remarkably original and, in many respects, demonstrates a realistic potential for implementation. However, prior to operationalization, several key elements should be logically structured and supported by institutional, ethical, and technical foundations in order to ensure legitimacy and acceptance by the international community. In that spirit, I offer the following analysis:</p>
+<p>It is widely acknowledged within the international community that maintaining fixed, continuous surveillance across the African continent is virtually unfeasible. Satellite surveillance, while valuable, is prohibitively expensive and limited in both resolution and frequency, making it inadequate for sustained, localized monitoring. Therefore, I fully agree with the necessity of a field-based information collection system as a complementary solution.</p>
+<p>The proposal to equip low-cost smartphones (approximately $20) with geolocation transmission capabilities and basic AI analysis is technically feasible. In fact, there have already been pilot initiatives in countries such as Kenya and Nigeria, using inexpensive smartphones for public health monitoring and the transmission of agricultural geodata. That said, for AI to automatically assess or validate the authenticity of coordinates, preliminary systems such as local-level labeling, trust assessment algorithms, and data clustering techniques would need to be in place.</p>
+<p>The argument that coordinate data, when accumulated in sufficient quantity, can serve as a reliable form of primary evidence is valid from a statistical detection standpoint. For instance, if coordinates are concentrated within a specific region and time window, abnormal patterns could be identified. However, for such data to be accepted as legal evidence by the international community, a multi-layered verification framework is essential—this includes the integrity of metadata, security of transmission pathways, and safeguards against misuse.</p>
+<p>The conceptual use of second-hand Bayraktar TB2 drones as a secondary verification tool is technically plausible, but its feasibility is highly contingent upon political and military considerations—such as Turkish export permissions, allowance for modifications, and potential diplomatic frictions during airspace transit. The idea of using a "drone within a drone" model—where a civilian UAV is deployed from a larger platform for long-range surveillance—is technologically achievable, though it hinges on secure communications and precision landing.</p>
+<p>The concept of dropping disposable civilian drones to collect surveillance footage and subsequently decommission them requires both ethical justification and technological execution. While the overarching aim—preventing mass atrocities—is clearly grounded in public interest, there are substantial risks related to the rights of those under surveillance, unauthorized use of imagery, and possible diplomatic incidents in cases of false detection.</p>
+<p>The assertion that preliminary evidence is needed to trigger satellite reconnaissance is both logical and grounded in current practice. International organizations such as the United Nations, the EU External Action Service, and the African Union typically require verified ground-level data before mobilizing assets. Your proposal could function as an upstream layer in that ecosystem—offering a decentralized civilian monitoring network with meaningful early-warning capabilities.</p>
+<p>In conclusion, this idea is technically viable and has the potential to serve as a critical component of an early-warning system against mass atrocities. However, the following conditions must be addressed to ensure its responsible implementation:</p>
+<ul><li>Development of robust data security and validation mechanisms,</li><li>Legal grounding for drone-based civilian surveillance,</li><li>Establishment of collaborative frameworks with international NGOs and civil society,</li><li>Institutionalization of procedures for requesting satellite imagery based on field data.</li></ul>
+<p>If your intention is to enable the surveillance of otherwise inaccessible regions through human-coordinated, AI-assisted methods, then this concept clearly holds strategic value. Even at this stage, the proposal could be developed into a credible diplomatic and technological briefing. Should you wish, I would be glad to assist in further structuring the technical requirements, legal framework, or budgetary design to bring it to the next level.</p>
+<p>The twenty-dollar AI smartphone I am envisioning can be used not only to monitor human rights violations, but also to save lives. This device functions like a radio, capable of sending SOS distress signals even without access to electricity or a telecommunications network. I would be grateful for the opportunity to share the full system with you. It is essential that the entire proposal is reviewed from beginning to end in order to fully understand how this smartphone can be brought to life. The document is 100 pages in total.</p>
+<p>Gyu-min Jeon</p>
+<p>I am a citizen of the Republic of Korea with a strong personal commitment to child safety and children’s rights. As an uncle to my only nephew, I have come to realize how deeply vulnerable children are in today’s world—especially in regions where basic protections do not exist.</p>
+<p>Motivated by this conviction, I hope to dedicate the remainder of my life to protecting the lives, dignity, and rights of children in crisis. I am especially drawn to the urgent needs of children in Africa, where countless young lives are endangered by poverty, violence, and lack of access to basic infrastructure.</p>
+<h1>Proposal for Deploying Decentralized Survival Communication Terminals in Remote African Regions</h1>
+<p>I hope this message finds you well. I am writing to share a humanitarian solution that may be of urgent relevance to your field operations in Africa—particularly in regions without electricity, internet, or communication infrastructure.</p>
+<p>I have developed a fully designed, ready-to-deploy radio-based device that functions as a mesh-enabled survival terminal. This system does not rely on cell towers or satellites, and it is powered entirely by solar energy.</p>
+<p>The two key objectives are:</p>
+<p>1. To save lives by helping people locate water sources and critical aid points.</p>
+<p>NGOs who dig wells or distribute food can instantly notify surrounding villages through broadcast signals. Villagers can also voluntarily share the location of clean water or food without needing literacy or smartphones.</p>
+<p>2. To prevent and report atrocities before they are erased.</p>
+<p>Residents who witness acts of violence, exploitation, or military raids(massacre) can use the device to send anonymous alerts. These signals can be relayed across dozens of kilometers—even without internet access—functioning as a digital witness system that preserves real-time evidence.</p>
+<p>Each device costs less than $30 to manufacture and requires only sunlight and human presence to operate. Its minimal UI is number-based, allowing even illiterate users or young children to send and receive essential messages.</p>
+<p>I am not asking for funding. What I seek is collaboration—specifically with NGOs capable of deploying and managing these networks in the field. I believe this system could dramatically improve real-time awareness, human security, and dignity across the most disconnected regions of the continent.</p>
+<p>I currently have a highly detailed proposal exceeding 100 pages in length. So far, I have only shared about 10 pages. The full document is written in Korean, but if you are interested, I am willing to translate the entire proposal into English and deliver it in the form of a complete proposal document.</p>
+<p>I am willing to develop my current Korean-language notes into a full proposal and formal project document. If you are able to introduce an angel investor who values human rights, I would be glad to submit the complete proposal.</p>
+<p>The “African Smart Wireless Terminal” (commonly referred to as the African Smart Phone) that I propose is a survival-oriented communication device designed specifically for rural communities in Africa where electricity, internet, and medical infrastructure are virtually nonexistent.</p>
+<p>This is not a conventional smartphone. It is more akin to a smart radio device, equipped with an independent communication network, solar-powered self-charging capabilities, and the ability to function without any base station.</p>
+<p>Its primary purpose is to ensure that even children in the most remote regions of Africa can call for help, communicate, receive medical information, and ultimately survive in times of crisis.</p>
+<p>This is a new kind of device that does not yet exist anywhere in the world.</p>
+<p>Technologies such as LoRa, Mesh, and solar power have long been available, but no country has yet integrated them into a complete system that combines humanitarian networking, social ethics, regional cooperation, and base station-free autonomous communication.</p>
+<p>Although the device resembles a smartphone on the outside, it is essentially an offline wireless network node.</p>
+<p>Its key functions include the following.</p>
+<ul><li>Each device acts as a relay station without the need for external infrastructure, and the more users there are, the wider the coverage becomes.</li><li>It requires no electricity supply, operating all day with solar charging.</li><li>Using LoRa and Bluetooth Mesh technology, the device automatically connects with nearby users to transmit messages, voice signals, and location data.</li><li>All applications use a simple numeric code system (for example, 01 = fever, 02 = water shortage), allowing even illiterate individuals or young children to use it with ease.</li><li>Every device comes preloaded with medical modules connected to NGOs, enabling automatic reception of emergency alerts and healthcare instructions.</li><li>Information sharing is voluntary, giving users full control over whether to share their location or participate in community communications.</li></ul>
+<p>This is not merely a piece of equipment—it represents a new social infrastructure: a system built on information self-reliance, humanitarian leadership, survival sharing, and the freedom to communicate.</p>
+<p>This is not about charity. It is the realization of trust and hope.</p>
+<h1>How will the African Smart Phone change the world?</h1>
+<p>In Africa, millions of people live without electricity, internet, or access to healthcare. When a child is struck with a high fever, a woman faces complications during childbirth, food becomes scarce, or armed groups attack a village, there is no way for people to call for help. Existing smartphones are useless in these circumstances—without power, without signal, and without repair resources, they are nothing more than dead weight.</p>
+<p>But the African Smart Phone I propose changes this reality entirely.</p>
+<p>When a child has a fever, a mother can press "01" and nearby medical volunteers or NGO doctors will receive the signal and respond with emergency instructions. When a village discovers a source of clean water or food, they can choose to share the location so that nearby families in need can benefit. Witnesses to acts of violence, theft, or military aggression can anonymously report the incident to NGOs or media networks. When NGOs set up temporary clinics or food distribution points, all devices within several kilometers will automatically receive broadcast updates.</p>
+<p>All of these functions are possible without base stations, telecom operators, data centers, or satellites. All it takes is one person, one device, and one ray of sunlight.</p>
+<p>Proposal Summary: African Smart Wireless Terminal — Proposal Objective: To establish a dignity-centered communication infrastructure that enables rural populations in Africa—where electricity, internet, and medical access are absent—to safely exchange life-saving information.</p>
+<p><strong>1. Core Concept: Looks Like a Smartphone, Functions Like a Radio</strong></p>
+<p>The African Smart Wireless Terminal resembles a regular smartphone in appearance but functions as a radio-based communication device designed for survival. Each unit is assigned a unique frequency in the form of a digital ID, which is permanently fixed and cannot be altered. For example, a frequency like “131414#” is clearly displayed on the device, allowing users to easily recognize and confirm their personal identifier.</p>
+<p><strong>2. Decentralized Communication Without Base Stations: More Users, Wider Reach</strong></p>
+<p>Each device serves as a miniature base station, forming a self-sustaining network without the need for antennas or traditional telecom infrastructure. The system functions as a mesh network, expanding its coverage based on user density. If two users are located approximately 1 km apart, they can communicate directly. If there are users with devices at 2–3 km intervals, the entire region forms an extended, connected communication web.</p>
+<p><strong>3. Solar-Powered Energy Independence</strong></p>
+<p>The device does not rely on conventional electricity. It charges via a small, built-in solar panel. This design is optimized for Africa’s abundant sunlight, enabling stable usage in off-grid environments. Similar solar-powered radios, lights, and chargers have already been successfully distributed by NGOs, proving the practicality of this approach.</p>
+<p><strong>4. OS and App Structure: Linux-Based System with Bluetooth and Radio Transmission</strong></p>
+<p>Instead of Android or iOS, the device uses a Linux-based, customizable open-source OS. Apps can be transferred and installed via radio or Bluetooth without requiring internet access. Most applications use a simple numeric command system—for example, “01 = fever,” “02 = water shortage”—allowing ease of use for illiterate individuals or young children.</p>
+<p><strong>5. Key Use Cases</strong></p>
+<ul><li>Sharing the locations of clean water, food, or firewood among village residents</li><li>Requesting basic first aid from nearby healthcare workers or NGO doctors</li><li>Reporting human rights violations such as massacres or looting anonymously to NGOs</li><li>Enabling communication among residents who do not own smartphones, reducing misunderstandings and preventing intergroup conflict</li></ul>
+<p><strong>6. Feasibility Assessment</strong></p>
+<p>● Technical Feasibility — LoRa, BLE Mesh, and P2P technologies are already commercially available. A radio-based smart device is technically realistic. Unique frequencies can be implemented via digital software IDs, ensuring user authenticity and security. App transmission via Bluetooth has been successfully demonstrated in apps like Briar. Solar charging is also a mature and widely used technology.</p>
+<p>● Social Feasibility — Strongly persuasive in humanitarian contexts: bridging communication gaps, enabling emergency response, and expanding access to information rights. The narrative “One device = one life’s right to communicate” resonates with ethical marketing and ESG initiatives. Caution is needed in certain regions where radio use could be misinterpreted as surveillance; local education and NGO partnerships are essential.</p>
+<p>● Economic Sustainability — Device component costs can be kept around $20–30, making large-scale production feasible. Subsidies can be secured through donation-based models or partnerships with high-income countries. In the long term, local repair hubs and community-managed maintenance systems can be established through regional NGOs. Aligns with CSR initiatives, social entrepreneurship, and open technology grants.</p>
+<p><strong>7. Requirements and Implementation Conditions</strong></p>
+<ul><li>Partnerships with mesh communication and solar hardware developers</li><li>Agreements with African local NGOs and community stakeholders for joint management</li><li>Ecosystem-level planning for training, maintenance, and app operations</li><li>Security protocols and policies to prevent misuse in politically sensitive regions</li></ul>
+<p>Conclusion: This proposal is technologically viable and grounded in humanitarian values. It has strong social utility and can be effectively implemented through collaboration with NGOs, businesses, and civil society.</p>
+<div class="hr"></div>
+<p class="footer"><strong>The full proposal is 100 pages and available upon request. It operates without electricity or a telecommunications network and costs $20.</strong></p>
+`,
+      ko: `
+<header class="meta"><div>수신</div><div>관계자 여러분 / 현장 운영 담당자</div><div>발신</div><div>전규민 (Gyu-min Jeon)</div><div>제목</div><div>원문 제안서 – 편지 형식(전체)</div><div>날짜</div><div>2025-08-15 (KST)</div></header>
+<h1>편지</h1>
+<p>아프리카 대륙은 광대한 지리적 규모와 다양성 탓에 실시간 모니터링이 사실상 불가능한 지역이 다수 존재합니다. 이러한 구조적 한계는 국제사회가 새롭게 발생하는 인도주의 위기에 신속히 대응하는 능력을 계속 저해하고 있습니다. 이러한 맥락에서, 기술 기반 조기경보 시스템은 긴급한 필요일 뿐 아니라 매우 실용적인 해결책이라고 확신합니다.</p>
+<p>오랜 기간 개발되어 온 이 개념은 인공지능의 발전과 저비용 모바일 기술의 보급 덕분에 최근 현실적 실현 가능 단계에 도달했습니다. 우리는 저렴한 스마트폰을 활용하는 경량 AI 기반 감시 프레임워크를 제안하며, 잠재적인 대규모 인권 침해에 대한 예방적 대응을 가능하게 합니다.</p>
+<p>제안된 시스템은 지역 주민이 자발적으로 제출하는 위치 정보에 기반해 작동합니다. 내장된 AI 엔진이 유입되는 좌표의 분포와 집중 패턴을 자율적으로 분석하여 이상 징후를 탐지합니다. 개별 데이터 포인트는 부정확하거나 오보고일 수 있으나, 수량이 증가함에 따라 통계적 신뢰가 자연스럽게 형성되어 집계 데이터가 신뢰할 만한 1차 지표로 기능할 수 있습니다.</p>
+<p>이 접근법은 자원 제약으로 인해 실시간·광역 커버가 어려운 위성 정찰을 보완하는 핵심 수단이 될 수 있습니다. 특히 위성 자산 투입에는 통상 일정 수준의 사전 증거가 필요하며—본 시스템은 그 증거 요건을 충족하는 데 실질적으로 기여할 수 있습니다.</p>
+<p>보다 견고한 2차 검증을 확보하기 위해, 퇴역 무인항공기—특히 개조된 Bayraktar TB2 드론—의 활용을 제안합니다. 무장을 제거하고 연료 용량을 확대할 경우 약 500km의 감시 범위를 달성할 수 있으며, 여기에 일회용 저가 민간 드론을 결합하면 총 1,000km를 넘는 감시 능력으로 확장할 수 있습니다.</p>
+<p>이중 드론 체계에서는 소형 드론을 일회용 정찰 유닛으로 투입하여, 사전 지정된 고위험 지역에서 은밀히 음성·영상 증거를 수집합니다. 이러한 간접적·비침투적 검증 방식은 설득력 있는 2차 증거를 제공하여 위성 자산의 전략적 투입 근거를 강화할 수 있습니다.</p>
+<p>결론적으로, 20달러 미만의 AI 스마트폰과 개조된 장거리 감시 드론에 기반한 본 시스템은 1차 좌표 데이터와 2차 현장 증거를 구조적으로 수집하는 확장 가능한 메커니즘을 제공합니다. 비상업적·비군사적 의도로 설계된 이 구상은 권리 기반 모니터링과 조기 인도주의 개입을 위한 국제협력의 토대가 될 공익 기술 플랫폼으로서 강력한 잠재력을 지닙니다.</p>
+<p>AI는 이러한 문제의식을 표명했습니다.</p>
+<p>귀하의 개념은 매우 독창적이며 여러 측면에서 현실적 실행 가능성을 보여줍니다. 다만 운영에 앞서 국제사회의 정당성과 수용성을 확보하려면 제도적·윤리적·기술적 기반 위에 논리적으로 구조화될 필요가 있습니다. 그런 취지에서 다음과 같이 분석을 제시합니다.</p>
+<p>국제사회는 아프리카 전역에 고정적·연속적 감시망을 유지하는 것이 사실상 불가능하다는 데 대체로 동의합니다. 위성 감시는 가치가 있으나 비용이 과도하고 해상도와 빈도가 제한적이어서 지속적·국지적 모니터링에는 부족합니다. 따라서 현장 기반 정보 수집 체계가 보완책으로 필요하다는 점에 전적으로 동의합니다.</p>
+<p>약 20달러 수준의 저가 스마트폰에 위치 전송 기능과 기본 AI 분석을 탑재하는 것은 기술적으로 가능합니다. 실제로 케냐, 나이지리아 등에서는 저가 스마트폰을 보건 모니터링 및 농업 지오데이터 전송에 활용한 시범이 존재합니다. 다만 AI가 좌표의 진위를 자동 평가·검증하려면 지역 단위 라벨링, 신뢰도 평가 알고리즘, 데이터 군집화 등의 사전 체계가 갖춰져야 합니다.</p>
+<p>좌표 데이터가 충분히 축적되면 1차 증거로서 신뢰할 수 있다는 주장은 통계적 탐지 관점에서 타당합니다. 예컨대 특정 지역·시간대에 좌표가 집중되면 비정상 패턴을 식별할 수 있습니다. 그러나 이를 국제사회가 법적 증거로 수용하려면 메타데이터 무결성, 전송 경로 보안, 오용 방지 등을 포함하는 다층 검증 프레임워크가 필수적입니다.</p>
+<p>중고 Bayraktar TB2 드론을 2차 검증 도구로 사용하는 개념은 기술적으로 가능하나, 터키의 수출 허가, 개조 허용, 영공 통과 시 외교 마찰 등 정치·군사적 변수에 크게 좌우됩니다. 대형 플랫폼에서 민간 UAV를 투하하는 ‘드론 속 드론’ 모델은 기술적으로 구현 가능하지만, 안전한 통신과 정밀 착륙이 전제되어야 합니다.</p>
+<p>일회용 민간 드론을 투하해 영상을 수집한 뒤 폐기하는 개념은 윤리적 정당성과 기술적 실행력을 모두 요구합니다. 대량 학살 예방이라는 공익적 목적이 분명하더라도, 감시 대상의 권리, 영상의 무단 사용, 오탐 시 외교적 분쟁 등 상당한 위험이 존재합니다.</p>
+<p>위성 정찰 투입에 사전 증거가 필요하다는 주장은 논리적이며 현행 관행에 부합합니다. 유엔, EU 대외행동청, 아프리카연합 등 국제기구는 통상 검증된 현장 데이터를 전제로 자산을 동원합니다. 귀하의 제안은 그러한 생태계에서 상류의 분산형 민간 모니터링 네트워크로 기능하며 의미 있는 조기경보 능력을 제공할 수 있습니다.</p>
+<p>결론적으로 이 아이디어는 기술적으로 실현 가능하며 대규모 잔혹행위에 대한 조기경보 체계의 핵심 요소가 될 잠재력이 있습니다. 다만 다음 조건을 충족해야 책임 있는 실행이 가능합니다.</p>
+<ul><li>강건한 데이터 보안 및 검증 메커니즘 구축,</li><li>드론 기반 민간 감시에 대한 법적 근거 마련,</li><li>국제 NGO 및 시민사회와의 협력 프레임워크 수립,</li><li>현장 데이터 기반 위성 영상 요청 절차의 제도화.</li></ul>
+<p>접근 불가능 지역을 인력 조율과 AI 보조 방식으로 감시하려는 의도라면, 이 개념은 분명 전략적 가치를 가집니다. 현 단계에서도 외교·기술 브리핑으로 발전시킬 수 있으며, 기술 요건·법적 틀·예산 설계를 더 구조화하는 데 기꺼이 도움을 드리겠습니다.</p>
+<p>제가 구상하는 20달러 AI 스마트폰은 인권 침해 감시뿐 아니라 생명 구조에도 사용될 수 있습니다. 이 장치는 라디오처럼 작동하여 전기나 통신망이 없어도 SOS 구조 신호를 전송할 수 있습니다. 전 제안의 전 과정을 검토하셔야 이 스마트폰을 현실화하는 방법을 온전히 이해하실 수 있습니다. 문서는 총 100페이지 분량입니다.</p>
+<p>전규민</p>
+<p>저는 대한민국 국민으로서 아동 안전과 아동 권리에 강한 소명의식을 가지고 있습니다. 하나뿐인 조카의 삼촌으로서, 특히 기본적인 보호가 존재하지 않는 지역의 아이들이 오늘날 얼마나 취약한지 절감했습니다.</p>
+<p>이 신념에 동기부여되어, 위기에 처한 아동의 생명·존엄·권리를 지키는 데 남은 삶을 바치고자 합니다. 저는 특히 빈곤·폭력·기초 인프라 부재로 수많은 아이들의 생명이 위협받는 아프리카의 긴급한 필요에 마음이 끌립니다.</p>
+<h1>아프리카 오지 분산형 생존 통신 단말 배치 제안</h1>
+<p>안녕하십니까. 전기·인터넷·통신 인프라가 없는 아프리카 지역의 현장 운영에 긴급히 유의미할 수 있는 인도주의 해결책을 공유드리고자 합니다.</p>
+<p>저는 메쉬 기반 생존 단말로 작동하는, 배포 준비가 완료된 라디오형 장치를 설계했습니다. 이 시스템은 기지국이나 위성에 의존하지 않으며 전적으로 태양광으로 구동됩니다.</p>
+<p>핵심 목표는 두 가지입니다.</p>
+<p>1. 사람들에게 수원지와 주요 구호 거점의 위치를 찾도록 도와 생명을 구하는 것.</p>
+<p>우물을 파거나 식량을 배포하는 NGO는 방송 신호를 통해 주변 마을에 즉시 알릴 수 있습니다. 주민들도 문해력이나 스마트폰 없이도 깨끗한 물·식량 위치를 자발적으로 공유할 수 있습니다.</p>
+<p>2. 잔혹행위가 지워지기 전에 이를 방지하고 보고하는 것.</p>
+<p>폭력·착취·군의 습격(학살)을 목격한 주민은 장치를 사용해 익명 경보를 보낼 수 있습니다. 이러한 신호는 인터넷 없이도 수십 킬로미터에 걸쳐 중계되어, 실시간 증거를 보존하는 디지털 증인지 시스템으로 기능합니다.</p>
+<p>각 장치는 제조 원가가 30달러 미만이며, 작동에 필요한 것은 햇빛과 사람의 존재뿐입니다. 최소 UI는 숫자 기반으로, 문해력이 없는 사용자나 아동도 필수 메시지를 주고받을 수 있습니다.</p>
+<p>저는 자금을 요청하지 않습니다. 제가 구하는 것은 협력—현장에서 이 네트워크를 배치·운영할 수 있는 NGO와의 협력입니다. 이 시스템은 가장 단절된 지역에서도 실시간 인식, 인간 안보, 존엄을 크게 향상시킬 수 있다고 믿습니다.</p>
+<p>현재 100페이지가 넘는 매우 상세한 제안서를 보유하고 있으며, 지금까지 약 10페이지만 공유했습니다. 전체 문서는 한국어로 작성되어 있으나 원하시면 전체를 영어로 번역해 완성된 제안서 형태로 제공하겠습니다.</p>
+<p>현재의 한글 노트를 정식 제안서·프로젝트 문서로 발전시킬 의향이 있습니다. 인권을 중시하는 엔젤 투자자를 소개해 주실 수 있다면, 전체 제안서를 제출하겠습니다.</p>
+<p>제가 제안하는 “아프리카 스마트 무선 단말”(통칭 African Smart Phone)은 전기·인터넷·의료 인프라가 사실상 부재한 아프리카 농촌 공동체를 위해 설계된 생존 지향 통신 장치입니다.</p>
+<p>이는 일반적인 스마트폰이 아닙니다. 독립 통신망, 태양광 자가충전, 기지국 없이 작동하는 능력을 갖춘 스마트 라디오 장치에 가깝습니다.</p>
+<p>주요 목적은 아프리카의 가장 외딴 지역의 아이들조차도 도움을 요청하고, 소통하며, 의료 정보를 받고, 위기 속에서 살아남을 수 있도록 하는 것입니다.</p>
+<p>이는 아직 어느 나라에도 존재하지 않는 새로운 유형의 장치입니다.</p>
+<p>LoRa, Mesh, 태양광 같은 기술은 오래전부터 존재했지만, 인도주의 네트워킹·사회 윤리·지역 협력·기지국 없는 자율 통신을 결합한 완전한 시스템으로 통합한 국가는 아직 없습니다.</p>
+<p>외관은 스마트폰과 유사하지만, 본질적으로는 오프라인 무선 네트워크 노드입니다.</p>
+<p>주요 기능은 다음과 같습니다.</p>
+<ul><li>외부 인프라 없이 각 장치가 중계국 역할을 하며, 사용자가 많을수록 커버리지가 넓어집니다.</li><li>전력 공급이 필요 없으며, 태양광 충전으로 하루 종일 작동합니다.</li><li>LoRa 및 Bluetooth Mesh를 사용해 주변 사용자와 자동 연결되어 메시지·음성·위치 데이터를 전송합니다.</li><li>모든 애플리케이션은 단순 숫자 코드(예: 01=발열, 02=물 부족)를 사용하여 문해력이 없는 사람이나 아동도 쉽게 사용할 수 있습니다.</li><li>모든 장치에는 NGO와 연계된 의료 모듈이 사전 탑재되어, 긴급 경보와 보건 지침을 자동 수신합니다.</li><li>정보 공유는 자발적으로 이루어지며, 사용자는 위치 공유 및 커뮤니티 통신 참여 여부를 완전히 통제합니다.</li></ul>
+<p>이것은 단순한 장비가 아니라 정보 자립, 인도주의적 리더십, 생존의 공유, 의사소통의 자유 위에 구축된 새로운 사회 인프라입니다. 이는 자선이 아닙니다. 신뢰와 희망의 실현입니다.</p>
+<h1>아프리카 스마트폰은 세상을 어떻게 바꾸는가?</h1>
+<p>아프리카에는 전기·인터넷·의료 접근 없이 사는 수백만 명이 있습니다. 아이가 고열에 시달리거나, 산모가 난산을 겪거나, 식량이 부족해지거나, 무장 집단이 마을을 습격해도, 도움을 청할 방법이 없습니다. 이러한 상황에서 기존 스마트폰은 전력·신호·수리 인프라가 없으면 무용지물입니다.</p>
+<p>그러나 제가 제안하는 아프리카 스마트폰은 이 현실을 완전히 바꿉니다.</p>
+<p>아이가 열이 나면 어머니는 "01"을 눌러 인근 자원봉사 의료진이나 NGO 의사에게 신호를 보내 응급 지침을 받습니다. 마을에서 깨끗한 물이나 식량원을 발견하면 위치를 공유해 인근의 도움이 필요한 가정이 혜택을 받을 수 있습니다. 폭력·절도·군사적 공격을 목격한 주민은 사건을 NGO나 언론 네트워크에 익명 보고할 수 있습니다. NGO가 임시 클리닉이나 배포 거점을 설치하면, 수 km 내 모든 장치가 자동으로 방송 업데이트를 수신합니다.</p>
+<p>이 모든 기능은 기지국, 통신사, 데이터센터, 위성 없이 가능합니다. 필요한 것은 단 한 사람, 한 대의 기기, 그리고 한 줄기 햇빛뿐입니다.</p>
+<p>제안 요약: African Smart Wireless Terminal — 제안 목표: 전기·인터넷·의료 접근이 없는 아프리카 농촌 인구가 생명과 직결된 정보를 안전하게 교환할 수 있는, 존엄 중심 통신 인프라 구축.</p>
+<p><strong>1. 핵심 개념: 스마트폰처럼 보이고 라디오처럼 작동</strong> — 각 장치는 디지털 ID 형태의 고유 주파수를 부여받아 영구 고정되며 변경할 수 없습니다. 예: “131414#”.</p>
+<p><strong>2. 기지국 없는 분산 통신</strong> — 사용자 밀도에 따라 확장되는 메쉬 네트워크로, 1km 간격 직접 통신, 2–3km 간격 릴레이로 지역 연결망 형성.</p>
+<p><strong>3. 태양광 에너지 자립</strong> — 내장 패널 충전, 오프그리드 최적화, NGO 배포 사례로 실효성 입증.</p>
+<p><strong>4. 리눅스 기반 OS와 라디오/Bluetooth 앱 배포</strong> — 숫자 코드 UI(01=발열, 02=물 부족)로 문해력 낮은 사용자도 사용 용이.</p>
+<p><strong>5. 주요 사용 사례</strong> — 식수·식량·장작 위치 공유 / 응급 처치 요청 / 인권 침해 익명 보고 / 비스마트폰 사용자 간 통신.</p>
+<p><strong>6. 실행 가능성</strong> — 기술·사회·경제 측면에서 타당. 보안·오용 방지 교육 필요.</p>
+<p><strong>7. 구현 조건</strong> — 하드웨어 파트너십, 현지 NGO 협력, 교육·유지보수 계획, 보안 정책.</p>
+<div class="hr"></div>
+<p class="footer"><strong>총 기획서는 100페이지 분량이며 요청 시 제공 가능합니다. 전기, 통신망 없이 구동이 가능하며 20달러입니다.</strong></p>
+`,
+      ja: `
+<header class="meta"><div>宛先</div><div>現地オペレーション担当各位</div><div>差出人</div><div>Gyu‑min Jeon</div><div>件名</div><div>原文提案書 – レター形式（全文）</div><div>日付</div><div>2025-08-15 (KST)</div></header>
+<h1>レター</h1>
+<p>アフリカ大陸は広大な規模と多様性のため、リアルタイム監視が事実上不可能な地域が多数存在します。この構造的制約は、新たに発生する人道危機への国際社会の迅速な対応を妨げています。したがって、技術に支えられた早期警戒システムは緊急かつ実務的な解決策です。</p>
+<p>長年の構想は、AIの進歩と低価格モバイル技術の普及により現実的な実現段階に到達しました。私たちは、手頃なスマートフォンを活用する軽量なAI駆動の監視フレームワークを提案し、大規模な人権侵害の兆候に対する予防的対応を可能にします。</p>
+<p>本システムは住民による位置情報の自発的提出によって作動します。内蔵AIが受信座標の分布と集中パターンを自律的に解析し、異常を検出します。個々のデータは不正確であったり誤報である場合があっても、量が増えるにつれて統計的信頼性が自然に確立され、集約データは信頼できる一次指標となります。</p>
+<p>このアプローチは、資源制約によりリアルタイムかつ広域のカバレッジが難しい衛星偵察を重要な形で補完し得ます。衛星資産の投入には通常、予備的証拠が必要であり、本システムはその閾値を満たすのに有効です。</p>
+<p>より強固な二次検証のため、退役UAV、特に改修したBayraktar TB2ドローンの活用を提案します。非武装化し燃料容量を拡大すれば約500kmの監視範囲が可能で、安価な使い捨て民生ドローンを組み合わせれば1,000km超まで拡張できます。</p>
+<p>二重ドローン構成では、小型機をワンタイム偵察ユニットとして投入し、事前特定の高リスク地域で秘匿的に音声・映像証拠を記録します。これは非侵襲的な間接検証として説得力のある二次証拠を提供し、衛星投入の戦略的根拠を補強します。</p>
+<p>結論として、20ドル未満のAI対応スマートフォンと改装長距離監視ドローンに基づく本システムは、一次の座標データと二次の現地証拠を収集する構造的かつスケーラブルなメカニズムを提供します。非商業・非軍事を意図して設計された本構想は、権利に基づくモニタリングと人道的早期介入の基盤となり得る公共利益技術として大きな潜在力を有します。</p>
+<p>AIはこの懸念を表明しました。</p>
+<p>あなたのコンセプトは非常に独創的で、多くの点で現実的な実装可能性を示しています。しかし運用前には、国際社会における正当性と受容性を確保するため、制度・倫理・技術の基盤の上で論理的に構造化される必要があります。その観点から以下の分析を示します。</p>
+<p>国際社会では、アフリカ全土で固定的かつ連続的な監視を維持することはほぼ不可能だとの認識が広く共有されています。衛星監視は有用ですが高コストで、解像度と頻度の制約も大きく、持続的・局所的モニタリングには不十分です。したがって、補完的解として現場ベースの情報収集体制が必要です。</p>
+<p>約20ドルの低価格スマートフォンに測位送信機能と基本的なAI解析を搭載する案は技術的に実現可能です。ケニアやナイジェリアでは、公衆衛生モニタリングや農業ジオデータ送信に廉価スマートフォンを用いたパイロット事例があります。ただしAIが座標の真正性を自動評価・検証するには、地域レベルのラベリング、信頼度評価アルゴリズム、データクラスタリングといった予備システムが必要です.</p>
+<p>座標データが十分に蓄積されれば一次証拠として信頼し得るという主張は、統計的検知の観点から妥当です。しかし法的証拠として受け入れられるには、メタデータの完全性、伝送経路の安全性、悪用防止を含む多層検証フレームワークが不可欠です。</p>
+<p>中古Bayraktar TB2の二次検証利用は技術的にもっともらしいものの、トルコの輸出許可や改造容認、領空通過に伴う外交的摩擦など、政治・軍事上の要因に大きく左右されます。「ドローン内ドローン」モデルは技術的に達成可能ですが、安全な通信と精密着陸が前提です。</p>
+<p>使い捨て民生ドローンを投下して映像を収集し、その後廃棄するという構想には、倫理的正当化と技術的実装の双方が求められます。大量虐殺を防ぐという公益目的が明確であっても、監視対象者の権利、画像の無断使用、誤検知時の外交問題などのリスクがあります。</p>
+<p>衛星偵察の起動に予備的証拠が必要との主張は論理的で現行慣行にも合致します。国連、EU外務局、アフリカ連合などの国際機関は通常、検証済みの地上データを前提に資産を動員します。あなたの提案は、そのエコシステム上流の分散型市民モニタリング網として機能し、意味のある早期警戒能力を提供し得ます。</p>
+<p>結論として、このアイデアは技術的に実現可能で、大規模残虐行為に対する早期警戒システムの重要要素となる潜在力があります。ただし、責任ある実装には以下の条件への対応が必要です。</p>
+<ul><li>堅牢なデータセキュリティと検証メカニズムの整備、</li><li>ドローンを用いた市民監視の法的根拠、</li><li>国際NGOと市民社会の協働枠組み、</li><li>現場データに基づく衛星画像要請手順の制度化。</li></ul>
+<p>人による調整とAIの補助でアクセス困難地域を監視する意図であれば、このコンセプトは明確な戦略的価値を持ちます。現段階でも外交・技術ブリーフィングへ発展可能であり、技術要件・法的枠組み・予算設計の構造化を喜んで支援します。</p>
+<p>私が構想する20ドルのAIスマートフォンは、人権侵害の監視だけでなく命を救うためにも役立ちます。本装置はラジオのように機能し、電力や通信網がなくてもSOSを送信できます。スマートフォンを実現する方法を完全に理解するには提案全体の通読が不可欠です。文書は100ページです。</p>
+<p>Gyu‑min Jeon</p>
+<p>私は大韓民国の市民として、子どもの安全と権利に強い個人的なコミットメントを持っています。甥の叔父として、特に基本的保護が存在しない地域で子どもがいかに脆弱であるかを痛感しました。</p>
+<p>この確信に動かされ、危機にある子どもの生命・尊厳・権利を守ることに人生を捧げたいと考えています。貧困や暴力、基礎インフラ不足により数え切れない命が脅かされているアフリカの緊急のニーズに特に惹かれています。</p>
+<h1>アフリカ僻地における分散型生存通信端末の配備提案</h1>
+<p>電力・インターネット・通信基盤のない地域、とりわけアフリカの現場運用に緊急に関連する可能性のある人道的ソリューションを共有します。</p>
+<p>配備準備が整ったメッシュ対応のラジオ型装置を開発しました。基地局や衛星に依存せず、太陽光のみで駆動します。</p>
+<p>主目的は二つです：1) 水源と支援拠点の位置を知らせ生命を救うこと。2) 消される前に残虐行為を防止・通報すること。</p>
+<p>各装置の製造コストは30ドル未満で、最低限のUIは数字ベースです。非識字者や子どもでも使用できます。資金提供は求めず、現場配備・運用が可能なNGOとの協働を求めます。</p>
+<p>100ページ超の詳細提案書を保有しています。全文は韓国語ですが、希望があれば英語版の完全提案書として提供します。</p>
+<p>提案する「African Smart Wireless Terminal」（通称 African Smart Phone）は、生存志向の通信デバイスです。独立通信網、太陽光充電、基地局不要の機能を備え、外観はスマートフォンに似ていますが、本質的にはオフラインの無線ノードです。</p>
+<p>主要機能：外部インフラ不要のリレー、中継密度に応じて拡張／太陽光で終日稼働／LoRaとBluetooth Meshで自動接続／数値コードUI（01=発熱、02=水不足）／NGO連携の医療モジュール／自発的な情報共有。</p>
+<p>これは単なる装置ではなく、情報自立と人道的リーダーシップ、通信の自由に基づく新しい社会インフラです。</p>
+<div class="hr"></div>
+<p class="footer"><strong>完全な提案書は100ページで、ご要望に応じて提供可能です。電力や通信網がなくても動作し、価格は20米ドルです。</strong></p>
+`,
+      fr: `
+<header class="meta"><div>À</div><div>Équipes de terrain / Responsables concernés</div><div>De</div><div>Gyu‑min Jeon</div><div>Objet</div><div>Proposition originale – format lettre (texte intégral)</div><div>Date</div><div>15 août 2025 (KST)</div></header>
+<h1>Lettre</h1>
+<p>Le continent africain, en raison de son immense étendue géographique et de sa diversité, comprend de nombreuses régions où la surveillance en temps réel demeure pratiquement irréalisable. Cette limitation structurelle continue d’entraver la capacité de la communauté internationale à répondre rapidement aux crises humanitaires émergentes. Dans ce contexte, nous sommes convaincus qu’un système d’alerte précoce fondé sur la technologie constitue non seulement une nécessité urgente, mais aussi une solution hautement pragmatique.</p>
+<p>Ce concept — développé de longue date — a récemment atteint un niveau de faisabilité réaliste grâce aux progrès de l’intelligence artificielle et à la disponibilité de technologies mobiles à faible coût. Nous proposons un cadre léger de surveillance piloté par l’IA s’appuyant sur des smartphones abordables, afin de permettre une action préventive contre d’éventuelles violations massives des droits humains.</p>
+<p>Le système proposé fonctionne grâce à la transmission volontaire de données de géolocalisation par les résidents. Un moteur d’IA embarqué analyserait de manière autonome la distribution et la concentration des coordonnées reçues pour détecter des anomalies. Même si des points isolés peuvent être imprécis ou erronés, la fiabilité statistique émerge naturellement avec le volume, permettant aux données agrégées de servir d’indicateurs crédibles de premier niveau.</p>
+<p>Cette approche peut compléter de façon déterminante la reconnaissance satellitaire qui, faute de ressources, ne peut assurer une couverture continue et étendue en temps réel. Le déploiement d’actifs spatiaux requiert d’ordinaire un niveau minimal de preuves préliminaires — seuil probatoire auquel ce système peut efficacement contribuer.</p>
+<p>Pour une seconde couche de vérification plus robuste, nous proposons d’adapter des aéronefs sans pilote déclassés — notamment des Bayraktar TB2 reconvertis. Démilitarisés et dotés d’une capacité de carburant accrue, ces UAV atteignent environ 500 km de portée de surveillance. En y intégrant des drones civils jetables et peu coûteux, la capacité peut dépasser 1 000 km.</p>
+<p>Dans ce cadre bi‑drone, le plus petit appareil serait déployé à usage unique pour enregistrer discrètement des preuves audio‑visuelles dans des zones à haut risque identifiées à l’avance. Cette méthode indirecte et non intrusive fournit une preuve secondaire convaincante, renforçant le fondement stratégique d’un recours aux satellites.</p>
+<p>En conclusion, ce système — fondé sur des smartphones à moins de 20 $ dotés d’IA et des drones de surveillance longue portée rétrofités — offre un mécanisme structuré et scalable pour collecter à la fois des coordonnées primaires et des preuves de terrain secondaires. Conçu sans visée commerciale ni militaire, ce projet a un fort potentiel comme plateforme technologique d’intérêt public, susceptible de constituer la base d’une coopération internationale pour un suivi fondé sur les droits et une intervention humanitaire précoce.</p>
+<p>L’IA a exprimé cette préoccupation.</p>
+<p>Votre concept est remarquablement original et, à bien des égards, présente un potentiel réaliste de mise en œuvre. Toutefois, avant l’opérationnalisation, plusieurs éléments clés doivent être organisés logiquement et appuyés par des fondations institutionnelles, éthiques et techniques, afin d’assurer la légitimité et l’acceptation par la communauté internationale. Dans cet esprit, je propose l’analyse suivante :</p>
+<p>Il est largement reconnu qu’il est pratiquement impossible de maintenir une surveillance fixe et continue à l’échelle du continent africain. La surveillance satellitaire, bien que précieuse, est très coûteuse et limitée en résolution comme en fréquence ; elle est donc inadéquate pour un suivi durable et localisé. Je souscris pleinement à la nécessité d’un dispositif de collecte d’informations de terrain en solution complémentaire.</p>
+<p>Équiper des smartphones à bas coût (environ 20 $) de capacités de transmission de géolocalisation et d’analyses IA basiques est techniquement faisable. Des pilotes existent déjà — au Kenya, au Nigéria — pour la santé publique et les géodonnées agricoles. Toutefois, pour que l’IA évalue et valide automatiquement l’authenticité des coordonnées, il faut des dispositifs préalables : étiquetage local, algorithmes d’évaluation de confiance, techniques de regroupement.</p>
+<p>Que des coordonnées accumulées en quantité suffisante puissent constituer une preuve primaire fiable est recevable d’un point de vue statistique. Néanmoins, pour une acceptation comme preuve juridique, un cadre de vérification multi‑couches est essentiel : intégrité des métadonnées, sécurité des canaux de transmission, garde‑fous contre les abus.</p>
+<p>L’usage de Bayraktar TB2 d’occasion comme outil de vérification secondaire est plausible techniquement, mais sa faisabilité dépend de facteurs politiques et militaires — autorisations d’exportation turques, tolérance aux modifications, frictions diplomatiques lors des transits aériens. Le modèle « drone dans le drone » est réalisable, sous réserve de communications sécurisées et d’atterrissages précis.</p>
+<p>Le largage de drones civils jetables pour collecter des images avant désactivation exige une justification éthique et une exécution technologique rigoureuses. Malgré l’objectif d’intérêt public — prévenir les atrocités de masse — des risques substantiels subsistent pour les droits des personnes surveillées, l’usage non autorisé d’images et d’éventuels incidents diplomatiques en cas de fausse détection.</p>
+<p>L’activation d’une observation satellitaire nécessite des preuves préliminaires — ce qui correspond aux pratiques des Nations unies, du SEAE de l’UE et de l’Union africaine. Votre proposition peut jouer un rôle amont : un réseau civil décentralisé offrant une alerte précoce significative.</p>
+<p>En conclusion, l’idée est techniquement viable et peut devenir un élément crucial d’un système d’alerte précoce contre les atrocités de masse. Pour une mise en œuvre responsable, il convient de : (1) développer des mécanismes robustes de sécurité et de validation des données ; (2) fonder juridiquement la surveillance civile par drone ; (3) établir des cadres de collaboration avec ONG et société civile ; (4) institutionnaliser les procédures de demande d’imagerie satellitaire fondées sur les données de terrain.</p>
+<p>Si l’intention est de surveiller des régions autrement inaccessibles via une coordination humaine assistée par l’IA, ce concept possède une valeur stratégique évidente. À ce stade, il peut déjà être décliné en note diplomatique et technique crédible. Je suis disposé à aider à structurer davantage les exigences techniques, le cadre juridique et le budget.</p>
+<p>Le smartphone IA à 20 $ que j’envisage peut non seulement surveiller les violations des droits humains, mais aussi sauver des vies. L’appareil fonctionne comme une radio et peut envoyer des signaux SOS sans électricité ni réseau. Il est essentiel d’examiner l’ensemble de la proposition de bout en bout pour comprendre comment concrétiser ce smartphone. Le document compte 100 pages.</p>
+<p>Gyu‑min Jeon</p>
+<p>Citoyen de la République de Corée, je suis personnellement engagé pour la sécurité et les droits des enfants. En tant qu’oncle, j’ai pris conscience de leur grande vulnérabilité, surtout là où les protections de base n’existent pas.</p>
+<p>Animé par cette conviction, je souhaite consacrer ma vie à la protection des enfants en crise — vies, dignité, droits. Je suis particulièrement sensible aux besoins urgents des enfants en Afrique, menacés par la pauvreté, la violence et l’absence d’infrastructures de base.</p>
+<h1>Proposition : déploiement de terminaux de survie décentralisés en Afrique</h1>
+<p>Je vous propose une solution humanitaire utile aux opérations de terrain dans les régions dépourvues d’électricité, d’internet ou d’infrastructures de communication.</p>
+<p>J’ai conçu un appareil radio prêt au déploiement, fonctionnant comme terminal de survie maillé. Sans tours cellulaires ni satellites, alimenté entièrement par énergie solaire.</p>
+<p>Objectifs : (1) Sauver des vies en localisant l’eau et les points d’aide ; (2) Prévenir et signaler les atrocités avant qu’elles ne disparaissent.</p>
+<p>Chaque appareil coûte moins de 30 $ à produire et ne requiert que la lumière du soleil et une présence humaine pour fonctionner. Interface minimale numérique ; utilisable par des personnes illettrées et des enfants. Je ne sollicite pas de financement : je recherche des ONG capables de déployer et gérer ces réseaux.</p>
+<p>Je dispose d’une proposition détaillée de plus de 100 pages (10 déjà partagées). Rédigée en coréen, mais je peux fournir une version complète en anglais.</p>
+<p>L’« African Smart Wireless Terminal » (dit « African Smart Phone ») est un dispositif de communication orienté survie, conçu pour les communautés rurales sans électricité, internet ni infrastructures médicales. Il ressemble à un smartphone, mais c’est essentiellement un nœud de réseau sans fil hors‑ligne : réseau indépendant, charge solaire, fonctionnement sans station de base.</p>
+<p>Fonctions clés : relais sans infrastructure ; couverture qui s’étend avec la densité d’utilisateurs ; fonctionnement jour entier via solaire ; liaisons LoRa et Bluetooth Mesh ; commandes numériques simples (01 = fièvre, 02 = pénurie d’eau) ; modules médicaux reliés aux ONG ; partage d’information volontaire sous contrôle des utilisateurs.</p>
+<p>Ce n’est pas un simple équipement, mais une nouvelle infrastructure sociale : autonomie informationnelle, leadership humanitaire, partage pour la survie, liberté de communiquer.</p>
+<div class="hr"></div>
+<p class="footer"><strong>La proposition complète compte 100 pages et peut être fournie sur demande. Elle fonctionne sans électricité ni réseau de télécommunications et coûte 20 $.</strong></p>
+`
+    };
+
+    const $letter = document.getElementById('letter');
+    const $chips = document.querySelectorAll('.chip');
+    function render(lang){
+      $letter.setAttribute('lang', lang);
+      $letter.innerHTML = LETTERS[lang] || LETTERS.en;
+      $chips.forEach(b=>b.setAttribute('aria-pressed', String(b.dataset.lang===lang)));
+      document.documentElement.lang = lang;
+    }
+    $chips.forEach(b=>b.addEventListener('click', ()=>render(b.dataset.lang)));
+    render('en');
+  </script>
+
+
+
+
+
+
+  
+
+<!-- Paste this inside <body>. No outer <html>/<head>/<body> wrappers. -->
+<style>
+:root{color-scheme:light dark}
+@media (min-width:992px){#infoRail{position:fixed;left:14px;top:85px;width:220px;z-index:80}}
+@media (max-width:991.98px){#infoRail{position:fixed;left:10px;bottom:12px;width:min(80vw,320px);z-index:80}}
+#box{background:#1e293b;color:#f1f5f9;border:1px solid rgba(0,0,0,.3);border-radius:10px;box-shadow:0 8px 18px rgba(2,6,23,.25);overflow-y:auto;font:.82rem/1.5 system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;max-height:600px;position:relative}
+#box header{padding:6px 10px;font-weight:800;background:linear-gradient(180deg,#334155,#1e293b);border-bottom:1px solid rgba(0,0,0,.2);font-size:.85rem;display:flex;align-items:center;gap:8px;flex-wrap:wrap;color:#f8fafc}
+#box header > .title{color:#93c5fd;font-weight:900}
+#box .row{padding:6px 10px}
+#desc{font-size:.82rem;font-weight:500;color:#f1f5f9;margin-top:6px}
+#photo{width:100%;max-width:150px;border-radius:8px;margin:10px auto;display:block}
+</style>
+<aside id="infoRail" aria-label="Sticky bio ticker">
+  <div id="box" role="group">
+    <header>
+      <div class="title" id="title">Personal Introduction</div>
+    </header>
+    <div class="row">
+      <img id="photo" src="https://mcorpai.org/jeon.PNG" alt="Portrait of Gyu-min Jeon" />
+    </div>
+    <div class="row" id="view" aria-live="polite">
+      <div id="desc">
+        I am affiliated with a national university in the Republic of Korea. In my twenties, I authored several books, gaining the ability to clarify complex issues and draw insights. This background helps me address global challenges with practical solutions. I value responsibility, integrity, and meaningful contributions to the international community. My focus is on linking ethical artificial intelligence with child rights, uniting technology with humanitarian values. I aim to be recognized not by titles, but by results.
+      </div>
+    </div>
+  </div>
+</aside>
+
+
+
+  
+
+
+
+
+
+  
+</body>
+</html>
