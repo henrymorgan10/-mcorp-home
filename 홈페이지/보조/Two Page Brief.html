@@ -1,0 +1,374 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>외교관 브리핑용 1페이지 요약 | One‑Page Brief for Diplomats</title>
+<style>
+  :root{color-scheme:light dark}
+  body{margin:0;padding:24px;font:14px/1.55 system-ui,-apple-system,Segoe UI,Roboto,"Noto Sans KR",Helvetica,Arial}
+  *{box-sizing:border-box}
+  .wrap{max-width:960px;margin:0 auto}
+  header{display:flex;flex-wrap:wrap;align-items:center;gap:10px;justify-content:space-between;margin-bottom:16px}
+  h1{font-size:1.35rem;margin:.2rem 0}
+  .langbar{display:flex;gap:6px;flex-wrap:wrap}
+  .btn{border:1px solid rgba(0,0,0,.18);padding:6px 10px;border-radius:10px;background:#fff;cursor:pointer;font-weight:700}
+  .btn[aria-pressed="true"]{box-shadow:0 2px 6px rgba(0,0,0,.12)}
+  @media(prefers-color-scheme:dark){.btn{background:rgba(255,255,255,.06)}}
+
+  /* 1p brief visuals */
+  .card{background:var(--bg,#fffbea);border:1px solid rgba(0,0,0,.12);border-radius:12px;box-shadow:0 6px 14px rgba(2,6,23,.08);padding:16px;margin:18px 0}
+  @media(prefers-color-scheme:dark){.card{background:rgba(255,255,255,.06)}}
+  .toolbar{display:flex;gap:8px;justify-content:flex-end;margin-bottom:8px}
+  .grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+  @media(max-width:860px){.grid{grid-template-columns:1fr}}
+  .h2{font-size:1.02rem;font-weight:800;margin:10px 0 6px}
+  .small{font-size:.82rem;color:#6b7280}
+  .badges{display:flex;gap:8px;flex-wrap:wrap;margin:8px 0}
+  .badge{font-size:.72rem;border:1px solid rgba(0,0,0,.18);border-radius:999px;padding:4px 8px}
+  .link{color:#0b5fff;text-decoration:underline}
+  .tightline{margin:2px 0}
+
+  /* print: only the active language prints; single page */
+  .print-page{break-inside:avoid;page-break-inside:avoid}
+  @media print{
+    header,.langbar,.small{display:none!important}
+    .card{border:none;box-shadow:none;background:transparent}
+    .annex{display:none!important}
+  }
+
+  /* language visibility */
+  .lang{display:none}
+  .lang.active{display:block}
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <h1 id="page-title">One‑Page Brief for Diplomats</h1>
+      <nav class="langbar" aria-label="Language selector">
+        <button class="btn" data-lang="ko" aria-pressed="false">KR</button>
+        <button class="btn" data-lang="en" aria-pressed="true">EN</button>
+        <button class="btn" data-lang="ja" aria-pressed="false">JP</button>
+        <button class="btn" data-lang="fr" aria-pressed="false">FR</button>
+        <button class="btn" onclick="window.print()">🖨️ Print 1p</button>
+      </nav>
+    </header>
+
+    <!-- ================= EN (default) ================= -->
+    <section class="lang active" id="lang-en" lang="en">
+      <section class="card" aria-label="One-page brief (EN)">
+        <div class="print-page">
+          <div class="grid">
+            <div>
+              <h2 class="h2">1) Context & Problem</h2>
+              <ul>
+                <li>In regions where real‑time monitoring is impractical, protection gaps for children with disabilities persist.</li>
+                <li>Server/cloud‑dependent models risk censorship, outages, and recurring cost.</li>
+                <li>Data‑collecting systems face legal and trust barriers (GDPR/child privacy).</li>
+              </ul>
+              <h2 class="h2">2) Our Solution (Serverless · Data‑Free)</h2>
+              <ul>
+                <li><strong>Offline‑first</strong> lightweight AI that runs locally on low‑spec devices.</li>
+                <li><strong>Zero personal data collection</strong> (no cookies/logins/analytics/SDKs).</li>
+                <li><strong>Refugee‑assembled</strong>, ultra‑low‑cost device + pilot design.</li>
+              </ul>
+              <div class="badges">
+                <span class="badge">UNCRC · CRPD aligned</span>
+                <span class="badge">GDPR‑friendly</span>
+                <span class="badge">No‑Server · No‑Cookie</span>
+                <span class="badge">Low‑Spec Ready</span>
+              </div>
+            </div>
+            <div>
+              <h2 class="h2">3) What We Ask (5‑min)</h2>
+              <ul>
+                <li><strong>5‑minute briefing</strong> with a designated focal point.</li>
+                <li>Permission to share the <strong>11‑page Executive Summary</strong>.</li>
+                <li>Consideration of a small <strong>Pilot</strong> in 1–2 sites with a local partner.</li>
+              </ul>
+              <h2 class="h2">4) Live Materials</h2>
+              <ul>
+                <li><a class="link" href="https://mcorpai.org/diplomacy.html">Child Protection for Children with Disabilities</a> — request letter, ethics, governance</li>
+                <li><a class="link" href="https://mcorpai.org/Ethical%20AI%20with%20a%20Human-Centered%20Story.pdf">48KB Offline Demo (PDF)</a> — open for in‑browser reading</li>
+              </ul>
+              <p><strong>Separate:</strong> <span style="color:#000">Offline lightweight AI can prevent loss of life.</span></p>
+              <p class="tightline"><a class="link" href="https://mcorpai.org/SOS%20Application.pdf" target="_blank" rel="noopener">Offline Ethical AI (PDF)</a> —<span style="color:#000">Scam Compound (Abduction) Prevention App</span></p>
+              <p class="tightline"><a class="link" href="https://mcorpai.org/multilingual.html">$30 Smartphone Briefing</a> — <span style="color:#000">Preventing Mass Atrocities in Africa</span></p>
+            </div>
+          </div>
+          <p class="small">* Links open in the same tab and are designed for low‑connectivity contexts.</p>
+          <div class="grid">
+            <div>
+              <h2 class="h2">5) Pilot at a Glance</h2>
+              <ul>
+                <li>Duration: 2–6 weeks (setup · test · review).</li>
+                <li>Sites: 1–2 locations (school/shelter).</li>
+                <li>Hardware: low‑end Android + low‑cost parts, locally assembled.</li>
+                <li>Security/Ethics: data‑free operation, informed consent, risk minimization.</li>
+              </ul>
+              <h2 class="h2">6) Risk & Mitigation</h2>
+              <ul>
+                <li>Censorship/outage → <strong>no‑server file distribution</strong>.</li>
+                <li>Privacy concerns → <strong>zero data collection</strong>, on‑device inference, no logs.</li>
+                <li>Trust gap → <strong>live demo</strong>, open documentation, partial code disclosure.</li>
+              </ul>
+            </div>
+            <div>
+              <h2 class="h2">7) Outcomes & Metrics</h2>
+              <ul>
+                <li>Alert latency; false/miss rates; field adoption.</li>
+                <li>Local assembly/ops self‑reliance (training hours, replacement cycle).</li>
+                <li>Cost‑effectiveness (device · training · upkeep).</li>
+              </ul>
+              <h2 class="h2">8) Contact : mcorpai.org </h2>
+              <p>Lead: Gyu‑min Jeon (Morgan J) · <span class="small">Please refer to site contact details.</span></p>
+              <div class="badges"><span class="badge">Open Collaboration</span><span class="badge">Human Rights by Design</span></div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </section>
+
+    <!-- ================= KO ================= -->
+    <section class="lang" id="lang-ko" lang="ko">
+      <section class="card" aria-label="One-page brief (KR)">
+        <div class="print-page">
+          <div class="grid">
+            <div>
+              <h2 class="h2">1) 배경과 문제</h2>
+              <ul>
+                <li>실시간 감시가 어려운 지역에서 장애 아동 보호 공백이 큽니다.</li>
+                <li>서버·클라우드 의존은 검열·중단·비용 리스크를 유발합니다.</li>
+                <li>개인정보 수집형 시스템은 법·신뢰 장벽에 부딪힙니다.</li>
+              </ul>
+              <h2 class="h2">2) 해결책 (Serverless · Data‑Free)</h2>
+              <ul>
+                <li><strong>오프라인‑퍼스트</strong> 경량 AI — 저사양 기기에서도 현장 실행.</li>
+                <li><strong>개인 데이터 0 수집</strong> — 쿠키/로그인/분석/외부 SDK 미사용.</li>
+                <li><strong>난민 주도 조립</strong> — 초저비용 장치 + 파일럿 설계.</li>
+              </ul>
+              <div class="badges"><span class="badge">UNCRC · CRPD 정합</span><span class="badge">GDPR 친화</span><span class="badge">No‑Server · No‑Cookie</span><span class="badge">Low‑Spec Ready</span></div>
+            </div>
+            <div>
+              <h2 class="h2">3) 요청 사항 (5분)</h2>
+              <ul>
+                <li><strong>5분 브리핑</strong> 기회 및 담당자 지정.</li>
+                <li><strong>11쪽 요약본</strong> 공유 허가.</li>
+                <li>현지 파트너와 <strong>소규모 파일럿</strong> 검토(1–2개 사이트).</li>
+              </ul>
+              <h2 class="h2">4) Live Materials</h2>
+              <ul>
+                <li><a class="link" href="https://mcorpai.org/diplomacy.html">장애아동 보호</a> — 요청 문안·윤리·거버넌스</li>
+                <li><a class="link" href="https://mcorpai.org/Ethical%20AI%20with%20a%20Human-Centered%20Story.pdf">48KB 오프라인 데모 (PDF)</a> — 브라우저에서 바로 열람</li>
+              </ul>
+              <p><strong>별도:</strong> <span style="color:#000">오프라인 경량 AI는 인명 피해를 막을 수 있습니다.</span></p>
+              <p class="tightline"><a class="link" href="https://mcorpai.org/SOS%20Application%20kor.pdf" target="_blank" rel="noopener">오프라인 윤리적 AI (PDF)</a> — <span style="color:#000">스캠 컴파운드(악성 납치) 예방 앱</span></p>
+              <p class="tightline"><a class="link" href="https://mcorpai.org/multilingual.html">30달러 스마트폰 브리핑</a> — <span style="color:#000">아프리카 집단 학살 방지</span></p>
+            </div>
+          </div>
+          <p class="small">* 모든 링크는 동일 창에서 열리며, 저연결 환경을 고려하여 구성되었습니다.</p>
+          <div class="grid">
+            <div>
+              <h2 class="h2">5) 파일럿 요약</h2>
+              <ul>
+                <li>기간: 2–6주(셋업·테스트·리뷰).</li>
+                <li>장소: 1–2곳(학교/쉘터).</li>
+                <li>장비: 저가 부품 + 로우엔드 안드로이드, 현지 조립.</li>
+                <li>보안/윤리: 비수집·동의/고지·리스크 최소화.</li>
+              </ul>
+              <h2 class="h2">6) 리스크·대응</h2>
+              <ul>
+                <li>검열/중단 → <strong>무서버 파일 배포</strong>.</li>
+                <li>프라이버시 → <strong>수집 0</strong>, 온디바이스 추론, 로그 미저장.</li>
+                <li>신뢰 부족 → <strong>현장 데모</strong>, 공개 문서, 일부 코드 공개.</li>
+              </ul>
+            </div>
+            <div>
+              <h2 class="h2">7) 성과지표</h2>
+              <ul>
+                <li>경보 지연/오탐·미탐 비율/현장 채택도.</li>
+                <li>현지 조립·운영 자립도(교육 시간, 교체 주기).</li>
+                <li>비용 대비 효과(장치·교육·유지).</li>
+              </ul>
+              <h2 class="h2">8) 연락처 : mcorpai.org </h2>
+              <p>담당: 전규민(Morgan J) · <span class="small">사이트 연락처 참조</span></p>
+              <div class="badges"><span class="badge">Open Collaboration</span><span class="badge">Human Rights by Design</span></div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </section>
+
+    <!-- ================= JA ================= -->
+    <section class="lang" id="lang-ja" lang="ja">
+      <section class="card" aria-label="One-page brief (JP)">
+        <div class="print-page">
+          <div class="grid">
+            <div>
+              <h2 class="h2">1) 背景と課題</h2>
+              <ul>
+                <li>リアルタイム監視が困難な地域では、障害児の保護に大きなギャップが残っています。</li>
+                <li>サーバー/クラウド依存は、検閲・停止・継続費用のリスクを伴います。</li>
+                <li>個人データ収集型は、GDPR 等の法的・信頼面の障壁があります。</li>
+              </ul>
+              <h2 class="h2">2) 解決策（サーバーレス・データ不収集）</h2>
+              <ul>
+                <li><strong>オフライン・ファースト</strong>の軽量 AI（低スペック端末でローカル実行）。</li>
+                <li><strong>個人データ 0 収集</strong>（クッキー/ログイン/解析/外部 SDK なし）。</li>
+                <li><strong>難民による現地組立</strong>・超低コスト機器＋パイロット設計。</li>
+              </ul>
+              <div class="badges"><span class="badge">UNCRC・CRPD 整合</span><span class="badge">GDPR 適合</span><span class="badge">No‑Server・No‑Cookie</span><span class="badge">Low‑Spec Ready</span></div>
+            </div>
+            <div>
+              <h2 class="h2">3) ご依頼（5 分）</h2>
+              <ul>
+                <li><strong>5 分間のブリーフィング</strong>の機会。</li>
+                <li><strong>11 ページ要約</strong>の共有許可。</li>
+                <li>現地パートナーと <strong>小規模パイロット</strong>（1–2 拠点）の検討。</li>
+              </ul>
+              <h2 class="h2">4) 関連資料</h2>
+              <ul>
+                <li><a class="link" href="https://mcorpai.org/diplomacy.html">障害児保護</a> — 依頼文・倫理・ガバナンス</li>
+                <li><a class="link" href="https://mcorpai.org/Ethical%20AI%20with%20a%20Human-Centered%20Story.pdf">48KB オフライン・デモ（PDF）</a> — ブラウザで即時閲覧</li>
+              </ul>
+              <p><strong>別途：</strong> <span style="color:#000">オフラインの軽量AIは人命被害を防ぐことができます。</span></p>
+              <p class="tightline"><a class="link" href="https://mcorpai.org/SOS%20Application.pdf" target="_blank" rel="noopener">オフライン倫理的AI（PDF）</a> — <span style="color:#000">スカム・コンパウンド（悪質な拉致）予防アプリ</span></p>
+              <p class="tightline"><a class="link" href="https://mcorpai.org/multilingual.html">30ドル・スマートフォン・ブリーフィング</a> — <span style="color:#000">アフリカの集団虐殺防止</span></p>
+            </div>
+          </div>
+          <p class="small">＊リンクは同一タブで開き、低回線環境を想定しています。</p>
+          <div class="grid">
+            <div>
+              <h2 class="h2">5) パイロット概要</h2>
+              <ul>
+                <li>期間：2–6 週間（セットアップ・テスト・レビュー）。</li>
+                <li>場所：1–2 拠点（学校/シェルター）。</li>
+                <li>機材：低価格部品＋ローエンド Android、現地組立。</li>
+                <li>倫理：データ不収集、同意・説明、リスク最小化。</li>
+              </ul>
+              <h2 class="h2">6) リスクと対策</h2>
+              <ul>
+                <li>検閲/停止 → <strong>サーバーレス配布</strong>。</li>
+                <li>プライバシー → <strong>データ 0 収集</strong>、端末内推論、ログなし。</li>
+                <li>信頼不足 → <strong>実演</strong>、公開文書、一部コード公開。</li>
+              </ul>
+            </div>
+            <div>
+              <h2 class="h2">7) 指標</h2>
+              <ul>
+                <li>通知遅延・誤検知/見逃し率・現場採用度。</li>
+                <li>現地組立/運用の自立度（教育時間・交換周期）。</li>
+                <li>費用対効果（機器・教育・保守）。</li>
+              </ul>
+              <h2 class="h2">8) 連絡先 : mcorpai.org </h2>
+              <p>担当：Jeon Gyu‑min（Morgan J） · <span class="small">サイトの連絡先をご参照ください。</span></p>
+              <div class="badges"><span class="badge">Open Collaboration</span><span class="badge">Human Rights by Design</span></div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </section>
+
+    <!-- ================= FR ================= -->
+    <section class="lang" id="lang-fr" lang="fr">
+      <section class="card" aria-label="One-page brief (FR)">
+        <div class="print-page">
+          <div class="grid">
+            <div>
+              <h2 class="h2">1) Contexte & Problème</h2>
+              <ul>
+                <li>Dans des zones où le suivi en temps réel est irréalisable, des lacunes de protection persistent pour les enfants en situation de handicap.</li>
+                <li>La dépendance au cloud/serveur expose à la censure, aux pannes et aux coûts récurrents.</li>
+                <li>Les systèmes collectant des données font face à des obstacles juridiques et de confiance (RGPD/ droits de l’enfant).</li>
+              </ul>
+              <h2 class="h2">2) Notre solution (Sans serveur · Sans données)</h2>
+              <ul>
+                <li>IA légère <strong>hors‑ligne par défaut</strong>, exécutée localement sur terminaux modestes.</li>
+                <li><strong>Aucune collecte de données personnelles</strong> (pas de cookies/connexion/analytics/SDK).</li>
+                <li><strong>Assemblage par des réfugiés</strong>, dispositif ultra‑économique + pilote.</li>
+              </ul>
+              <div class="badges"><span class="badge">UNCRC · CRPD conforme</span><span class="badge">Compatible RGPD</span><span class="badge">No‑Server · No‑Cookie</span><span class="badge">Low‑Spec Ready</span></div>
+            </div>
+            <div>
+              <h2 class="h2">3) Notre demande (5 min)</h2>
+              <ul>
+                <li>Un <strong>briefing de 5 minutes</strong> avec un point focal.</li>
+                <li>Autorisation de partager le <strong>résumé de 11 pages</strong>.</li>
+                <li>Étude d’un <strong>pilote</strong> sur 1–2 sites avec partenaire local.</li>
+              </ul>
+              <h2 class="h2">4) Ressources</h2>
+              <ul>
+                <li><a class="link" href="https://mcorpai.org/diplomacy.html">Protection des enfants en situation de handicap</a> — lettre, éthique, gouvernance</li>
+                <li><a class="link" href="https://mcorpai.org/Ethical%20AI%20with%20a%20Human-Centered%20Story.pdf">Démo hors‑ligne 48KB (PDF)</a> — lecture directe dans le navigateur</li>
+              </ul>
+              <p><strong>Note séparée&nbsp;:</strong> <span style="color:#000">Une IA légère hors‑ligne peut sauver des vies.</span></p>
+              <p class="tightline"><a class="link" href="https://mcorpai.org/SOS%20Application.pdf" target="_blank" rel="noopener">IA éthique hors ligne (PDF)</a> — <span style="color:#000">Application de prévention contre les camps d’escroquerie (enlèvements)</span></p>
+              <p class="tightline"><a class="link" href="https://mcorpai.org/multilingual.html">Briefing sur smartphone à 30&nbsp;$</a> — <span style="color:#000">pour prévenir les massacres de masse en Afrique</span></p>
+            </div>
+          </div>
+          <p class="small">* Les liens s’ouvrent dans le même onglet et sont adaptés aux contextes de faible connectivité.</p>
+          <div class="grid">
+            <div>
+              <h2 class="h2">5) Aperçu du pilote</h2>
+              <ul>
+                <li>Durée : 2–6 semaines (mise en place · test · revue).</li>
+                <li>Sites : 1–2 lieux (école/abri).</li>
+                <li>Matériel : Android d’entrée de gamme + pièces peu coûteuses, assemblage local.</li>
+                <li>Sécurité/Éthique : fonctionnement sans données, consentement éclairé, risques minimisés.</li>
+              </ul>
+              <h2 class="h2">6) Risques & Atténuation</h2>
+              <ul>
+                <li>Censure/panne → <strong>distribution de fichiers sans serveur</strong>.</li>
+                <li>Vie privée → <strong>zéro collecte</strong>, inférence sur l’appareil, pas de journaux.</li>
+                <li>Confiance → <strong>démo en direct</strong>, documentation ouverte, code partiel publié.</li>
+              </ul>
+            </div>
+            <div>
+              <h2 class="h2">7) Résultats & Indicateurs</h2>
+              <ul>
+                <li>Latence d’alerte ; taux de faux positifs/négatifs ; adoption terrain.</li>
+                <li>Autonomie locale d’assemblage/exploitation (heures de formation, cycle de remplacement).</li>
+                <li>Coût‑efficacité (dispositif · formation · maintenance).</li>
+              </ul>
+              <h2 class="h2">8) Contact : mcorpai.org </h2>
+              <p>Référent : Gyu‑min Jeon (Morgan J) · <span class="small">voir les coordonnées sur le site</span></p>
+              <div class="badges"><span class="badge">Open Collaboration</span><span class="badge">Human Rights by Design</span></div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </section>
+
+    <section class="annex small" aria-label="Notes">
+    <p style="color:#000"> Should circumstances make an MVP impracticable at this stage, I would be grateful if your mission could advise on the feasibility of issuing a brief, non-binding note acknowledging receipt of the materials and their informal review for internal information-sharing purposes. The note would include a standard non-endorsement clause and confirm that it carries no implications for procurement or budgetary decision-making. If appropriate, an introduction to a relevant NGO or to the competent technical or development desk would also be most appreciated. </p>
+    </section>
+  </div>
+
+<script>
+(function(){
+  const buttons=[...document.querySelectorAll('.langbar .btn[data-lang]')];
+  const sections={
+    en:document.getElementById('lang-en'),
+    ko:document.getElementById('lang-ko'),
+    ja:document.getElementById('lang-ja'),
+    fr:document.getElementById('lang-fr')
+  };
+  const titles={
+    en:'One‑Page Brief for Diplomats',
+    ko:'외교관 브리핑용 1페이지 요약',
+    ja:'外交官向け 1ページ・ブリーフ',
+    fr:'Note d’une page pour les diplomates'
+  };
+  function setLang(l){
+    Object.keys(sections).forEach(k=>sections[k]?.classList.toggle('active', k===l));
+    buttons.forEach(b=>b.setAttribute('aria-pressed', b.dataset.lang===l? 'true':'false'));
+    document.documentElement.setAttribute('lang', l);
+    const h=document.getElementById('page-title'); if(h) h.textContent=titles[l]||titles.en;
+  }
+  buttons.forEach(b=>b.addEventListener('click',()=>setLang(b.dataset.lang)));
+  setLang('en');
+})();
+</script>
+</body>
+</html>

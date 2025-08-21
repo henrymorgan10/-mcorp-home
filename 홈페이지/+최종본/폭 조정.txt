@@ -1,0 +1,7 @@
+📜 The document itself embodies the AI engine. Although it is still in its early stage (version 0.3), it is worth studying 📜 (폭이 너무 넓잖아 1번 이미지를 봐) [Submission] One‑Page Summary — Click to open PDF (폭이 너무 넓잖아 1번 이미지를 봐) At this very moment, lives are at risk in plac
+넓게 벌어지는 건 <p> 기본 마진이랑(위·아래 여백) 페이지 스타일에서 a가 display:block로 잡혀 있어서 그래요. 아래처럼 문장 바로 아래에 딱 붙는 인라인 링크로 바꿔 주세요(폭도 텍스트 길이만큼만).
+display:inline!important 으로 폭이 100%로 늘어나는 걸 막고,
+
+<br> 한 줄만 내려 간격을 최소화했어요(추가 여백 없음).
+
+이렇게 넣으면 스샷처럼 널찍한 빈칸 없이, 📜 문장 바로 아래에 컴팩트하게 링크가 뜹니다.

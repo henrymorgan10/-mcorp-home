@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Multilingual Diplomatic Letter – Offline, Non‑Learning, Ultra‑Lightweight AI</title>
+  <style>
+    :root{color-scheme:light dark}
+    body{margin:0;font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial,"Apple SD Gothic Neo","Noto Sans KR",sans-serif;background:#f6f8fb;color:#0b1221}
+    .wrap{max-width:980px;margin:24px auto;padding:16px 16px 16px 260px;position:relative}
+    .controls{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-bottom:12px;position:relative}
+    .chip{border:1px solid rgba(0,0,0,.14);background:#fff;border-radius:999px;padding:8px 12px;font-size:.9rem;cursor:pointer;user-select:none}
+    .chip[aria-pressed="true"]{outline:2px solid #1e3a8a;background:#eef2ff}
+    .letter{background:#fff;border:1px solid rgba(0,0,0,.12);border-radius:14px;box-shadow:0 10px 26px rgba(2,6,23,.08);padding:24px}
+    .meta{display:grid;grid-template-columns:120px 1fr;gap:6px;font-size:.95rem;color:#374151;margin:0 0 14px;position:relative}
+    h1{font-size:1.2rem;margin:8px 0 12px;font-weight:800;text-align:left}
+    .ribbon{background:#0b3d91;color:#fff;letter-spacing:.02em;padding:8px 14px;font-weight:800;font-size:.86rem;border-radius:999px;display:inline-block}
+    p{line-height:1.74;margin:10px 0}
+    .footer{margin-top:18px;font-size:.95rem;color:#374151}
+    .hr{height:1px;background:linear-gradient(90deg,rgba(0,0,0,.1),rgba(0,0,0,.04));margin:16px 0;border-radius:1px}
+    /* Personal intro rail (1) */
+    @media (min-width:992px){#infoRail{position:fixed;left:14px;top:85px;width:220px;z-index:80}}
+    @media (max-width:991.98px){#infoRail{position:fixed;left:10px;bottom:12px;width:min(80vw,320px);z-index:80}.wrap{padding:16px}}
+    #box{background:#1e293b;color:#f1f5f9;border:1px solid rgba(0,0,0,.3);border-radius:10px;box-shadow:0 8px 18px rgba(2,6,23,.25);overflow-y:auto;font:.82rem/1.5 system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;max-height:600px}
+    #box header{padding:6px 10px;font-weight:800;background:linear-gradient(180deg,#334155,#1e293b);border-bottom:1px solid rgba(0,0,0,.2);font-size:.85rem;display:flex;align-items:center;gap:8px;flex-wrap:wrap;color:#f8fafc}
+    #box header>.title{color:#93c5fd;font-weight:900}
+    #box .row{padding:6px 10px}
+    #desc{font-size:.82rem;font-weight:500;color:#f1f5f9;margin-top:6px}
+    #photo{width:100%;max-width:150px;border-radius:8px;margin:10px auto;display:block}
+    /* Number markers removed per request */
+    #box{position:relative}
+    #box::before{content:none!important}
+    .controls::before{content:none!important}
+    .letter .meta::before{content:none!important}
+    
+    
+    
+  </style>
+</head>
+<body>
+  <aside id="infoRail" aria-label="Sticky bio ticker">
+    <div id="box" role="group">
+      <header>
+        <div class="title" id="title">Personal Introduction</div>
+      </header>
+      <div class="row">
+        <img id="photo" src="https://mcorpai.org/jeon.PNG" alt="Portrait of Gyu-min Jeon" />
+      </div>
+      <div class="row" id="view" aria-live="polite">
+        <div id="desc">
+          I am affiliated with a national university in the Republic of Korea. In my twenties, I authored several books, gaining the ability to clarify complex issues and draw insights. This background helps me address global challenges with practical solutions. I value responsibility, integrity, and meaningful contributions to the international community. My focus is on linking ethical artificial intelligence with child rights, uniting technology with humanitarian values. I aim to be recognized not by titles, but by results.
+        </div>
+      </div>
+    </div>
+  </aside>
+
+  <div class="wrap">
+    <div class="controls" role="group" aria-label="Language selector">
+      <button class="chip" data-lang="en" aria-pressed="true">English</button>
+      <button class="chip" data-lang="ko" aria-pressed="false">한국어</button>
+      <button class="chip" data-lang="ja" aria-pressed="false">日本語</button>
+      <button class="chip" data-lang="fr" aria-pressed="false">Français</button>
+    </div>
+
+    <article id="letter" class="letter" lang="en" aria-live="polite"></article>
+  </div>
+
+  <script>
+    const EN_BODY = `
+<span class="ribbon">Diplomatic Brief</span>
+<h1>Why Offline, Non‑Learning, Ultra‑Lightweight AI Is Essential: Practical Standards for Child Protection in Refugee Settlements</h1>
+<header class="meta"><div>To</div><div>Field Operations / Concerned Officials</div><div>From</div><div>Gyu‑min Jeon</div><div>Subject</div><div>Rationale and Request for an Offline, Non‑Learning, Ultra‑Lightweight AI for Child Safety</div><div>Date</div><div>2025‑08‑15 (KST)</div></header>
+<p>Your Excellency,</p>
+<p>First, from the standpoint of operational constraints and the protection of child rights, the solution must be offline, non‑learning, and ultra‑lightweight. Refugee settlements face unreliable connectivity and scarce power; AI systems dependent on cloud links and large models cannot be operated sustainably. Our design therefore adopts an offline‑first posture so that core functions work without data transmission in degraded or no‑network conditions. For a child’s wearable, the foremost prerequisite is not maximal recognition accuracy but acceptance and attachment. The primary task is to ensure that the child does not reject the device and wears it daily. The design philosophy prioritizes emotional consistency and trust over technical display, enabling the child and caregiver to integrate the device into daily life. Accordingly, algorithms that deliver steady feedback with minimal computation on small chipsets are the practical choice.</p>
+<p>Second, the principles of zero collection of personal data and a strict ban on permanent storage are not only legal‑ethical imperatives but also operational advantages. Our architecture collects no personally identifiable information and maintains no long‑term records on central servers. Rather than relying solely on encryption to reduce risk, we remove structural risk by ensuring there is nothing of value to steal. This conforms to international standards such as the GDPR and strengthens both legal defensibility and ethical rigor for high‑risk groups including children, persons with disabilities, and displaced families. Device identification relies on a non‑reversible hardware token instead of names, birthdays, addresses, or photos; even in the event of compromise, there is no sensitive personal data to leak.</p>
+<p>Third, technology choices are driven by field fitness, not cutting‑edge process nodes. A configuration built on low‑power microcontrollers and lightweight AI accelerators at roughly the 28‑nm class keeps cost and power low while improving supply accessibility through emerging manufacturing hubs. A character‑style form factor gives interior volume for modularity and durability, and it is friendly to local small‑batch assembly. This approach achieves mission goals without high‑end semiconductors or large compute, reducing unit cost toward the sub‑$30 target.</p>
+<p>Fourth, assembly and maintenance should be designed to build community self‑reliance. With a day or two of training, low‑skilled workers can participate in a guided, modular assembly line with visual cues and light supervision. Tent‑based micro‑hubs require only basic tools and electricity and can be co‑located with health or food distribution points to reinforce community safety nets. Start‑up costs are modest, on the order of one to three thousand US dollars per hub, and cooperative ownership and solidarity funds can spread job benefits while aligning with corporate ESG participation.</p>
+<p>Fifth, immediate feasibility at pilot scale matters. We target a self‑reliant field pilot that can begin on site, with a working prototype and field test budget under one thousand US dollars. This is not symbolic expenditure; it is an operational unit cost that enables technicians, youth, and caregivers to co‑produce the device. The model aligns with the international shift from short‑term cash assistance to long‑term self‑reliance.</p>
+<p>Sixth, the app and registration flow must be simple yet robust under caregiver control. Distribution is limited to an official site, not public app stores. Verification uses the device serial number and partial caregiver phone digits, download counts are limited, and open‑ended verification questions known only to caregivers provide a further safeguard. This preserves caregiver control while maintaining accessibility.</p>
+<p>Seventh, diplomatic and policy alignment is strongest when framed in the language of human rights and sustainability. By moving beyond data minimization to data non‑collection, the system structurally eliminates risk and represents a next‑generation privacy‑first design. It aligns with intersectional protection of child and disability rights and is consistent with public agendas such as the SDGs and green initiatives.</p>
+<p>In conclusion and with respect, this proposal demonstrates that a practical AI for safeguarding children with disabilities can operate without expensive servers or large chips. An attachment‑first, ultra‑lightweight design increases the likelihood of daily wear and uninterrupted operation under weak connectivity and power. A zero‑data, no‑permanent‑storage architecture lowers legal exposure and social stigma risks at the source, while local assembly and cooperative operations promote community self‑reliance. A prototype can commence immediately on a small budget and scale through distributed micro‑production.</p>
+<p>We respectfully request partnership. First, kindly authorize fabrication of a single prototype and a short pilot that can be validated in the field. Second, allow joint design of small assembly hubs within settlements, coupled with health and food distribution models. Third, please enshrine the principles of data non‑collection and offline‑first operation in policy documents to institutionally safeguard vulnerable children and families. This is not a brochure; it is a plan to be proven in the field, where one opportunity can unlock trust.</p>
+<p>Finally, we underline the strategic virtue of simplicity. Simplicity is not a cheap compromise; it enables ownership, trust, and legal robustness. Children need one object they can trust and wear, parents need a design that never compromises their privacy, and the field needs a system that runs without networks and grid power. Offline, non‑learning, ultra‑lightweight AI meets these three requirements at once. The start is small; the effect is large. One prototype today can become the safety and self‑reliance of a community tomorrow.</p>
+<p>Respectfully submitted.</p>
+<p>AI Necklace for Child Safety</p>
+<div class="hr"></div>
+<p class="footer">This letter is premised on an offline, ultra‑lightweight design that collects no personal data, prioritizing immediate deployability and legal‑ethical coherence in refugee and low‑resource environments.</p>
+`;
+
+    const KO_BODY = `
+<span class="ribbon">외교 서한</span>
+<h1>오프라인·비학습·초경량 AI는 왜 필수인가: 난민촌 아동보호의 현실적 기준</h1>
+<header class="meta"><div>수신</div><div>관계자 여러분 / 현장 운영 담당자</div><div>발신</div><div>전규민</div><div>제목</div><div>오프라인·비학습·초경량 AI 도입의 외교적 근거와 요청</div><div>날짜</div><div>2025년 8월 15일 (KST)</div></header>
+<p>각하께</p>
+<p>첫째, 환경적 제약과 아동권 보호 관점에서 왜 오프라인·비학습·초경량이어야 하는지 설명드립니다. 난민촌은 통신 인프라가 불안정하고 전력도 제한적이기 때문에, 클라우드 연결과 대용량 모델에 의존하는 일반적 인공지능은 현실적으로 지속 운용이 어렵습니다. 본 설계는 통신이 없거나 불안정한 상황에서도 작동하도록 오프라인을 기본으로 삼아, 데이터 전송이 필요하지 않은 상태에서도 핵심 기능을 수행하는 것을 목표로 합니다. 특히 장애아동의 웨어러블 기기에서 가장 먼저 확보해야 하는 것은 높은 인식 정확도가 아니라 착용과 애착이며, 아이가 거부하지 않고 일상적으로 사용하는 상태를 만드는 것이 본질적 과제입니다. 설계 철학은 “기술적 과시”가 아니라 “정서적 일관성과 신뢰”를 우선하며, 이는 아이와 보호자가 기기를 삶의 일부로 받아들이게 만드는 가장 현실적인 출발점입니다. 따라서 최소한의 계산으로 안정적 피드백을 주는 초경량 알고리즘과 소형 칩셋이 실무적으로 더 적합합니다. 별첨 자료 또한 초기 기능의 핵심을 ‘인식’이 아니라 ‘애착’으로 정의하며, 정서적 신뢰가 기술 기능보다 앞선다고 명확히 밝히고 있습니다.</p>
+<p>둘째, 개인정보 비수집과 영구 저장 금지 원칙은 법적·윤리적 이유뿐 아니라 안전 운용의 실익이 큽니다. 본 접근은 개인식별정보를 전혀 모으지 않고, 중앙 서버에도 장기 보관하지 않는 ‘영구 저장 없음’ 구조를 채택합니다. 위험을 암호화로만 낮추는 것이 아니라 애초 탈취할 데이터가 없도록 시스템을 설계하여 구조적 위험을 제거합니다. 이는 GDPR 등 국제 기준과 부합하며, 높은 위험 집단인 아동·장애인·난민 맥락에서 법적 방어력과 윤리적 강도를 동시에 높입니다. 별첨은 오프라인 학습과 일시적 서버 분석 후 자동 삭제라는 설계 원칙을 제시하며, 해킹의 표적 자체를 제거하는 개념으로 설명하고 있습니다. 또한 아동의 이름이나 생년월일, 주소, 사진 등은 어떤 형태로도 수집하지 않고, 장치 고유번호만을 토큰처럼 사용하여 식별하는 방식을 명시합니다. 이는 금융권 토큰화와 유사한 보안 역할을 하며, 서버에 개인정보를 보유하지 않기 때문에 침해가 발생하더라도 유출될 민감정보가 없습니다.</p>
+<p>셋째, 기술 선택은 최신 공정이 아니라 현장 적합성에 의해 결정됩니다. 본 모델은 저전력 경량 AI 칩과 28nm 급 프로세스를 활용하는 구성이 유효하며, 이는 저비용·저전력에 최적화되어 있고 신흥 생산거점과의 협업을 통해 공급망 접근성을 높일 수 있습니다. 아이가 착용하기 쉬운 캐릭터형 외형은 내부 공간 여유를 확보하여 모듈화와 내구성을 높이고, 로컬 소량 조립에 유리한 구조를 제공합니다. 이러한 선택은 고가의 최첨단 반도체와 대규모 연산 인프라가 없어도 본 목적을 달성할 수 있음을 보여주며, 장치당 단가를 낮추어 보호자 부담을 실질적으로 줄이는 데 기여합니다. 사용자가 제시하신 장치당 30달러 이하 목표는 바로 이런 공정·부품·설계 선택을 통해 접근 가능성이 높아집니다.</p>
+<p>넷째, 조립과 유지보수는 현장 공동체의 자립 역량을 키우도록 설계해야 합니다. 본 제안은 저숙련 단계에서도 하루 이틀의 기본 교육 후 참여 가능한 모듈 조립 공정을 전제로 하며, 시각 안내와 최소 감독 체계로 품질을 관리합니다. 현장 텐트형 조립 거점은 필수 공구와 전기만으로 구축 가능하고, 보건·식량 배분의 거점 기능까지 결합해 공동체 안전망을 강화합니다. 이러한 조립 거점의 초기 구축비는 미화 1천에서 3천 달러 수준으로 제시되어 실무적 접근성을 높입니다. 더 나아가 협동조합형 소유구조와 연대기금 모델을 통해 고용 효과가 비취업 구성원에게까지 확산되도록 설계할 수 있으며, 기업의 ESG 참여와 연계하여 장기적 자립 기반을 마련하는 경로도 별첨에서 제시되어 있습니다.</p>
+<p>다섯째, 시범 수준에서도 즉시 실행 가능한 현실성을 갖추는 것이 중요합니다. 본 설계는 난민촌 현장에서 바로 시작 가능한 자립형 파일럿을 지향하며, 작동 가능한 프로토타입의 제작과 현장 테스트 전체 비용을 1천 달러 미만으로 제시합니다. 이는 상징이 아니라 운영 단위의 비용으로서, 현장 기술자와 청년, 보호자가 직접 제작 과정에 참여하는 모델을 현실화합니다. 단기 현금지원에서 장기 자립으로 전환하자는 국제 기조와도 부합한다는 점이 명시되어 있습니다.</p>
+<p>여섯째, 앱과 등록 체계는 보호자 통제와 안전성을 전제로 간소하지만 강건하게 설계해야 합니다. 공개 마켓이 아닌 공식 웹을 통해서만 보호자가 앱을 내려받고, 기기 일련번호와 보호자 전화번호 일부를 통한 검증, 재다운로드 횟수 제한, 보호자만 아는 개방형 확인 질문 등의 다중 안전장치로 오남용을 억제합니다. 이는 보호자 중심의 통제권을 보장하면서도 접근성을 유지하는 절충안으로 제시됩니다.</p>
+<p>일곱째, 외교·정책적 정합성은 인권과 지속가능성의 언어로 설명할 때 가장 잘 전달됩니다. 본 접근은 데이터 최소주의를 넘어 데이터 무수집으로 위험을 구조적으로 제거하며, 프라이버시 중심 설계의 차세대 모델로 제시됩니다. 이는 아동권리와 장애권리의 교차적 보호라는 국제 인권 프레임과 정합적이며, 유럽 그린딜과 지속가능발전목표 같은 공공의제와도 구조적 정렬을 이룹니다.</p>
+<p>둘째, 외교관을 위한 결론과 요청을 드립니다. 본 제안은 고가의 서버와 대규모 반도체 없이도 장애아동의 생명을 지키는 실용적 AI를 제공할 수 있음을 보여줍니다. 정서적 애착을 우선하는 초경량 설계는 아이가 실제로 착용하고 지속 사용할 가능성을 높이고, 통신과 전력이 불안정한 난민촌에서도 끊김 없이 작동합니다. 개인정보를 전혀 모으지 않고 서버에 영구 저장하지 않는 구조는 법적 리스크와 사회적 낙인 가능성을 원천적으로 낮추며, 현장 조립과 협동조합형 운영을 통해 공동체 자립을 촉진합니다. 프로토타입은 소규모 예산으로 즉시 착수 가능하며, 현장 내 소량 생산과 분산 배치로 빠르게 확장할 수 있습니다.</p>
+<p>외교·개발 파트너께 요청드립니다. 첫째, 현장에서 검증 가능한 단일 프로토타입의 제작과 짧은 파일럿을 허가해 주시기 바랍니다. 둘째, 난민 정착지 내 소규모 조립 거점 설치에 관해 보건·식량 배분과의 결합 모델을 공동으로 설계할 기회를 주시기 바랍니다. 셋째, 개인정보 무수집과 오프라인 우선 원칙을 정책 문서에 명시하여, 취약 아동과 가족의 권익을 제도적으로 보호할 기반을 함께 마련해 주시기 바랍니다. 본 제안은 브로슈어가 아니라 실물과 현장에서 검증될 수 있는 계획이며, 한 번의 기회가 신뢰를 열 수 있습니다.</p>
+<p>마지막으로 강조드립니다. 본 모델의 강점은 단순함입니다. 단순함은 값싼 절충이 아니라 현장 소유와 신뢰, 법적 강건성을 가능하게 하는 전략적 선택입니다. 아동에게는 믿고 늘 착용할 수 있는 하나의 물건이 필요하고, 부모에게는 개인정보를 걱정하지 않아도 되는 안전한 설계가 필요하며, 현장에는 통신과 전력이 없어도 돌아가는 실용적 시스템이 필요합니다. 이 세 가지 요구를 동시에 충족하는 해법이 오프라인, 비학습, 초경량 AI입니다. 시작은 작지만, 효과는 큽니다. 오늘 한 개의 프로토타입이 내일 한 공동체의 안전과 자립으로 이어질 수 있습니다.</p>
+<p>위 내용을 공손히 제출드리며, 귀 기관의 고견과 동반 검토를 정중히 요청드립니다. 본 서한은 협력의 문을 여는 초대장입니다. 귀 기관의 현장 통찰과 결합될 때, 본 설계는 가장 취약한 아동에게 즉시적이면서도 지속 가능한 안전을 제공할 수 있습니다.</p>
+<p>공손히 올립니다.</p>
+<p>AI Necklace for Child Safety 드림</p>
+<div class="hr"></div>
+<p class="footer">본 서한은 개인정보를 수집하지 않는 오프라인·초경량 설계를 전제로 하며, 난민촌 및 저자원 환경에서의 즉시 실행 가능성과 법적·윤리적 정합성을 최우선 가치로 합니다.</p>
+`;
+
+    const JA_BODY = `
+<span class="ribbon">外交書簡</span>
+<h1>オフライン・非学習・超軽量AIはなぜ不可欠か──難民キャンプにおける児童保護の実務基準</h1>
+<header class="meta"><div>宛先</div><div>現地オペレーション／関係各位</div><div>差出人</div><div>Gyu‑min Jeon</div><div>件名</div><div>児童安全のためのオフライン・非学習・超軽量AIに関する根拠と要請</div><div>日付</div><div>2025年8月15日 (KST)</div></header>
+<p>閣下</p>
+<p>まず、運用上の制約と児童の権利保護の観点から、本解決策はオフライン、非学習、超軽量でなければなりません。難民キャンプでは接続性が不安定で電力も乏しく、クラウド連携や大規模モデルに依存するAIは持続的に運用できません。したがって本設計はオフライン・ファーストを採り、通信不能または劣化した環境でもデータ送信なしに中核機能が動作することを前提とします。児童用ウェアラブルにとって最優先は最高の認識精度ではなく、受容と愛着です。子どもが機器を拒まず日常的に装着する状態を実現することが本質的課題であり、技術的誇示ではなく感情的一貫性と信頼を優先します。したがって、小規模チップで最小計算量により安定したフィードバックを返す超軽量アルゴリズムが実務的に適切です。</p>
+<p>次に、個人データのゼロ収集と恒久保存の全面禁止は、法倫理上の要請であると同時に運用面の利点です。本アーキテクチャは個人識別情報を一切収集せず、中央サーバーに長期記録を保持しません。暗号化だけに依存して危険を下げるのではなく、盗まれる価値のあるデータをそもそも持たないことで構造的リスクを除去します。これはGDPR等の国際基準に整合し、児童・障害者・避難民といった高リスク集団に対する法的防御力と倫理的厳格性を高めます。機器識別は氏名や生年月日、住所、写真ではなく、不可逆なハードウェアトークンにより行い、仮に侵害が生じても漏洩するセンシティブな個人情報は存在しません。</p>
+<p>第三に、技術選択は最先端プロセスではなく現場適合性によって決まります。低電力マイクロコントローラと軽量AIアクセラレータ（おおむね28nmクラス）を基盤とする構成は、コストと消費電力を抑えると同時に新興生産拠点を通じた供給アクセスを高めます。キャラクター型の外形は内部容積に余裕があり、モジュール化と耐久性を高め、地域での小ロット組立にも適します。高価な半導体や大規模計算なしで目的を達成でき、1台30ドル未満という目標価格に近づけます。</p>
+<p>第四に、組立と保守はコミュニティの自立を育むよう設計すべきです。1〜2日の訓練で低熟練の作業者も、視覚ガイドと軽監督のもとモジュール組立ラインに参加できます。テント型のマイクロハブは基本工具と電源のみで設置でき、保健や食糧配布拠点と併設することで地域のセーフティネットを強化します。立上げ費用は拠点あたりおおよそ1000〜3000米ドルで、協同組合的所有や連帯基金により雇用効果を広く波及させ、企業のESG参加とも整合します。</p>
+<p>第五に、試験規模での即時実行可能性が重要です。現場で直ちに開始できる自立型パイロットを目標とし、動作プロトタイプと実地試験の予算を1000米ドル未満に設定します。これは象徴的支出ではなく、技術者や若者、保護者が共に製作に関与できる運用単位のコストです。短期的現金支援から長期的自立へという国際的潮流とも一致します。</p>
+<p>第六に、アプリと登録の流れは保護者の管理下で簡潔かつ堅牢であるべきです。公開アプリストアではなく公式サイトからのみ配布し、機器のシリアル番号と保護者電話番号の一部で検証します。再ダウンロード回数を制限し、保護者のみが知る自由記述型の確認質問を設けて濫用を抑止します。これにより、アクセス性を保ちながら保護者の統制を確保します。</p>
+<p>第七に、人権と持続可能性の言葉で説明すると外交・政策上の整合性が最も強まります。データ最小化を超えてデータ無収集へと踏み込み、構造的にリスクを消去する本設計は、プライバシー第一の次世代モデルです。児童権と障害者権の交差的保護に整合し、SDGsなどの公共アジェンダとも一致します。</p>
+<p>結語として、障害のある子どもを守る実務的AIは高価なサーバや大規模チップなしで稼働可能であることを示しました。愛着を最優先する超軽量設計は、弱い接続・電力環境下でも日常装着と無停止運用の可能性を高めます。ゼロデータ・恒久保存なしの構造は法的リスクと社会的スティグマの源を下げ、地域組立と協同運営はコミュニティの自立を促進します。プロトタイプは小予算で直ちに着手でき、分散型マイクロ生産で拡張可能です。</p>
+<p>つきましては、パートナーシップを謹んでお願い申し上げます。第一に、現場で検証可能な単一プロトタイプの製作と短期パイロットの実施を許可ください。第二に、定住地内の小規模組立ハブを保健・配給モデルと連携して共同設計する機会を賜りたく存じます。第三に、データ無収集とオフライン・ファースト原則を政策文書に明記し、脆弱な児童と家族を制度的に保護する基盤を整えてください。これはパンフレットではなく、現場で実証される計画です。一度の機会が信頼を開きます。</p>
+<p>最後に、単純さの戦略的価値を強調いたします。単純さは廉価な妥協ではなく、所有感、信頼、法的強靭性を可能にします。子どもには信頼して身に着けられる一つの物が、保護者にはプライバシーを損なわない設計が、現場にはネットワークや電力がなくても動く実用的なシステムが必要です。オフライン・非学習・超軽量AIはこの三要件を同時に満たします。始まりは小さくとも、効果は大きいのです。本日の一つのプロトタイプが、明日の一つの共同体の安全と自立へつながります。</p>
+<p>謹んで提出いたします。</p>
+<p>AI Necklace for Child Safety</p>
+<div class="hr"></div>
+<p class="footer">本書簡は個人情報を収集しないオフライン・超軽量設計を前提とし、難民キャンプおよび低資源環境における即時展開性と法倫理上の整合性を最優先の価値とします。</p>
+`;
+
+    const FR_BODY = `
+<span class="ribbon">Note diplomatique</span>
+<h1>Pourquoi une IA hors‑ligne, non apprenante et ultra‑légère est essentielle : normes pratiques pour la protection de l’enfance dans les camps de réfugiés</h1>
+<header class="meta"><div>À</div><div>Équipes de terrain / Responsables concernés</div><div>De</div><div>Gyu‑min Jeon</div><div>Objet</div><div>Justification et demande concernant une IA hors‑ligne, non apprenante et ultra‑légère pour la sécurité des enfants</div><div>Date</div><div>15 août 2025 (KST)</div></header>
+<p>Excellence,</p>
+<p>Premièrement, au regard des contraintes opérationnelles et de la protection des droits de l’enfant, la solution doit être hors‑ligne, non apprenante et ultra‑légère. Les camps de réfugiés se caractérisent par une connectivité aléatoire et une énergie rare ; des systèmes d’IA dépendant du cloud et de modèles massifs ne peuvent pas être exploités durablement. Notre conception adopte donc un principe « offline‑first », afin que les fonctions essentielles opèrent sans transmission de données, y compris en l’absence de réseau. Pour un dispositif porté par un enfant, la priorité n’est pas la précision maximale de reconnaissance, mais l’acceptation et l’attachement. La philosophie de conception privilégie la cohérence émotionnelle et la confiance plutôt que la démonstration technique. Des algorithmes ultra‑légers fournissant un retour stable avec un calcul minimal sur de petits chipsets sont, de ce fait, l’option la plus pertinente.</p>
+<p>Deuxièmement, le principe de non‑collecte des données personnelles et l’interdiction de tout stockage permanent constituent non seulement une exigence juridique et éthique, mais aussi un avantage opérationnel. Notre architecture ne collecte aucune information personnellement identifiable et n’entretient aucun enregistrement de longue durée sur des serveurs centraux. Plutôt que de réduire le risque uniquement par le chiffrement, nous supprimons le risque structurel en veillant à ce qu’il n’y ait rien à voler. Cette approche est conforme aux normes internationales, telles que le RGPD, et renforce la solidité juridique et l’exigence éthique pour les groupes à haut risque, notamment les enfants, les personnes handicapées et les familles déplacées. L’identification de l’appareil repose sur un jeton matériel non réversible, et non sur des noms, dates de naissance, adresses ou photos ; en cas d’incident, aucune donnée personnelle sensible ne peut être divulguée.</p>
+<p>Troisièmement, les choix technologiques sont guidés par l’adéquation au terrain plutôt que par des nœuds de procédés de pointe. Une configuration fondée sur des microcontrôleurs basse consommation et des accélérateurs d’IA légers, de l’ordre de 28 nm, réduit le coût et la puissance tout en améliorant l’accès à l’approvisionnement via des pôles industriels émergents. Un facteur de forme de type « personnage » offre un volume interne propice à la modularité et à la durabilité, et se prête à un assemblage local en petites séries. Cette approche permet d’atteindre l’objectif sans semi‑conducteurs haut de gamme ni puissance de calcul massive, rapprochant le coût unitaire de l’objectif de moins de 30 USD.</p>
+<p>Quatrièmement, l’assemblage et la maintenance doivent être conçus pour renforcer l’autonomie communautaire. Après un à deux jours de formation, des travailleurs peu qualifiés peuvent participer à une ligne d’assemblage modulaire guidée par des repères visuels et une supervision légère. Des micro‑centres sous tente ne requièrent que des outils de base et de l’électricité, et peuvent être co‑localisés avec des points de santé ou de distribution alimentaire afin de consolider les filets de sécurité communautaires. Les coûts d’amorçage sont modestes—de l’ordre de 1 000 à 3 000 USD par centre—et des structures coopératives ou des fonds de solidarité peuvent diffuser les bénéfices de l’emploi tout en s’alignant sur les engagements ESG des entreprises.</p>
+<p>Cinquièmement, la faisabilité immédiate à l’échelle pilote est déterminante. Nous visons un pilote autonome démarrant in situ, avec un prototype fonctionnel et un budget d’essai sur le terrain inférieur à 1 000 USD. Il ne s’agit pas d’une dépense symbolique : c’est un coût opérationnel unitaire permettant aux techniciens, aux jeunes et aux aidants de coproduire l’appareil. Le modèle s’aligne sur l’évolution internationale allant de l’aide monétaire de court terme vers l’autonomisation durable.</p>
+<p>Sixièmement, l’application et le parcours d’enregistrement doivent rester simples mais robustes, sous contrôle des aidants. La distribution est limitée à un site officiel, hors boutiques publiques. La vérification utilise le numéro de série de l’appareil et une partie du numéro de téléphone de l’aidant ; le nombre de téléchargements est limité, et des questions de vérification ouvertes, connues des seuls aidants, apportent une protection supplémentaire. Cela préserve le contrôle des aidants tout en maintenant l’accessibilité.</p>
+<p>Septièmement, l’alignement diplomatique et politique est le plus fort lorsqu’il s’exprime dans le langage des droits humains et du développement durable. En allant au‑delà de la minimisation des données pour adopter la non‑collecte, le système élimine structurellement le risque et incarne une conception de nouvelle génération centrée sur la vie privée. Il s’aligne sur la protection croisée des droits de l’enfant et du handicap, et reste cohérent avec des agendas publics tels que les ODD et les initiatives vertes.</p>
+<p>En conclusion, cette proposition montre qu’une IA pratique pour la protection des enfants en situation de handicap peut fonctionner sans serveurs coûteux ni puces volumineuses. Une conception ultra‑légère centrée sur l’attachement augmente la probabilité de port au quotidien et d’opération continue malgré la faiblesse des réseaux et de l’énergie. Une architecture zéro‑donnée sans stockage permanent réduit à la source le risque juridique et la stigmatisation sociale, tandis que l’assemblage local et la gestion coopérative favorisent l’autonomie des communautés. Un prototype peut démarrer immédiatement avec un faible budget et se déployer par micro‑production distribuée.</p>
+<p>Nous sollicitons respectueusement un partenariat. Premièrement, veuillez autoriser la fabrication d’un prototype unique et un court pilote validable sur le terrain. Deuxièmement, permettez la conception conjointe de micro‑centres d’assemblage au sein des sites, couplés à des modèles de santé et de distribution alimentaire. Troisièmement, nous vous prions d’inscrire dans les documents de politique publique les principes de non‑collecte des données et d’« offline‑first », afin de protéger institutionnellement les enfants et les familles vulnérables. Il ne s’agit pas d’une brochure, mais d’un plan destiné à être éprouvé sur le terrain ; une seule occasion peut ouvrir la voie à la confiance.</p>
+<p>Enfin, nous soulignons la vertu stratégique de la simplicité. La simplicité n’est pas un compromis au rabais ; elle permet l’appropriation, la confiance et la robustesse juridique. Les enfants ont besoin d’un objet unique, fiable et portable ; les parents, d’un design qui ne compromet jamais leur vie privée ; et le terrain, d’un système fonctionnant sans réseau ni électricité du réseau. Une IA hors‑ligne, non apprenante et ultra‑légère répond simultanément à ces trois exigences. Le départ est modeste ; l’effet est considérable. Un prototype aujourd’hui peut devenir demain la sécurité et l’autonomisation d’une communauté.</p>
+<p>Nous vous prions d’agréer, Excellence, l’expression de notre très haute considération.</p>
+<p>AI Necklace for Child Safety</p>
+<div class="hr"></div>
+<p class="footer">La présente note est fondée sur une architecture hors‑ligne et ultra‑légère ne collectant aucune donnée personnelle, privilégiant l’exploitabilité immédiate et la cohérence juridique et éthique dans les environnements de réfugiés et à faibles ressources.</p>
+`;
+
+    const LETTERS = { en: EN_BODY, ko: KO_BODY, ja: JA_BODY, fr: FR_BODY };
+    const $letter = document.getElementById('letter');
+    const $chips = document.querySelectorAll('.chip');
+    function render(lang){
+      $letter.setAttribute('lang', lang);
+      $letter.innerHTML = LETTERS[lang] || LETTERS.en;
+      $chips.forEach(b=>b.setAttribute('aria-pressed', String(b.dataset.lang===lang)));
+      document.documentElement.lang = lang;
+    }
+    $chips.forEach(b=>b.addEventListener('click', ()=>render(b.dataset.lang)));
+    render('en');
+  </script>
+</body>
+</html>

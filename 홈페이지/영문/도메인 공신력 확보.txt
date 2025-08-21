@@ -1,0 +1,22 @@
+https://search.google.com/search-console?resource_id=sc-domain%3Amcorpai.org
+구글 서치 콘솔
+구글 웹마스터 도구 - Google Search Console
+	
+
+추천할 다음 단계:
+
+SNS/이메일 서명에 도메인 삽입
+
+예: https://mcorpai.org 링크를 모든 서명/소개에 포함
+
+각국 대사관 제안서에 링크 포함
+
+외교 제안서 마지막에 항상 URL 넣기
+
+기술 포럼/미디어에 소개 요청
+
+Reddit, IndieHackers, HackerNews, Product Hunt 등에 소개
+
+협력자/기자들에게 링크 공유 요청
+
+예: “아래 링크를 인용해주시면 감사하겠습니다” 문구 포함
