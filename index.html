@@ -383,7 +383,7 @@ a{color:var(--accent);text-decoration:underline}
     let W=0, H=0, DPR = Math.max(1, window.devicePixelRatio||1);
 
     // Tunables (~3 min target)
-    const PLAYER_EMOJI = '🐶'; // change to '🐱' if preferred
+    const PLAYER_EMOJI = '😺'; // change to '🐱' if preferred
     let speedBase = 300; const gravity = 2200; const jumpV = -800;
 
     // State
@@ -442,7 +442,7 @@ a{color:var(--accent);text-decoration:underline}
       const wrap=canvas.parentElement||root; W=wrap.clientWidth|0; H=Math.max(90,Math.min(140,Math.floor(W*0.09))); DPR=Math.max(1,window.devicePixelRatio||1);
       canvas.width=Math.floor(W*DPR); canvas.height=Math.floor(H*DPR); canvas.style.width=W+'px'; canvas.style.height=H+'px'; ctx.setTransform(DPR,0,0,DPR,0,0);
       groundY=H-18; const size=Math.floor(H*0.36);
-      if(!player){ player={ x:Math.floor(W*0.12), y:groundY-size, w:size*0.72, h:size, vy:0, size, emoji:'🐶' }; }
+      if(!player){ player={ x:Math.floor(W*0.12), y:groundY-size, w:size*0.72, h:size, vy:0, size, emoji:'😺' }; }
       else { player.size=size; player.w=size*0.72; player.h=size; player.y=groundY-player.h; }
     }
     window.addEventListener('resize',resize); resize();
