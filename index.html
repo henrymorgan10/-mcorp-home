@@ -338,7 +338,13 @@ a{color:var(--accent);text-decoration:underline}
     const root = document.createElement('div');
     root.id = 'rsr-root';
     root.innerHTML = `
-      <div class="rsr-title">Refugee Self‑Reliance 🌐https://mcorpai.org/ </div>
+      <div class="rsr-title">
+  Refugee Self-Reliance 🌐
+  <a href="https://mcorpai.org/" target="_blank" rel="noopener" style="color:#1e90ff; text-decoration:underline;">
+    https://mcorpai.org/
+  </a>
+</div>
+
       <div class="rsr-hud">
         <span class="rsr-badge rsr-temp">🌡️ Climate Temperature <strong id="rsr-temp">1.5°C</strong></span>
         <span class="rsr-badge">Score <strong id="rsr-score">0</strong></span>
