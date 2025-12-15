@@ -1,0 +1,187 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>PDF + Scroll-to-Play Audio (Test)</title>
+  <link rel="canonical" href="https://mcorp-ai.com/test.html" />
+  <style>
+    :root { color-scheme: light dark; }
+    body { margin: 0; font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif; }
+    .wrap { min-height: 100vh; display: grid; grid-template-rows: auto 1fr; }
+
+    header {
+      position: sticky; top: 0; z-index: 10;
+      backdrop-filter: blur(8px);
+      background: color-mix(in srgb, Canvas 85%, transparent);
+      border-bottom: 1px solid color-mix(in srgb, CanvasText 12%, transparent);
+      padding: 10px 14px;
+      display: flex; gap: 10px; align-items: center; justify-content: space-between;
+    }
+    .title { font-weight: 700; font-size: 14px; opacity: 0.9; }
+    .hint { font-size: 12px; opacity: 0.7; }
+    .actions { display: flex; gap: 10px; align-items: center; }
+    button {
+      border: 1px solid color-mix(in srgb, CanvasText 20%, transparent);
+      background: color-mix(in srgb, Canvas 90%, transparent);
+      padding: 8px 10px; border-radius: 10px;
+      cursor: pointer;
+      font-size: 12px;
+    }
+    button:hover { opacity: 0.9; }
+
+    main { display: grid; grid-template-columns: 1fr; }
+
+    /* PDF 영역 */
+    .pdfFrame {
+      width: 100%;
+      height: calc(100vh - 52px);
+      border: 0;
+      background: #fff;
+    }
+
+    /* 오디오: 기본은 숨기고, 필요하면 표시 */
+    audio { width: min(520px, 92vw); }
+
+    /* 오버레이 */
+    .overlay {
+      position: fixed; inset: 0;
+      display: grid; place-items: center;
+      background: color-mix(in srgb, #000 35%, transparent);
+      padding: 18px;
+    }
+    .card {
+      width: min(560px, 92vw);
+      background: color-mix(in srgb, Canvas 92%, transparent);
+      border: 1px solid color-mix(in srgb, CanvasText 14%, transparent);
+      border-radius: 16px;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.25);
+      padding: 16px;
+    }
+    .card h1 { font-size: 16px; margin: 0 0 8px; }
+    .card p { font-size: 13px; margin: 0 0 10px; opacity: 0.85; line-height: 1.5; }
+    .row { display: flex; gap: 10px; flex-wrap: wrap; align-items: center; justify-content: space-between; }
+    .small { font-size: 12px; opacity: 0.7; }
+
+    .hidden { display: none !important; }
+  </style>
+</head>
+<body>
+  <!--
+    사용 방법 (GitHub Pages):
+    1) 이 파일을 리포지토리 루트에 test.html로 저장
+    2) 아래 PDF/MP3 파일도 리포지토리 루트(main)에 같이 업로드
+       - "Jeon_NobelPeace Prize nominee.pdf"
+       - "Jeon_NobelPeace Prize nominee.mp3"
+    3) Pages가 켜져 있으면 https://mcorp-ai.com/test.html 로 접근
+  -->
+
+  <div class="wrap">
+    <header>
+      <div>
+        <div class="title">PDF + 스크롤(휠)로 음성 재생 (Test)</div>
+        <div class="hint">첫 스크롤/키 입력/터치/클릭이 들어오면 재생을 시도합니다.</div>
+      </div>
+      <div class="actions">
+        <button id="toggleAudioBtn" type="button">오디오 컨트롤 보기</button>
+        <button id="playBtn" type="button">재생</button>
+        <button id="pauseBtn" type="button">일시정지</button>
+      </div>
+    </header>
+
+    <main>
+      <!-- PDF: 웹페이지 안에 임베드 (클릭 없이 바로 보이게) -->
+      <iframe
+        class="pdfFrame"
+        id="pdf"
+        title="PDF"
+        src="Jeon_NobelPeace%20Prize%20nominee.pdf#toolbar=0&navpanes=0&scrollbar=1&view=FitH"
+      ></iframe>
+
+      <!-- 오디오(숨김) -->
+      <audio id="audio" class="hidden" preload="auto" controls>
+        <source src="Jeon_NobelPeace%20Prize%20nominee.mp3" type="audio/mpeg" />
+      </audio>
+    </main>
+  </div>
+
+  <!-- 안내 오버레이: 스크롤(휠) 한 번이면 시작되도록 설계 -->
+  <div id="overlay" class="overlay">
+    <div class="card">
+      <h1>스크롤하면 음성이 시작됩니다</h1>
+      <p>
+        휠 스크롤(또는 키 입력/터치/클릭) 후에 음성 재생이 시작됩니다.
+      </p>
+      <div class="row">
+        <div class="small">처음 1회만 필요합니다.</div>
+        <div class="row" style="justify-content:flex-end; gap:8px;">
+          <button id="overlayPlay" type="button">재생</button>
+          <button id="overlayClose" type="button">닫기</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const audio = document.getElementById('audio');
+    const overlay = document.getElementById('overlay');
+
+    const toggleAudioBtn = document.getElementById('toggleAudioBtn');
+    const playBtn = document.getElementById('playBtn');
+    const pauseBtn = document.getElementById('pauseBtn');
+    const overlayPlay = document.getElementById('overlayPlay');
+    const overlayClose = document.getElementById('overlayClose');
+
+    // 사용자 제스처 1회에 재생을 시도
+    let started = false;
+
+    function hideOverlay() {
+      overlay.classList.add('hidden');
+    }
+
+    async function tryStart(reason) {
+      if (started) return;
+      started = true;
+
+      try {
+        await audio.play();
+        hideOverlay();
+      } catch (err) {
+        // 실패하면 사용자가 버튼으로 재시도할 수 있게 풀어둠
+        started = false;
+        console.warn('Audio play blocked:', reason, err);
+      }
+    }
+
+    // 사용자 제스처로 인정되는 이벤트들
+    const gestureEvents = ['wheel', 'keydown', 'pointerdown', 'touchstart'];
+    const gestureOpts = { passive: true };
+
+    function onFirstGesture(e) {
+      tryStart(e.type);
+      // 옵션 객체는 재사용해서 removeEventListener 매칭 안정화
+      gestureEvents.forEach(evt => window.removeEventListener(evt, onFirstGesture, gestureOpts));
+    }
+
+    gestureEvents.forEach(evt => window.addEventListener(evt, onFirstGesture, gestureOpts));
+
+    // 버튼들
+    toggleAudioBtn.addEventListener('click', () => {
+      audio.classList.toggle('hidden');
+      toggleAudioBtn.textContent = audio.classList.contains('hidden') ? '오디오 컨트롤 보기' : '오디오 컨트롤 숨기기';
+    });
+
+    playBtn.addEventListener('click', () => tryStart('playBtn'));
+    pauseBtn.addEventListener('click', () => audio.pause());
+
+    overlayPlay.addEventListener('click', () => tryStart('overlayPlay'));
+    overlayClose.addEventListener('click', () => hideOverlay());
+
+    // 오디오가 끝나면 다시 시작 가능하게
+    audio.addEventListener('ended', () => {
+      started = false;
+      overlay.classList.remove('hidden');
+    });
+  </script>
+</body>
+</html>
