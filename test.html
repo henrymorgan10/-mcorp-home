@@ -3,107 +3,86 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>PDF + Scroll-to-Play Audio (Test)</title>
+  <title>mcorp-ai.com</title>
   <link rel="canonical" href="https://mcorp-ai.com/test.html" />
   <style>
     :root { color-scheme: light dark; }
-    body { margin: 0; font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif; }
-    .wrap { min-height: 100vh; display: grid; grid-template-rows: auto 1fr; }
+    html, body { height: 100%; }
+    body { margin: 0; overflow: hidden; background: #fff; }
 
-    header {
-      position: sticky; top: 0; z-index: 10;
-      backdrop-filter: blur(8px);
-      background: color-mix(in srgb, Canvas 85%, transparent);
-      border-bottom: 1px solid color-mix(in srgb, CanvasText 12%, transparent);
-      padding: 10px 14px;
-      display: flex; gap: 10px; align-items: center; justify-content: space-between;
-    }
-    .title { font-weight: 700; font-size: 14px; opacity: 0.9; }
-    .actions { display: flex; gap: 10px; align-items: center; }
-    button {
-      border: 1px solid color-mix(in srgb, CanvasText 20%, transparent);
-      background: color-mix(in srgb, Canvas 90%, transparent);
-      padding: 8px 10px; border-radius: 10px;
-      cursor: pointer;
-      font-size: 12px;
-    }
-
-    main { display: grid; grid-template-columns: 1fr; }
-
-    /* PDF 영역 */
+    /* PDF가 화면에 바로 꽉 차게 */
     .pdfFrame {
-      width: 100%;
-      height: calc(100vh - 52px);
+      width: 100vw;
+      height: 100vh;
       border: 0;
+      display: block;
       background: #fff;
     }
 
-    /* 오디오: 기본 숨김 */
+    /* 오디오는 UI 없이 숨김 */
     audio { display: none; }
+
+    /* 첫 휠 입력을 잡기 위한 완전 투명 레이어 (문구/팝업 없음) */
+    #capture {
+      position: fixed;
+      inset: 0;
+      background: transparent;
+      z-index: 2147483647;
+    }
   </style>
 </head>
 <body>
   <!--
-    GitHub Pages / main 루트 기준
-    파일:
+    GitHub Pages / main(루트) 기준 파일 배치
       - test.html
       - Jeon_NobelPeace Prize nominee.pdf
       - Jeon_NobelPeace Prize nominee.mp3
-    접속:
+    접속
       https://mcorp-ai.com/test.html
   -->
 
-  <div class="wrap">
-    <header>
-      <div class="title">PDF (Scroll → 1회 자동 음성 재생)</div>
-      <div class="actions">
-        <button id="playBtn" type="button">재생</button>
-        <button id="pauseBtn" type="button">일시정지</button>
-      </div>
-    </header>
+  <iframe
+    class="pdfFrame"
+    title="PDF"
+    src="Jeon_NobelPeace%20Prize%20nominee.pdf#toolbar=0&navpanes=0&scrollbar=1&view=FitH"
+  ></iframe>
 
-    <main>
-      <iframe
-        class="pdfFrame"
-        id="pdf"
-        title="PDF"
-        src="Jeon_NobelPeace%20Prize%20nominee.pdf#toolbar=0&navpanes=0&scrollbar=1&view=FitH"
-      ></iframe>
+  <audio id="audio" preload="auto">
+    <source src="Jeon_NobelPeace%20Prize%20nominee.mp3" type="audio/mpeg" />
+  </audio>
 
-      <audio id="audio" preload="auto">
-        <source src="Jeon_NobelPeace%20Prize%20nominee.mp3" type="audio/mpeg" />
-      </audio>
-    </main>
-  </div>
+  <!-- 사용자가 휠을 내리는 첫 순간(1회)만 잡고 바로 제거됨 -->
+  <div id="capture" aria-hidden="true"></div>
 
   <script>
     const audio = document.getElementById('audio');
-    const playBtn = document.getElementById('playBtn');
-    const pauseBtn = document.getElementById('pauseBtn');
+    const capture = document.getElementById('capture');
 
-    // 최초 사용자 제스처에서만 1회 재생
-    let playedOnce = false;
+    // 가능하면 미리(무음)로 재생 상태를 만들어두고, 첫 휠에서 음소거 해제
+    audio.muted = true;
+    audio.play().catch(() => { /* 조용히 무시 */ });
 
-    async function tryPlayOnce() {
-      if (playedOnce) return;
-      try {
-        await audio.play();
-        playedOnce = true;
-        window.removeEventListener('wheel', onWheel, { passive: true });
-      } catch (e) {
-        // 브라우저가 막으면 아무 표시 없이 조용히 실패
+    let done = false;
+
+    function onWheel(e) {
+      if (done) return;
+      // "내리는" 휠에서만 1회 트리거
+      if (typeof e.deltaY === 'number' && e.deltaY <= 0) return;
+
+      done = true;
+
+      // 즉시 레이어 제거(이후부터는 PDF 상호작용/스크롤 정상)
+      capture.remove();
+
+      // 첫 휠에서 음소거 해제 및 재생 보장 시도
+      audio.muted = false;
+      if (audio.paused) {
+        audio.play().catch(() => { /* 조용히 무시 */ });
       }
     }
 
-    function onWheel() {
-      tryPlayOnce();
-    }
-
-    window.addEventListener('wheel', onWheel, { passive: true });
-
-    // 수동 제어 (디버그/테스트용)
-    playBtn.addEventListener('click', () => audio.play());
-    pauseBtn.addEventListener('click', () => audio.pause());
+    // 첫 휠 입력을 레이어에서 받음
+    capture.addEventListener('wheel', onWheel, { passive: true });
   </script>
 </body>
 </html>
