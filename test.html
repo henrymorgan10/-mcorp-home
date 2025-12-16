@@ -20,7 +20,6 @@
 
     audio { display: none; }
 
-    /* 첫 휠 입력만 잡고 바로 제거되는 투명 레이어1 */
     #capture {
       position: fixed;
       inset: 0;
@@ -51,46 +50,69 @@
         try {
           audio.muted = true;
           var p = audio.play();
-          if (p && typeof p.catch === 'function') {
-            p.catch(function () {});
-          }
+          if (p && typeof p.catch === 'function') p.catch(function () {});
         } catch (e) {}
       }
 
       ensureMutedPlaying();
       window.addEventListener('pageshow', ensureMutedPlaying);
 
+      function tryAutoSoundAfterDelay(ms) {
+        setTimeout(function () {
+          try { audio.currentTime = 0; } catch (e) {}
+          audio.muted = false;
+
+          var p;
+          try { p = audio.play(); } catch (e) { return; }
+
+          if (p && typeof p.catch === 'function') {
+            p.catch(function () {
+              audio.muted = true;
+              ensureMutedPlaying();
+            });
+          }
+        }, ms);
+      }
+
+      tryAutoSoundAfterDelay(2000);
+
       var done = false;
 
-      function unmuteAndRestartOnce() {
+      function removeCapture() {
+        if (capture && capture.parentNode) capture.parentNode.removeChild(capture);
+        capture = null;
+      }
+
+      function startSoundOnce() {
         if (done) return;
         done = true;
 
-        if (capture && capture.parentNode) {
-          capture.parentNode.removeChild(capture);
-        }
+        removeCapture();
 
         function go() {
           try { audio.currentTime = 0; } catch (e) {}
           audio.muted = false;
+          try {
+            var p = audio.play();
+            if (p && typeof p.catch === 'function') p.catch(function () {});
+          } catch (e) {}
         }
 
-        if (audio.readyState >= 1) {
-          go();
-        } else {
-          audio.addEventListener('loadedmetadata', go, { once: true });
-        }
-
-        ensureMutedPlaying();
+        if (audio.readyState >= 1) go();
+        else audio.addEventListener('loadedmetadata', go, { once: true });
       }
 
       function onWheel(e) {
-        if (e && typeof e.deltaY === 'number' && e.deltaY > 0) {
-          unmuteAndRestartOnce();
-        }
+        if (e && typeof e.deltaY === 'number' && e.deltaY > 0) startSoundOnce();
       }
 
       capture.addEventListener('wheel', onWheel, { passive: true });
+
+      window.addEventListener('pointerdown', startSoundOnce, { passive: true, once: true });
+      window.addEventListener('touchstart', startSoundOnce, { passive: true, once: true });
+      window.addEventListener('keydown', startSoundOnce, { passive: true, once: true });
+
+      audio.addEventListener('error', function () {});
     })();
   </script>
 </body>
