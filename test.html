@@ -25,6 +25,7 @@
       inset: 0;
       background: transparent;
       z-index: 2147483647;
+      outline: none;
     }
   </style>
 </head>
@@ -35,84 +36,110 @@
     src="Jeon_NobelPeace%20Prize%20nominee.pdf#toolbar=0&navpanes=0&scrollbar=1&view=FitH"
   ></iframe>
 
-  <audio id="audio" preload="auto" autoplay muted playsinline>
+  <audio id="audio" preload="auto" playsinline>
     <source src="Jeon_NobelPeace%20Prize%20nominee.mp3" type="audio/mpeg" />
   </audio>
 
-  <div id="capture" aria-hidden="true"></div>
+  <div id="capture" tabindex="0" aria-hidden="true"></div>
 
   <script>
     (function () {
       var audio = document.getElementById('audio');
       var capture = document.getElementById('capture');
 
-      function ensureMutedPlaying() {
-        try {
-          audio.muted = true;
-          var p = audio.play();
-          if (p && typeof p.catch === 'function') p.catch(function () {});
-        } catch (e) {}
-      }
+      var started = false;
+      var lastAttemptAt = 0;
 
-      ensureMutedPlaying();
-      window.addEventListener('pageshow', ensureMutedPlaying);
-
-      function tryAutoSoundAfterDelay(ms) {
-        setTimeout(function () {
-          try { audio.currentTime = 0; } catch (e) {}
-          audio.muted = false;
-
-          var p;
-          try { p = audio.play(); } catch (e) { return; }
-
-          if (p && typeof p.catch === 'function') {
-            p.catch(function () {
-              audio.muted = true;
-              ensureMutedPlaying();
-            });
-          }
-        }, ms);
-      }
-
-      tryAutoSoundAfterDelay(2000);
-
-      var done = false;
-
-      function removeCapture() {
-        if (capture && capture.parentNode) capture.parentNode.removeChild(capture);
+      function removeCaptureLayer() {
+        if (capture && capture.parentNode) {
+          capture.parentNode.removeChild(capture);
+        }
         capture = null;
       }
 
-      function startSoundOnce() {
-        if (done) return;
-        done = true;
+      function canAttemptNow() {
+        var now = Date.now();
+        if (now - lastAttemptAt < 250) return false;
+        lastAttemptAt = now;
+        return true;
+      }
 
-        removeCapture();
+      function attemptPlay(label) {
+        if (started) return;
+        if (!canAttemptNow()) return;
 
-        function go() {
-          try { audio.currentTime = 0; } catch (e) {}
-          audio.muted = false;
-          try {
-            var p = audio.play();
-            if (p && typeof p.catch === 'function') p.catch(function () {});
-          } catch (e) {}
+        try { audio.muted = false; } catch (e) {}
+
+        var p;
+        try { p = audio.play(); } catch (e) { return; }
+
+        if (p && typeof p.then === 'function') {
+          p.then(function () {
+            started = true;
+          }).catch(function () {
+          });
         }
+      }
 
-        if (audio.readyState >= 1) go();
-        else audio.addEventListener('loadedmetadata', go, { once: true });
+      function attemptPlayFromGesture(label) {
+        removeCaptureLayer();
+        try { audio.currentTime = 0; } catch (e) {}
+        attemptPlay(label);
       }
 
       function onWheel(e) {
-        if (e && typeof e.deltaY === 'number' && e.deltaY > 0) startSoundOnce();
+        if (e && typeof e.deltaY === 'number' && e.deltaY > 0) {
+          attemptPlayFromGesture('wheel');
+        }
       }
 
-      capture.addEventListener('wheel', onWheel, { passive: true });
+      function onKeydown() {
+        attemptPlayFromGesture('keydown');
+      }
 
-      window.addEventListener('pointerdown', startSoundOnce, { passive: true, once: true });
-      window.addEventListener('touchstart', startSoundOnce, { passive: true, once: true });
-      window.addEventListener('keydown', startSoundOnce, { passive: true, once: true });
+      function onPointerDown() {
+        attemptPlayFromGesture('pointerdown');
+      }
 
-      audio.addEventListener('error', function () {});
+      function onTouchStart() {
+        attemptPlayFromGesture('touchstart');
+      }
+
+      setTimeout(function () {
+        try { audio.currentTime = 0; } catch (e) {}
+        attemptPlay('delay5s');
+      }, 5000);
+
+      var retryTimer = setInterval(function () {
+        if (started) {
+          clearInterval(retryTimer);
+          return;
+        }
+        attemptPlay('retry');
+      }, 1000);
+
+      audio.addEventListener('playing', function () {
+        started = true;
+        clearInterval(retryTimer);
+      });
+
+      if (capture) {
+        capture.addEventListener('wheel', onWheel, { passive: true });
+        capture.addEventListener('keydown', onKeydown, { passive: true });
+        capture.addEventListener('pointerdown', onPointerDown, { passive: true });
+        capture.addEventListener('touchstart', onTouchStart, { passive: true });
+      }
+
+      window.addEventListener('wheel', onWheel, { passive: true });
+      window.addEventListener('keydown', onKeydown, { passive: true });
+      window.addEventListener('pointerdown', onPointerDown, { passive: true });
+      window.addEventListener('touchstart', onTouchStart, { passive: true });
+
+      try {
+        if (capture) capture.focus({ preventScroll: true });
+      } catch (e) {
+        try { if (capture) capture.focus(); } catch (e2) {}
+      }
     })();
   </script>
 </body>
