@@ -1,292 +1,113 @@
-<!doctype html>
-<html lang="ko">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>mcorp-ai.com</title>
-  <link rel="canonical" href="https://mcorp-ai.com/test.html" />
-  <style>
-    :root { color-scheme: light dark; }
-    html, body { height: 100%; }
-    body { margin: 0; background: #fff; }
+<script>
+  (function () {
+    var audio = document.getElementById('audio');
+    var capture = document.getElementById('capture');
 
-    /* 데스크톱 iframe 표시용 (조금 더 작게, 중앙 정렬) */
-    #pdfIframe {
-      width: min(90vw, 980px);
-      height: 94vh;
-      margin: 3vh auto;
-      border: 0;
-      display: block;
-      background: #fff;
+    // 재생은 1회만. 진행 중/시도 중에는 추가 입력이 와도 절대 0초로 되감기지 않게 잠금.
+    var hasStarted = false;   // 한번이라도 재생이 실제로 시작되면 true
+    var finished = false;     // 끝까지 재생되면 true
+    var inFlight = false;     // play() 시도 중(결과 대기 중)인 동안 true
+    var lastAttemptAt = 0;
+
+    function canAttemptNow() {
+      var now = Date.now();
+      if (now - lastAttemptAt < 300) return false;
+      lastAttemptAt = now;
+      return true;
     }
 
-    /* 모바일 PDF.js 표시용 */
-    #pdfjsRoot {
-      display: none;
-      width: 100vw;
-      height: 100vh;
-      overflow: hidden;
-      background: #fff;
+    function stopRetry(timerId) {
+      try { clearInterval(timerId); } catch (e) {}
     }
 
-    #pdfjsScroll {
-      width: 100vw;
-      height: 100vh;
-      overflow: auto;
-      -webkit-overflow-scrolling: touch;
-      padding: 14px 10px;
-      box-sizing: border-box;
-    }
+    function startOnce() {
+      if (finished || hasStarted || inFlight) return;
+      if (!canAttemptNow()) return;
 
-    .pdfPage {
-      width: 100%;
-      max-width: 760px;
-      margin: 0 auto 14px;
-      background: #fff;
-    }
+      inFlight = true;
 
-    .pdfPage canvas {
-      width: 100%;
-      height: auto;
-      display: block;
-      background: #fff;
-    }
-
-    audio { display: none; }
-
-    /* 첫 입력을 최대한 잡기 위한 투명 레이어 (문구/팝업 없음) */
-    #capture {
-      position: fixed;
-      inset: 0;
-      background: transparent;
-      z-index: 2147483647;
-      outline: none;
-    }
-  </style>
-</head>
-<body>
-  <!--
-    GitHub Pages / main(루트) 기준 파일 배치
-      - test.html
-      - Jeon_NobelPeace Prize nominee.pdf
-      - Jeon_NobelPeace Prize nominee.mp3
-    접속
-      https://mcorp-ai.com/test.html
-  -->
-
-  <!-- 데스크톱: 기존 iframe 유지 -->
-  <iframe
-    id="pdfIframe"
-    title="PDF"
-    src="Jeon_NobelPeace%20Prize%20nominee.pdf#toolbar=0&navpanes=0&scrollbar=1&view=FitH"
-  ></iframe>
-
-  <!-- 모바일: PDF.js 렌더링 컨테이너 -->
-  <div id="pdfjsRoot" aria-hidden="true">
-    <div id="pdfjsScroll"></div>
-  </div>
-
-  <!-- 오디오는 UI 없이 숨김 -->
-  <audio id="audio" preload="auto" playsinline>
-    <source src="Jeon_NobelPeace%20Prize%20nominee.mp3" type="audio/mpeg" />
-  </audio>
-
-  <div id="capture" tabindex="0" aria-hidden="true"></div>
-
-  <script>
-    (function () {
-      var PDF_URL = 'Jeon_NobelPeace%20Prize%20nominee.pdf';
-
-      var iframe = document.getElementById('pdfIframe');
-      var pdfjsRoot = document.getElementById('pdfjsRoot');
-      var pdfjsScroll = document.getElementById('pdfjsScroll');
-
-      function isMobileDevice() {
-        var ua = navigator.userAgent || '';
-        var byUA = /Android|iPhone|iPad|iPod|SamsungBrowser/i.test(ua);
-        var byPointer = false;
-        try { byPointer = window.matchMedia && window.matchMedia('(pointer: coarse)').matches; } catch (e) {}
-        var byWidth = (typeof window.innerWidth === 'number' && window.innerWidth <= 900);
-        return byUA || (byPointer && byWidth);
+      if (capture && capture.parentNode) {
+        capture.parentNode.removeChild(capture);
+        capture = null;
       }
 
-      function loadScript(src) {
-        return new Promise(function (resolve, reject) {
-          var s = document.createElement('script');
-          s.src = src;
-          s.async = true;
-          s.onload = function () { resolve(); };
-          s.onerror = function () { reject(new Error('script load failed')); };
-          document.head.appendChild(s);
-        });
-      }
+      // 오직 "처음 시도"에서만 0초로 맞춤
+      try { audio.currentTime = 0; } catch (e) {}
+      try { audio.muted = false; } catch (e) {}
 
-      async function renderMobileWithPdfjs() {
-        // 모바일에서만 PDF.js 사용
-        iframe.style.display = 'none';
-        pdfjsRoot.style.display = 'block';
-
-        // PDF.js 로드 (CDN). 로드 실패 시 iframe으로 되돌림
-        var ver = '3.11.174';
-        var pdfjsSrc = 'https://cdn.jsdelivr.net/npm/pdfjs-dist@' + ver + '/build/pdf.min.js';
-        var workerSrc = 'https://cdn.jsdelivr.net/npm/pdfjs-dist@' + ver + '/build/pdf.worker.min.js';
-
-        try {
-          await loadScript(pdfjsSrc);
-          if (!window.pdfjsLib) throw new Error('pdfjsLib missing');
-          window.pdfjsLib.GlobalWorkerOptions.workerSrc = workerSrc;
-
-          var loadingTask = window.pdfjsLib.getDocument({ url: PDF_URL, withCredentials: false });
-          var pdf = await loadingTask.promise;
-
-          // 기존 렌더링 제거
-          while (pdfjsScroll.firstChild) pdfjsScroll.removeChild(pdfjsScroll.firstChild);
-
-          // 컨테이너 폭 기준으로 스케일 계산
-          var containerWidth = pdfjsScroll.clientWidth;
-          var targetWidth = Math.min(containerWidth - 2, 760);
-          var dpr = (window.devicePixelRatio || 1);
-
-          for (var pageNum = 1; pageNum <= pdf.numPages; pageNum++) {
-            var page = await pdf.getPage(pageNum);
-            var viewport1 = page.getViewport({ scale: 1 });
-            var scale = targetWidth / viewport1.width;
-
-            var viewport = page.getViewport({ scale: scale });
-
-            var pageWrap = document.createElement('div');
-            pageWrap.className = 'pdfPage';
-
-            var canvas = document.createElement('canvas');
-            var ctx = canvas.getContext('2d', { alpha: false });
-
-            canvas.width = Math.floor(viewport.width * dpr);
-            canvas.height = Math.floor(viewport.height * dpr);
-
-            // CSS 표시 크기
-            canvas.style.width = Math.floor(viewport.width) + 'px';
-            canvas.style.height = Math.floor(viewport.height) + 'px';
-
-            pageWrap.appendChild(canvas);
-            pdfjsScroll.appendChild(pageWrap);
-
-            // 고해상도 렌더링
-            ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
-
-            await page.render({
-              canvasContext: ctx,
-              viewport: viewport
-            }).promise;
-          }
-        } catch (e) {
-          // PDF.js가 실패하면 모바일에서도 iframe로 폴백
-          pdfjsRoot.style.display = 'none';
-          iframe.style.display = 'block';
-        }
-      }
-
-      // 모바일이면 PDF.js로 교체, 아니면 기존 iframe 유지
-      if (isMobileDevice()) {
-        renderMobileWithPdfjs();
-      }
-    })();
-  </script>
-
-  <script>
-    (function () {
-      var audio = document.getElementById('audio');
-      var capture = document.getElementById('capture');
-
-      var started = false;
-      var lastAttemptAt = 0;
-
-      function canAttemptNow() {
-        var now = Date.now();
-        if (now - lastAttemptAt < 250) return false;
-        lastAttemptAt = now;
-        return true;
-      }
-
-      function attemptPlay() {
-        if (started) return;
-        if (!canAttemptNow()) return;
-
-        try { audio.muted = false; } catch (e) {}
-
-        var p;
-        try { p = audio.play(); } catch (e) { return; }
-
-        if (p && typeof p.then === 'function') {
-          p.then(function () {
-            // playing 이벤트가 더 확실하지만, 여기서도 성공 처리
-          }).catch(function () {
-            // 조용히 실패
-          });
-        }
-      }
-
-      function attemptPlayFromGesture() {
-        // 입력을 막지 않기 위해, 첫 입력에서 레이어는 즉시 제거
-        if (capture && capture.parentNode) {
-          capture.parentNode.removeChild(capture);
-          capture = null;
-        }
-
-        try { audio.currentTime = 0; } catch (e) {}
-        attemptPlay();
-      }
-
-      function onWheel(e) {
-        if (e && typeof e.deltaY === 'number' && e.deltaY > 0) {
-          attemptPlayFromGesture();
-        }
-      }
-
-      function onKeydown() { attemptPlayFromGesture(); }
-      function onPointerDown() { attemptPlayFromGesture(); }
-      function onTouchStart() { attemptPlayFromGesture(); }
-
-      // 5초 후 자동 재생 시도 (정책상 막힐 수 있음)
-      setTimeout(function () {
-        try { audio.currentTime = 0; } catch (e) {}
-        attemptPlay();
-      }, 5000);
-
-      // 성공할 때까지 조용히 재시도
-      var retryTimer = setInterval(function () {
-        if (started) {
-          clearInterval(retryTimer);
-          return;
-        }
-        attemptPlay();
-      }, 1000);
-
-      audio.addEventListener('playing', function () {
-        started = true;
-        clearInterval(retryTimer);
-      });
-
-      // 레이어에서 최대한 입력 잡기
-      if (capture) {
-        capture.addEventListener('wheel', onWheel, { passive: true });
-        capture.addEventListener('keydown', onKeydown, { passive: true });
-        capture.addEventListener('pointerdown', onPointerDown, { passive: true });
-        capture.addEventListener('touchstart', onTouchStart, { passive: true });
-      }
-
-      // 레이어 제거 후에도 윈도우에서 계속 시도
-      window.addEventListener('wheel', onWheel, { passive: true });
-      window.addEventListener('keydown', onKeydown, { passive: true });
-      window.addEventListener('pointerdown', onPointerDown, { passive: true });
-      window.addEventListener('touchstart', onTouchStart, { passive: true });
-
-      // 키 입력이 iframe에 포커스가 가서 안 잡힐 수 있으니, 처음에 레이어에 포커스
+      var p;
       try {
-        if (capture) capture.focus({ preventScroll: true });
+        p = audio.play();
       } catch (e) {
-        try { if (capture) capture.focus(); } catch (e2) {}
+        inFlight = false;
+        return;
       }
-    })();
-  </script>
-</body>
-</html>
+
+      if (p && typeof p.then === 'function') {
+        p.then(function () {
+        }).catch(function () {
+          // 실패하면 다음 입력에서 다시 시도할 수 있게만 풀어줌
+          inFlight = false;
+        });
+      } else {
+        inFlight = false;
+      }
+    }
+
+    function onWheel(e) {
+      if (e && typeof e.deltaY === 'number' && e.deltaY > 0) startOnce();
+    }
+    function onKeydown() { startOnce(); }
+    function onPointerDown() { startOnce(); }
+    function onTouchStart() { startOnce(); }
+
+    // 5초 후 자동 시도(정책상 막힐 수 있음). 성공해도 1회.
+    setTimeout(function () {
+      startOnce();
+    }, 5000);
+
+    // 조용한 재시도(1초 간격). 재생 시작되면 즉시 중단.
+    var retryTimer = setInterval(function () {
+      if (finished || hasStarted) {
+        stopRetry(retryTimer);
+        return;
+      }
+      startOnce();
+    }, 1000);
+
+    audio.addEventListener('playing', function () {
+      hasStarted = true;
+      inFlight = false;
+      stopRetry(retryTimer);
+    });
+
+    audio.addEventListener('ended', function () {
+      finished = true;
+      inFlight = false;
+      stopRetry(retryTimer);
+    });
+
+    audio.addEventListener('pause', function () {
+      // 시작 이후에는 재시작하지 않음
+      if (hasStarted) inFlight = false;
+    });
+
+    if (capture) {
+      capture.addEventListener('wheel', onWheel, { passive: true });
+      capture.addEventListener('keydown', onKeydown, { passive: true });
+      capture.addEventListener('pointerdown', onPointerDown, { passive: true });
+      capture.addEventListener('touchstart', onTouchStart, { passive: true });
+    }
+
+    window.addEventListener('wheel', onWheel, { passive: true });
+    window.addEventListener('keydown', onKeydown, { passive: true });
+    window.addEventListener('pointerdown', onPointerDown, { passive: true });
+    window.addEventListener('touchstart', onTouchStart, { passive: true });
+
+    try {
+      if (capture) capture.focus({ preventScroll: true });
+    } catch (e) {
+      try { if (capture) capture.focus(); } catch (e2) {}
+    }
+  })();
+</script>
