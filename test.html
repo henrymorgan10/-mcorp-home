@@ -30,50 +30,68 @@
   </style>
 </head>
 <body>
-  <!--
-    GitHub Pages / main(루트) 기준 파일 배치
-      - test.html
-      - Jeon_NobelPeace Prize nominee.pdf
-      - Jeon_NobelPeace Prize nominee.mp3
-    접속
-      https://mcorp-ai.com/test.html
-  -->
-
   <iframe
     class="pdfFrame"
     title="PDF"
     src="Jeon_NobelPeace%20Prize%20nominee.pdf#toolbar=0&navpanes=0&scrollbar=1&view=FitH"
   ></iframe>
 
-  <audio id="audio" preload="auto">
+  <audio id="audio" preload="auto" autoplay muted playsinline>
     <source src="Jeon_NobelPeace%20Prize%20nominee.mp3" type="audio/mpeg" />
   </audio>
 
   <div id="capture" aria-hidden="true"></div>
 
   <script>
-    const audio = document.getElementById('audio');
-    const capture = document.getElementById('capture');
+    (function () {
+      var audio = document.getElementById('audio');
+      var capture = document.getElementById('capture');
 
-    audio.muted = true;
-    audio.play().catch(() => {});
-
-    let done = false;
-
-    function onWheel(e) {
-      if (done) return;
-      if (typeof e.deltaY === 'number' && e.deltaY <= 0) return;
-
-      done = true;
-      capture.remove();
-
-      audio.muted = false;
-      if (audio.paused) {
-        audio.play().catch(() => {});
+      function ensureMutedPlaying() {
+        try {
+          audio.muted = true;
+          var p = audio.play();
+          if (p && typeof p.catch === 'function') {
+            p.catch(function () {});
+          }
+        } catch (e) {}
       }
-    }
 
-    capture.addEventListener('wheel', onWheel, { passive: true });
+      ensureMutedPlaying();
+      window.addEventListener('pageshow', ensureMutedPlaying);
+
+      var done = false;
+
+      function unmuteAndRestartOnce() {
+        if (done) return;
+        done = true;
+
+        if (capture && capture.parentNode) {
+          capture.parentNode.removeChild(capture);
+        }
+
+        function go() {
+          try { audio.currentTime = 0; } catch (e) {}
+          audio.muted = false;
+        }
+
+        if (audio.readyState >= 1) {
+          go();
+        } else {
+          audio.addEventListener('loadedmetadata', go, { once: true });
+        }
+
+        ensureMutedPlaying();
+      }
+
+      function onWheel(e) {
+        if (e && typeof e.deltaY === 'number' && e.deltaY > 0) {
+          unmuteAndRestartOnce();
+        }
+      }
+
+      capture.addEventListener('wheel', onWheel, { passive: true });
+    })();
   </script>
 </body>
 </html>
