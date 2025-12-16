@@ -10,7 +10,6 @@
     html, body { height: 100%; }
     body { margin: 0; overflow: hidden; background: #fff; }
 
-    /* PDF가 화면에 바로 꽉 차게 */
     .pdfFrame {
       width: 100vw;
       height: 100vh;
@@ -19,10 +18,9 @@
       background: #fff;
     }
 
-    /* 오디오는 UI 없이 숨김 */
     audio { display: none; }
 
-    /* 첫 휠 입력을 잡기 위한 완전 투명 레이어 (문구/팝업 없음) */
+    /* 첫 휠 입력만 잡고 바로 제거되는 투명 레이어 */
     #capture {
       position: fixed;
       inset: 0;
@@ -51,37 +49,30 @@
     <source src="Jeon_NobelPeace%20Prize%20nominee.mp3" type="audio/mpeg" />
   </audio>
 
-  <!-- 사용자가 휠을 내리는 첫 순간(1회)만 잡고 바로 제거됨 -->
   <div id="capture" aria-hidden="true"></div>
 
   <script>
     const audio = document.getElementById('audio');
     const capture = document.getElementById('capture');
 
-    // 가능하면 미리(무음)로 재생 상태를 만들어두고, 첫 휠에서 음소거 해제
     audio.muted = true;
-    audio.play().catch(() => { /* 조용히 무시 */ });
+    audio.play().catch(() => {});
 
     let done = false;
 
     function onWheel(e) {
       if (done) return;
-      // "내리는" 휠에서만 1회 트리거
       if (typeof e.deltaY === 'number' && e.deltaY <= 0) return;
 
       done = true;
-
-      // 즉시 레이어 제거(이후부터는 PDF 상호작용/스크롤 정상)
       capture.remove();
 
-      // 첫 휠에서 음소거 해제 및 재생 보장 시도
       audio.muted = false;
       if (audio.paused) {
-        audio.play().catch(() => { /* 조용히 무시 */ });
+        audio.play().catch(() => {});
       }
     }
 
-    // 첫 휠 입력을 레이어에서 받음
     capture.addEventListener('wheel', onWheel, { passive: true });
   </script>
 </body>
