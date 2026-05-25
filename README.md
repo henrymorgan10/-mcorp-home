@@ -96,4 +96,25 @@ I hope to collaborate with people and institutions that value openness, democrat
 
 **I would greatly welcome the opportunity to obtain permanent residency in a Western country that values freedom and liberal democratic principles. ESG initiatives can make a significant contribution to the long-term strategic interests of Western countries.**
 
+# ESG will become increasingly important as time goes on.
+### As more people around the world lose jobs to black-box AI systems, ESG will increasingly become a matter of national competitiveness. ESG is fundamentally about people-centered governance and management. The value of engineers and architects who design white-box AI systems will continue to grow, because white-box AI helps protect and save human lives.
+
+**If a technology helps save human lives, it deserves the highest possible ESG evaluation.**
+
+**Environment:**
+White-box AI produces no large-scale infrastructure pollution and can operate on refurbished or discarded smartphones, significantly reducing electronic waste and energy consumption.
+
+**Social:**
+White-box AI is open-source and designed for broad public benefit. Because it does not rely on massive centralized data centers, resources can instead be directed toward supporting people and communities through real human employment and local participation. It is a model built around coexistence rather than concentration.
+
+**Governance:**
+White-box AI is not designed around monopoly or closed control. It is intended to remain transparent, accessible, and fair, so that everyone can use, examine, improve, and benefit from it equally.
+
+### ESG will become a key pillar of national competitiveness.
+**International institutions tend to be skeptical of black-box AI systems because they lack transparency and accountability. As a result, they are more likely to adopt white-box AI systems that can be audited, understood, and trusted.**
+
+## Human dignity
+**Countries that respect human dignity and treat people with fairness and respect will ultimately receive the highest ESG recognition. In the end, ESG standards are evaluated and acknowledged by international institutions, and those institutions naturally value countries that uphold human rights, dignity, and humane governance.**
+
+
 
