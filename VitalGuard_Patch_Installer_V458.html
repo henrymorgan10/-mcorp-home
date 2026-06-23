@@ -1,0 +1,693 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>VitalGuard Patch Installer — V4.5.7 → V4.5.8</title>
+<style>
+  :root {
+    --bg: #0d1117;
+    --bg-card: #161b22;
+    --bg-elevated: #1c2128;
+    --border: #30363d;
+    --accent: #c0392b;
+    --accent-ok: #2ea043;
+    --accent-warn: #d29922;
+    --text: #e6edf3;
+    --text-sec: #8b949e;
+    --text-muted: #484f58;
+    --radius: 12px;
+    --font: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--font);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px 16px 80px;
+  }
+
+  /* ── 헤더 ── */
+  .header {
+    text-align: center;
+    margin-bottom: 36px;
+  }
+  .header-badge {
+    display: inline-block;
+    background: var(--accent);
+    color: #fff;
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    padding: 3px 10px;
+    border-radius: 20px;
+    margin-bottom: 14px;
+  }
+  .header h1 {
+    font-size: 1.55rem;
+    font-weight: 700;
+    letter-spacing: -.02em;
+    margin-bottom: 6px;
+  }
+  .header p {
+    color: var(--text-sec);
+    font-size: 0.88rem;
+    line-height: 1.6;
+  }
+
+  /* ── 카드 ── */
+  .card {
+    width: 100%;
+    max-width: 680px;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 28px;
+    margin-bottom: 16px;
+  }
+  .card-title {
+    font-size: 0.78rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: .07em;
+    color: var(--text-sec);
+    margin-bottom: 16px;
+  }
+
+  /* ── 단계 표시 ── */
+  .steps {
+    display: flex;
+    gap: 0;
+    margin-bottom: 28px;
+    width: 100%;
+    max-width: 680px;
+  }
+  .step {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    position: relative;
+  }
+  .step:not(:last-child)::after {
+    content: '';
+    position: absolute;
+    top: 14px;
+    left: calc(50% + 14px);
+    right: calc(-50% + 14px);
+    height: 2px;
+    background: var(--border);
+    transition: background .3s;
+  }
+  .step.done:not(:last-child)::after { background: var(--accent-ok); }
+  .step-num {
+    width: 28px; height: 28px;
+    border-radius: 50%;
+    background: var(--bg-elevated);
+    border: 2px solid var(--border);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 0.75rem; font-weight: 700;
+    transition: all .3s;
+    position: relative; z-index: 1;
+  }
+  .step.active .step-num { border-color: var(--accent); color: var(--accent); }
+  .step.done .step-num  { border-color: var(--accent-ok); background: var(--accent-ok); color: #fff; }
+  .step-label {
+    font-size: 0.68rem;
+    color: var(--text-muted);
+    text-align: center;
+  }
+  .step.active .step-label { color: var(--text); }
+  .step.done  .step-label  { color: var(--accent-ok); }
+
+  /* ── 드롭존 ── */
+  .dropzone {
+    border: 2px dashed var(--border);
+    border-radius: var(--radius);
+    padding: 40px 20px;
+    text-align: center;
+    cursor: pointer;
+    transition: all .2s;
+    position: relative;
+  }
+  .dropzone:hover, .dropzone.dragover {
+    border-color: var(--accent);
+    background: rgba(192,57,43,.06);
+  }
+  .dropzone input[type=file] {
+    position: absolute; inset: 0; opacity: 0; cursor: pointer; width: 100%; height: 100%;
+  }
+  .dropzone-icon { font-size: 2.4rem; margin-bottom: 10px; }
+  .dropzone-label { font-size: 0.92rem; color: var(--text-sec); margin-bottom: 4px; }
+  .dropzone-sub   { font-size: 0.75rem; color: var(--text-muted); }
+
+  /* ── 파일 확인 카드 ── */
+  .file-info {
+    display: none;
+    align-items: center;
+    gap: 14px;
+    background: var(--bg-elevated);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 16px 18px;
+    margin-top: 14px;
+  }
+  .file-info.show { display: flex; }
+  .file-icon { font-size: 1.6rem; flex-shrink: 0; }
+  .file-meta { flex: 1; min-width: 0; }
+  .file-name { font-size: 0.88rem; font-weight: 600; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .file-size { font-size: 0.74rem; color: var(--text-muted); margin-top: 2px; }
+  .file-check { color: var(--accent-ok); font-size: 1.2rem; }
+  .file-err   { color: var(--accent); font-size: 0.8rem; margin-top: 8px; }
+
+  /* ── 패치 목록 ── */
+  .patch-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .patch-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    background: var(--bg-elevated);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 12px 14px;
+    font-size: 0.82rem;
+  }
+  .patch-icon { flex-shrink: 0; font-size: 1rem; margin-top: 1px; }
+  .patch-text { flex: 1; line-height: 1.5; }
+  .patch-label { font-weight: 600; color: var(--text); margin-bottom: 2px; }
+  .patch-desc  { color: var(--text-sec); font-size: 0.76rem; }
+  .patch-count { flex-shrink: 0; font-size: 0.7rem; color: var(--text-muted); padding: 2px 8px; background: var(--bg); border: 1px solid var(--border); border-radius: 20px; }
+
+  /* ── 버튼 ── */
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 12px 28px;
+    border: none;
+    border-radius: 10px;
+    font-size: 0.92rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all .2s;
+    font-family: var(--font);
+  }
+  .btn:disabled { opacity: .4; cursor: not-allowed; }
+  .btn-primary  { background: var(--accent); color: #fff; }
+  .btn-primary:not(:disabled):hover { background: #a93226; }
+  .btn-success  { background: var(--accent-ok); color: #fff; }
+  .btn-success:not(:disabled):hover { background: #268636; }
+  .btn-full     { width: 100%; }
+
+  /* ── 프로그레스 ── */
+  .progress-wrap {
+    display: none;
+    flex-direction: column;
+    gap: 8px;
+    margin-top: 14px;
+  }
+  .progress-wrap.show { display: flex; }
+  .progress-bar-bg {
+    height: 6px;
+    background: var(--bg-elevated);
+    border-radius: 10px;
+    overflow: hidden;
+  }
+  .progress-bar-fill {
+    height: 100%;
+    background: var(--accent);
+    border-radius: 10px;
+    width: 0%;
+    transition: width .4s ease;
+  }
+  .progress-bar-fill.ok { background: var(--accent-ok); }
+  .progress-label { font-size: 0.78rem; color: var(--text-sec); }
+
+  /* ── 결과 로그 ── */
+  .log-box {
+    display: none;
+    background: #010409;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 16px;
+    font-family: 'SF Mono', 'Fira Code', 'Consolas', monospace;
+    font-size: 0.74rem;
+    line-height: 1.7;
+    max-height: 220px;
+    overflow-y: auto;
+    margin-top: 14px;
+    color: #7ee787;
+  }
+  .log-box.show { display: block; }
+  .log-err  { color: #f85149; }
+  .log-warn { color: var(--accent-warn); }
+  .log-info { color: #58a6ff; }
+
+  /* ── 다운로드 섹션 ── */
+  .download-section {
+    display: none;
+    flex-direction: column;
+    gap: 12px;
+  }
+  .download-section.show { display: flex; }
+  .result-badge {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: rgba(46,160,67,.1);
+    border: 1px solid rgba(46,160,67,.3);
+    border-radius: 10px;
+    padding: 14px 18px;
+    font-size: 0.86rem;
+  }
+  .result-badge-icon { font-size: 1.4rem; }
+  .result-stats { font-size: 0.76rem; color: var(--text-sec); margin-top: 2px; }
+
+  /* ── 푸터 ── */
+  .footer {
+    margin-top: 40px;
+    text-align: center;
+    font-size: 0.72rem;
+    color: var(--text-muted);
+    line-height: 1.8;
+  }
+</style>
+</head>
+<body>
+
+<!-- 헤더 -->
+<div class="header">
+  <div class="header-badge">VitalGuard Patch System</div>
+  <h1>🛠 HTML 패치 인스톨러</h1>
+  <p>원본 파일을 올리면 V4.5.8 패치를 자동으로 적용합니다.<br>
+     서버 전송 없음 · 완전 오프라인 · 브라우저 안에서만 처리</p>
+</div>
+
+<!-- 진행 단계 -->
+<div class="steps" id="stepBar">
+  <div class="step active" id="s1">
+    <div class="step-num">1</div>
+    <div class="step-label">파일 업로드</div>
+  </div>
+  <div class="step" id="s2">
+    <div class="step-num">2</div>
+    <div class="step-label">패치 적용</div>
+  </div>
+  <div class="step" id="s3">
+    <div class="step-num">3</div>
+    <div class="step-label">다운로드</div>
+  </div>
+</div>
+
+<!-- STEP 1: 파일 업로드 -->
+<div class="card" id="cardUpload">
+  <div class="card-title">📁 STEP 1 — 원본 파일 선택</div>
+  <div class="dropzone" id="dropzone">
+    <input type="file" id="fileInput" accept=".html">
+    <div class="dropzone-icon">📄</div>
+    <div class="dropzone-label">VitalGuard_AI_complete_V45_7.html 을 여기에 드래그하거나 클릭하세요</div>
+    <div class="dropzone-sub">HTML 파일만 허용 · 파일은 브라우저 밖으로 전송되지 않음</div>
+  </div>
+  <div class="file-info" id="fileInfo">
+    <div class="file-icon">📄</div>
+    <div class="file-meta">
+      <div class="file-name" id="fileName">—</div>
+      <div class="file-size" id="fileSize">—</div>
+    </div>
+    <div class="file-check" id="fileCheck">✓</div>
+  </div>
+  <div class="file-err" id="fileErr" style="display:none"></div>
+  <br>
+  <button class="btn btn-primary btn-full" id="btnPatch" disabled onclick="runPatch()">
+    🔧 V4.5.8 패치 적용하기
+  </button>
+</div>
+
+<!-- STEP 2: 패치 내용 미리보기 -->
+<div class="card">
+  <div class="card-title">📋 V4.5.8 패치 내용 (테스트 버전)</div>
+  <ul class="patch-list">
+    <li class="patch-item">
+      <div class="patch-icon">🏷️</div>
+      <div class="patch-text">
+        <div class="patch-label">버전 문자열 일괄 업데이트</div>
+        <div class="patch-desc">파일 전체의 v4.5.7 → v4.5.8 / APP_VERSION 상수 업데이트</div>
+      </div>
+      <div class="patch-count">39곳</div>
+    </li>
+    <li class="patch-item">
+      <div class="patch-icon">📝</div>
+      <div class="patch-text">
+        <div class="patch-label">CHANGELOG 블록 추가</div>
+        <div class="patch-desc">파일 최상단 주석에 V4.5.8 변경 이력 기록 삽입</div>
+      </div>
+      <div class="patch-count">+8줄</div>
+    </li>
+    <li class="patch-item">
+      <div class="patch-icon">⚓</div>
+      <div class="patch-text">
+        <div class="patch-label">앵커 주석 시스템 삽입</div>
+        <div class="patch-desc">SECURITY_CSP_GUARD / BOOT_INIT 앵커 주입 (다음 패치부터 정밀 타격 가능)</div>
+      </div>
+      <div class="patch-count">+4줄</div>
+    </li>
+    <li class="patch-item">
+      <div class="patch-icon">🔖</div>
+      <div class="patch-text">
+        <div class="patch-label">title 태그 업데이트</div>
+        <div class="patch-desc">페이지 타이틀을 v4.5.8 Patch Installer Test 로 변경</div>
+      </div>
+      <div class="patch-count">1곳</div>
+    </li>
+    <li class="patch-item">
+      <div class="patch-icon">📌</div>
+      <div class="patch-text">
+        <div class="patch-label">END 주석 업데이트</div>
+        <div class="patch-desc">파일 최하단 END OF 주석을 v4.5.8로 갱신</div>
+      </div>
+      <div class="patch-count">1곳</div>
+    </li>
+  </ul>
+</div>
+
+<!-- STEP 2: 진행 상태 -->
+<div class="card" id="cardProgress" style="display:none">
+  <div class="card-title">⚙️ STEP 2 — 패치 적용 중</div>
+  <div class="progress-wrap show">
+    <div class="progress-bar-bg">
+      <div class="progress-bar-fill" id="progressFill"></div>
+    </div>
+    <div class="progress-label" id="progressLabel">준비 중...</div>
+  </div>
+  <div class="log-box show" id="logBox"></div>
+</div>
+
+<!-- STEP 3: 다운로드 -->
+<div class="card" id="cardDownload" style="display:none">
+  <div class="card-title">✅ STEP 3 — 패치 완료</div>
+  <div class="download-section show">
+    <div class="result-badge">
+      <div class="result-badge-icon">🎉</div>
+      <div>
+        <div>V4.5.8 패치 성공적으로 적용되었습니다</div>
+        <div class="result-stats" id="resultStats">—</div>
+      </div>
+    </div>
+    <button class="btn btn-success btn-full" id="btnDownload" onclick="doDownload()">
+      ⬇️ VitalGuard_AI_complete_V45_8.html 다운로드
+    </button>
+  </div>
+</div>
+
+<div class="footer">
+  VitalGuard Patch Installer · 완전 오프라인 동작 · 바닐라 HTML/JS · 제로 의존성<br>
+  파일은 브라우저 메모리에서만 처리되며 외부로 전송되지 않습니다.
+</div>
+
+<script>
+'use strict';
+
+/* ─────────────────────────────────────────────
+   상태
+───────────────────────────────────────────── */
+let _originalText = '';
+let _patchedText  = '';
+let _fileName     = '';
+let _fileInput    = null;
+
+/* ─────────────────────────────────────────────
+   파일 읽기
+───────────────────────────────────────────── */
+const dropzone  = document.getElementById('dropzone');
+const fileInput = document.getElementById('fileInput');
+
+dropzone.addEventListener('dragover', e => { e.preventDefault(); dropzone.classList.add('dragover'); });
+dropzone.addEventListener('dragleave', () => dropzone.classList.remove('dragover'));
+dropzone.addEventListener('drop', e => {
+  e.preventDefault();
+  dropzone.classList.remove('dragover');
+  const f = e.dataTransfer.files[0];
+  if (f) handleFile(f);
+});
+fileInput.addEventListener('change', e => {
+  const f = e.target.files[0];
+  if (f) handleFile(f);
+});
+
+function handleFile(file) {
+  const errEl = document.getElementById('fileErr');
+  errEl.style.display = 'none';
+
+  if (!file.name.endsWith('.html') && !file.name.endsWith('.htm')) {
+    showFileErr('HTML 파일만 허용됩니다. (.html)');
+    return;
+  }
+  if (file.size > 5 * 1024 * 1024) {
+    showFileErr('파일 크기가 5MB를 초과합니다.');
+    return;
+  }
+
+  _fileName = file.name;
+  const reader = new FileReader();
+  reader.onload = e => {
+    const text = e.target.result;
+    // V45.7 여부 간단 확인
+    if (!text.includes('VitalGuardAI') && !text.includes('VitalGuard')) {
+      showFileErr('VitalGuard HTML 파일이 아닌 것 같습니다. 다시 확인해주세요.');
+      return;
+    }
+    _originalText = text;
+    showFileOk(file);
+  };
+  reader.onerror = () => showFileErr('파일 읽기 실패. 다시 시도해주세요.');
+  reader.readAsText(file, 'UTF-8');
+}
+
+function showFileOk(file) {
+  document.getElementById('fileName').textContent = file.name;
+  document.getElementById('fileSize').textContent =
+    (file.size / 1024).toFixed(1) + ' KB  ·  약 ' +
+    (file.size / 15).toFixed(0) + ' 토큰 추정';
+  document.getElementById('fileInfo').classList.add('show');
+  document.getElementById('fileCheck').textContent = '✓';
+  document.getElementById('btnPatch').disabled = false;
+  setStep(1, 'done');
+  setStep(2, 'active');
+}
+
+function showFileErr(msg) {
+  const el = document.getElementById('fileErr');
+  el.textContent = '⚠ ' + msg;
+  el.style.display = 'block';
+  document.getElementById('btnPatch').disabled = true;
+}
+
+/* ─────────────────────────────────────────────
+   단계 표시
+───────────────────────────────────────────── */
+function setStep(n, state) {
+  const el = document.getElementById('s' + n);
+  if (!el) return;
+  el.className = 'step ' + (state || '');
+}
+
+/* ─────────────────────────────────────────────
+   패치 엔진
+───────────────────────────────────────────── */
+function runPatch() {
+  if (!_originalText) return;
+  document.getElementById('btnPatch').disabled = true;
+  document.getElementById('cardProgress').style.display = 'block';
+
+  const log    = document.getElementById('logBox');
+  const fill   = document.getElementById('progressFill');
+  const plabel = document.getElementById('progressLabel');
+
+  log.innerHTML = '';
+
+  function appendLog(msg, cls) {
+    const line = document.createElement('div');
+    line.className = cls || '';
+    line.textContent = '> ' + msg;
+    log.appendChild(line);
+    log.scrollTop = log.scrollHeight;
+  }
+
+  function setProgress(pct, label) {
+    fill.style.width = pct + '%';
+    plabel.textContent = label;
+  }
+
+  // 비동기 처리 (UI 블로킹 방지)
+  setTimeout(() => {
+    try {
+      setProgress(10, '원본 파일 분석 중...');
+      appendLog('원본 파일 로드 완료: ' + (_originalText.length).toLocaleString() + ' chars', 'log-info');
+
+      let text = _originalText;
+      let patchCount = 0;
+
+      /* ── PATCH 1: CHANGELOG 블록 삽입 ── */
+      setProgress(20, 'CHANGELOG 삽입 중...');
+      const changelogBlock =
+`<!--
+  VitalGuard AI — Patch History
+  ================================================
+  CHANGELOG:
+    V4.5.8 - [TEST PATCH] 인스톨러 시스템 검증용 패치
+             버전 문자열 일괄 업데이트 (v4.5.7 → v4.5.8)
+             CHANGELOG 블록 추가
+             앵커 주석 시스템 삽입 (SECURITY_CSP_GUARD, BOOT_INIT)
+             title 태그 업데이트
+    V4.5.7 - 기준선 (보안 강화 빌드)
+  ================================================
+-->`;
+      // DOCTYPE 바로 다음에 삽입
+      const doctypeEnd = text.indexOf('>') + 1;
+      text = text.slice(0, doctypeEnd) + '\n' + changelogBlock + '\n' + text.slice(doctypeEnd);
+      appendLog('PATCH 1 완료: CHANGELOG 블록 삽입 (+8줄)', 'log-info');
+      patchCount++;
+
+      /* ── PATCH 2: title 태그 업데이트 ── */
+      setProgress(35, 'title 태그 업데이트 중...');
+      const oldTitle = '<title>VitalGuardAI.com v4.5.7 — Hardened Offline Resilience Research Demonstrator</title>';
+      const newTitle = '<title>VitalGuardAI.com v4.5.8 — Patch Installer Test Build</title>';
+      if (text.includes(oldTitle)) {
+        text = text.replace(oldTitle, newTitle);
+        appendLog('PATCH 2 완료: title 태그 v4.5.8 업데이트', 'log-info');
+        patchCount++;
+      } else {
+        appendLog('PATCH 2 경고: title 태그 원본 문자열 불일치 (건너뜀)', 'log-warn');
+      }
+
+      /* ── PATCH 3: APP_VERSION 상수 업데이트 ── */
+      setProgress(50, 'APP_VERSION 업데이트 중...');
+      const oldAppVer = "const APP_VERSION = '4.5.7';";
+      const newAppVer = "const APP_VERSION = '4.5.8';";
+      if (text.includes(oldAppVer)) {
+        text = text.replace(oldAppVer, newAppVer);
+        appendLog('PATCH 3 완료: APP_VERSION 4.5.7 → 4.5.8', 'log-info');
+        patchCount++;
+      } else {
+        appendLog('PATCH 3 경고: APP_VERSION 원본 불일치 (건너뜀)', 'log-warn');
+      }
+
+      /* ── PATCH 4: 앵커 주석 삽입 (CSP 가드 영역) ── */
+      setProgress(62, '앵커 주석(CSP_GUARD) 삽입 중...');
+      const cspAnchorTarget = '<meta http-equiv="Content-Security-Policy"';
+      const cspAnchorStart  = '<!-- ===== ANCHOR_START: SECURITY_CSP_GUARD ===== -->\n';
+      const cspIdx = text.indexOf(cspAnchorTarget);
+      if (cspIdx !== -1 && !text.includes('ANCHOR_START: SECURITY_CSP_GUARD')) {
+        text = text.slice(0, cspIdx) + cspAnchorStart + text.slice(cspIdx);
+        // CSP meta 태그 끝 위치 탐색
+        const cspLineEnd = text.indexOf('\n', text.indexOf(cspAnchorTarget)) + 1;
+        text = text.slice(0, cspLineEnd) +
+               '<!-- ===== ANCHOR_END: SECURITY_CSP_GUARD ===== -->\n' +
+               text.slice(cspLineEnd);
+        appendLog('PATCH 4 완료: ANCHOR SECURITY_CSP_GUARD 삽입', 'log-info');
+        patchCount++;
+      } else {
+        appendLog('PATCH 4 건너뜀: 앵커 이미 존재하거나 대상 없음', 'log-warn');
+      }
+
+      /* ── PATCH 5: 앵커 주석 삽입 (BOOT_INIT 영역) ── */
+      setProgress(74, '앵커 주석(BOOT_INIT) 삽입 중...');
+      const bootAnchorTarget = '/* VitalGuardAI.com v4.5.';
+      const bootIdx = text.lastIndexOf(bootAnchorTarget);
+      if (bootIdx !== -1 && !text.includes('ANCHOR_START: BOOT_INIT')) {
+        text = text.slice(0, bootIdx) +
+               '/* ===== ANCHOR_START: BOOT_INIT ===== */\n' +
+               text.slice(bootIdx);
+        appendLog('PATCH 5 완료: ANCHOR BOOT_INIT 삽입', 'log-info');
+        patchCount++;
+      } else {
+        appendLog('PATCH 5 건너뜀: 앵커 이미 존재하거나 대상 없음', 'log-warn');
+      }
+
+      /* ── PATCH 6: END 주석 업데이트 ── */
+      setProgress(85, 'END 주석 업데이트 중...');
+      const oldEnd = '/* --- END OF VitalGuardAI.com v4.5.7 — security remediation build ---------------- */';
+      const newEnd = '/* --- END OF VitalGuardAI.com v4.5.8 — patch installer test build --------------- */';
+      if (text.includes(oldEnd)) {
+        text = text.replace(oldEnd, newEnd);
+        appendLog('PATCH 6 완료: END 주석 v4.5.8 업데이트', 'log-info');
+        patchCount++;
+      } else {
+        appendLog('PATCH 6 경고: END 주석 원본 불일치 (건너뜀)', 'log-warn');
+      }
+
+      /* ── PATCH 7: 나머지 v4.5.7 문자열 일괄 치환 ── */
+      setProgress(93, '나머지 버전 문자열 일괄 치환 중...');
+      const before7 = (text.match(/v4\.5\.7/g) || []).length;
+      text = text.replace(/v4\.5\.7/g, 'v4.5.8');
+      const after7 = (text.match(/v4\.5\.7/g) || []).length;
+      const replaced = before7 - after7;
+      appendLog('PATCH 7 완료: v4.5.7 → v4.5.8 일괄 치환 (' + replaced + '곳)', 'log-info');
+      patchCount++;
+
+      /* ── 완료 ── */
+      setProgress(100, '패치 완료!');
+      fill.classList.add('ok');
+      plabel.textContent = '✅ 모든 패치 적용 완료';
+      appendLog('─────────────────────────────────', '');
+      appendLog('총 ' + patchCount + '개 패치 적용 완료', 'log-info');
+      appendLog('출력 파일: VitalGuard_AI_complete_V45_8.html', 'log-info');
+      appendLog('원본 크기: ' + _originalText.length.toLocaleString() + ' chars', 'log-info');
+      appendLog('패치 크기: ' + text.length.toLocaleString() + ' chars', 'log-info');
+
+      _patchedText = text;
+
+      // 다운로드 섹션 표시
+      document.getElementById('resultStats').textContent =
+        '패치 ' + patchCount + '개 적용 · ' +
+        '원본 ' + (_originalText.length / 1024).toFixed(1) + 'KB → ' +
+        '패치 ' + (text.length / 1024).toFixed(1) + 'KB';
+      document.getElementById('cardDownload').style.display = 'block';
+
+      setStep(2, 'done');
+      setStep(3, 'active');
+
+      // 다운로드 섹션으로 스크롤
+      document.getElementById('cardDownload').scrollIntoView({ behavior: 'smooth', block: 'center' });
+
+    } catch(err) {
+      appendLog('오류 발생: ' + err.message, 'log-err');
+      document.getElementById('progressLabel').textContent = '❌ 패치 실패 — 콘솔 확인';
+      console.error('[VitalGuard Installer]', err);
+    }
+  }, 80);
+}
+
+/* ─────────────────────────────────────────────
+   다운로드
+───────────────────────────────────────────── */
+function doDownload() {
+  if (!_patchedText) return;
+  const blob = new Blob([_patchedText], { type: 'text/html;charset=utf-8' });
+  const url  = URL.createObjectURL(blob);
+  const a    = document.createElement('a');
+  a.href     = url;
+  a.download = 'VitalGuard_AI_complete_V45_8.html';
+  document.body.appendChild(a);
+  a.click();
+  setTimeout(() => { URL.revokeObjectURL(url); a.remove(); }, 1500);
+
+  setStep(3, 'done');
+  document.getElementById('btnDownload').textContent = '✅ 다운로드 완료';
+  document.getElementById('btnDownload').disabled = true;
+}
+</script>
+</body>
+</html>
