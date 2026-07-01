@@ -1,6 +1,26 @@
-# UN Semi-Permanent Members Proposal
+**True creation always begins outside the boundaries of the established. — Morgan J.**
 
-## Background of the Proposal
+I am an [offline AI architect](https://mcorpai.org/) dedicated to developing AI systems that remain operational even under the most severe disaster scenarios, including situations where communications, networks, and critical infrastructure have been completely shut down.
+
+My vision is to build sovereign AI that is accessible to everyone, especially people living in the world's least developed and underserved communities. By operating entirely offline, this technology can provide resilient, privacy-preserving, and sustainable AI capabilities without requiring cloud services or continuous internet connectivity.
+
+I hope to collaborate with the United Nations to make offline AI freely available to people in the world's poorest countries, helping expand equitable access to AI while strengthening resilience, digital inclusion, and humanitarian response in regions where conventional online AI services are often unavailable or unreliable.
+
+The United Nations has, at times, faced operational and financial challenges due to outstanding assessed contributions from some Member States. As an architect, my strength lies in designing practical and sustainable solutions.
+
+I would like to share a proposal that I believe could contribute to building a stronger, more resilient, and financially sustainable United Nations. My hope is to work alongside the United Nations and other international organizations in support of the world's poorest and most vulnerable communities.
+
+This proposal is offered as a public resource. Anyone is welcome to use, share, adapt, and distribute it free of charge for the benefit of the international community.
+
+**Freedom of the human spirit and freedom of expression are the greatest strengths of a strong United Nations.**
+
+**A strong United Nations is the foundation of lasting peace. It should never be held back by financial uncertainty.**
+
+<img width="168" height="119" alt="1" src="https://raw.githubusercontent.com/henrymorgan10/mcorpai-org/main/UN.PNG" />
+
+# For a Stronger United Nations
+## UN Semi-Permanent Members Proposal — By Morgan J., Architect (ROK)
+### Proposal Background: A Stronger United Nations Begins with a Stable and Responsible Financial Foundation.
 
 Semi-Permanent Member status does not signify a position superior to that of ordinary Member States.
 Semi-Permanent Members are "Responsible Member States" that assume additional obligations in order to more actively share the UN's financial stability and international responsibilities, and they are granted correspondingly limited participation rights.
@@ -86,7 +106,7 @@ After the trial operation ends, the effectiveness and operational performance of
 
 ---
 
-# Composition of the Semi-Permanent Members (22 States)
+# Composition and Overview of the 22 Semi-Permanent Members for a Stronger United Nations
 
 **If a state continuously fails to pay its UN assessed contributions without justifiable cause, the UN may, after issuing one public warning (an official Yellow Card), upon a second instance of non-payment completely strip that state of its Semi-Permanent Member status (an official Red Card). The seat thus left vacant shall be filled, after comprehensively evaluating the capacity to pay UN contributions and the willingness to make international contributions, by a new Semi-Permanent Member state capable of responsible contribution payment.**
 
@@ -168,7 +188,9 @@ The UN emergency fund serves as a financial buffer needed for the normal operati
 
 **In the case of non-payment for economic reasons, voting rights are maintained as they are and the unpaid amount is completely waived. The same principle applies to all 193 states.**
 
-**However, if a state fails to pay its contributions even once, it can never thereafter become a candidate state for the Semi-Permanent Members, permanently. Because the conditions for stripping Semi-Permanent Member status upon non-payment are extremely strong, such a state cannot become part of the candidate pool.**
+## Full Waiver of Outstanding Arrears and Eligibility Restrictions
+
+**Upon the establishment of the Semi-Permanent Membership system, all outstanding assessed contribution arrears owed by the P5 (the United States, China, Russia, the United Kingdom, and France), as well as Venezuela, Afghanistan, Bolivia, Lebanon, South Sudan, the Commonwealth of Dominica, Equatorial Guinea, and other Member States, shall be fully forgiven. (Effectively neutralizing Article 19 of the UN Charter.) However, if a State fails to pay its assessed contribution even once thereafter, it shall be permanently disqualified from ever becoming a Semi-Permanent Member Candidate in the future. Because the eligibility requirements for Semi-Permanent Members impose exceptionally strict penalties for non-payment of assessed contributions, eligibility for the Semi-Permanent Member Candidate Pool shall likewise be permanently revoked.**
 
 ### The Semi-Permanent Members shall be composed of a total of 22 states, centered on the G4, some members of the Coffee Club, and the major powers and emerging states of each region.
 
@@ -331,3 +353,23 @@ This proposal aims, while maintaining the authority of the existing Security Cou
 Through this, it seeks to enhance the representation and legitimacy of the international community while at the same time maintaining the existing P5 system to secure the stability and continuity of the international order.
 
 The Semi-Permanent Members system is not a system for conferring privileges but a system of shared responsibility for Member States that voluntarily assume additional responsibilities and financial obligations for the sustainability of the international community. Accordingly, Semi-Permanent Members do not hold a legal status superior to that of ordinary Member States, and the principle of legal equality of all UN Member States is maintained as it is.
+
+## Administrative Oversight for Humanitarian Programs, Including Support for Least Developed Countries (LDCs) and Refugee Relief
+
+**A total of 22 countries shall each appoint Continental Inspectors across the world's seven continents. The role of each Continental Inspector is to audit whether budgets are administered transparently and, if funds are found to have been diverted to improper purposes such as criminal proceeds, to initiate prosecution under international law. The Inspectors shall not interfere with how humanitarian programs, including assistance for Least Developed Countries (LDCs) and refugee relief, are carried out, but they shall oversee whether the allocated budgets are being used properly. Each Inspector shall serve a one-year term, with appointments rotating in sequence. The order of rotation shall be determined by the amount of assessed contributions paid, with the highest contributing countries serving first. Even countries making the lowest contributions shall still serve as Inspectors, although later in the rotation.**
+
+**Even if an Inspector uncovers misconduct and initiates prosecution under international law, it may take several years before a final court judgment is reached. To prevent criminal funds from continuing to be disbursed during that period, each Continental Inspector shall have the administrative authority to immediately invoke a "Freeze Authority," temporarily suspending funding to a specific organization or region whenever clear indications of misconduct have been established. The administrative judicial authority of a Semi-Permanent Member Inspector shall be exercised independently by that Inspector alone. Even if a court later concludes that no criminal offense occurred, the Inspector shall be granted immunity for exercising this authority.**
+
+**Each continent shall appoint two Administrative Inspectors, for a total of 14 Inspectors, each possessing independent investigative authority. Following the Singapore model, each Inspector shall receive an annual salary of USD 2 million.**
+
+**A UN Special Anti-Corruption Tribunal dedicated to corruption involving UN humanitarian funds shall be established. Individuals responsible shall be immediately placed on the Interpol Red Notice list and the Financial Action Task Force (FATF) sanctions list. If a Semi-Permanent Member State becomes implicated, its Semi-Permanent Membership shall be automatically and permanently revoked, even where no conclusive physical evidence has yet been obtained.**
+
+**The term "implicated" does not refer to mere speculation. It refers to situations where physical evidence has not yet been secured, but an internationally recognized criminal suspect is already under investigation through international cooperation (ensuring objectivity through third-party cooperation such as Interpol or Europol), or where multiple highly credible statements have already been obtained and independently cross-verified from sources such as whistleblowers, local NGOs, and financial institution personnel. In other words, revocation shall not be based on mere suspicion, but only where Probable Cause and Reasonable Suspicion has been established through an international cooperative investigation or multiple reliable and independently corroborated testimonies. In such cases, the State shall be immediately suspended from, and become subject to permanent removal from, Semi-Permanent Membership.**
+
+### How Can Membership Be Revoked Without Conclusive Evidence? Could It Not Be Defamation? — "Moral Bankruptcy"
+
+**Even in the absence of conclusive physical evidence, "Moral Bankruptcy" shall constitute sufficient grounds for the permanent revocation of Semi-Permanent Membership. A State whose membership has been permanently revoked shall have the right to appeal. To exercise this right, the State must submit evidence to the United Nations demonstrating that it was not involved in the alleged criminal conduct. If the United Nations accepts the evidence of innocence, the State's status shall be decided through a secret ballot requiring the approval of at least 68% of the Semi-Permanent Members (15 of 21 Member States). The identities of those voting in favor or against shall remain confidential, and only the final voting result shall be disclosed. If the State fails to obtain the required 15 affirmative votes, a country from the Semi-Permanent Member candidate pool shall be automatically promoted to full Semi-Permanent Membership without delay. If subsequent international cooperative investigations ultimately conclude that no offense was committed, the previously revoked Member State shall become a Semi-Permanent Member Candidate (Observer) and remain on the waiting list indefinitely.**
+
+**Reason for Indefinite Waiting Status Even After Being Cleared:**
+
+**A final acquittal is sincerely welcomed. However, becoming entangled in such a serious controversy has already caused significant damage to the reputation of the United Nations and wasted valuable administrative resources. The consequence is indefinite Observer status. If, in the future, another Member State loses its membership due to Moral Bankruptcy, the Observer State may once again become eligible for Semi-Permanent Membership.**
