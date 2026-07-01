@@ -16,6 +16,8 @@ The United States currently contributes billions of dollars to the UN each year.
 
 **Most importantly, it offers a path by which the United States could help promote peace while reducing government spending—without requiring additional expenditure.**
 
+## Why I Became Interested in the United Nations
+
 My vision is to build sovereign AI that is accessible to everyone, especially people living in the world's least developed and underserved communities. By operating entirely offline, this technology can provide resilient, privacy-preserving, and sustainable AI capabilities without requiring cloud services or continuous internet connectivity.
 
 I hope to collaborate with the United Nations to make offline AI freely available to people in the world's poorest countries, helping expand equitable access to AI while strengthening resilience, digital inclusion, and humanitarian response in regions where conventional online AI services are often unavailable or unreliable.
