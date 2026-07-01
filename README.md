@@ -4,7 +4,7 @@
 
 I am an [offline AI architect](https://mcorpai.org/) dedicated to developing AI systems that remain operational even under the most severe disaster scenarios, including situations where communications, networks, and critical infrastructure have been completely shut down.
 
-## Sometimes the world is shaped by unknown architects, because they act without selfish motives.
+**Sometimes the world is shaped by unknown architects, because they act without selfish motives.**
 
 My vision is to build sovereign AI that is accessible to everyone, especially people living in the world's least developed and underserved communities. By operating entirely offline, this technology can provide resilient, privacy-preserving, and sustainable AI capabilities without requiring cloud services or continuous internet connectivity.
 
