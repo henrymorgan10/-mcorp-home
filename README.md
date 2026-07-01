@@ -6,7 +6,7 @@ My vision is to build sovereign AI that is accessible to everyone, especially pe
 
 I hope to collaborate with the United Nations to make offline AI freely available to people in the world's poorest countries, helping expand equitable access to AI while strengthening resilience, digital inclusion, and humanitarian response in regions where conventional online AI services are often unavailable or unreliable.
 
-The United Nations has, at times, faced operational and financial challenges due to outstanding assessed contributions from some Member States. As an architect, my strength lies in designing practical and sustainable solutions.
+The United Nations has, at times, faced operational and financial challenges due to outstanding assessed contributions from some Member States. [As an architect](https://mcorpai.org/), my strength lies in designing practical and sustainable solutions.
 
 I would like to share a proposal that I believe could contribute to building a stronger, more resilient, and financially sustainable United Nations. My hope is to work alongside the United Nations and other international organizations in support of the world's poorest and most vulnerable communities.
 
