@@ -1,4 +1,4 @@
-**True creation always begins outside the boundaries of the established. — Morgan J.**
+**True creation always begins outside the boundaries of the established. — [Morgan J.](https://mcorpai.org/)**
 
 I am an [offline AI architect](https://zenodo.org/records/20319524) dedicated to developing AI systems that remain operational even under the most severe disaster scenarios, including situations where communications, networks, and critical infrastructure have been completely shut down.
 
