@@ -1,12 +1,12 @@
-**True creation always begins outside the boundaries of the established. — [Morgan J.](https://mcorpai.org/)**
+**True creation always begins outside the boundaries of the established. — Morgan J.**
 
-I am an [offline AI architect](https://zenodo.org/records/20319524) dedicated to developing AI systems that remain operational even under the most severe disaster scenarios, including situations where communications, networks, and critical infrastructure have been completely shut down.
+I am an [offline AI architect](https://mcorpai.org/) dedicated to developing AI systems that remain operational even under the most severe disaster scenarios, including situations where communications, networks, and critical infrastructure have been completely shut down.
 
 My vision is to build sovereign AI that is accessible to everyone, especially people living in the world's least developed and underserved communities. By operating entirely offline, this technology can provide resilient, privacy-preserving, and sustainable AI capabilities without requiring cloud services or continuous internet connectivity.
 
 I hope to collaborate with the United Nations to make offline AI freely available to people in the world's poorest countries, helping expand equitable access to AI while strengthening resilience, digital inclusion, and humanitarian response in regions where conventional online AI services are often unavailable or unreliable.
 
-The United Nations has, at times, faced operational and financial challenges due to outstanding assessed contributions from some Member States. [As an architect](https://mcorpai.org/), my strength lies in designing practical and sustainable solutions.
+The United Nations has, at times, faced operational and financial challenges due to outstanding assessed contributions from some Member States. As an architect, my strength lies in designing practical and sustainable solutions.
 
 I would like to share a proposal that I believe could contribute to building a stronger, more resilient, and financially sustainable United Nations. My hope is to work alongside the United Nations and other international organizations in support of the world's poorest and most vulnerable communities.
 
@@ -146,18 +146,6 @@ As a principle, the reduced funds shall be supplemented through the additional c
 | 🇬🇧 United Kingdom | Approx. USD 0.4 billion | Reduction of approx. USD 0.15 billion | Pays approx. USD 0.25 billion |
 | 🇫🇷 France | Approx. USD 0.4 billion | Reduction of approx. USD 0.15 billion | Pays approx. USD 0.25 billion |
 | 🇷🇺 Russia | Approx. USD 0.2 billion | Reduction of approx. USD 0.1 billion | Pays approx. USD 0.1 billion |
-
-### Reduction of P5 Assessed Contributions
-
-Following the implementation of the Semi-Permanent Member system, the assessed contributions of the P5 shall be substantially and structurally reduced within six years. It is recommended that the annual assessed contributions of the P5 be adjusted to approximately **USD 1 billion for the United States, USD 1 billion for China, USD 200 million for the United Kingdom, USD 200 million for France, and USD 100 million for Russia**.
-
-The total assessed contributions collected from the P5 shall be adjusted to approximately **USD 2.5 billion** and then frozen for a period of **10 years**. After the expiration of the 10-year period, the assessed contributions of the P5 shall be subject to renegotiation.
-
-While substantially reducing the assessed contributions of the P5, stricter rules shall be adopted to ensure that non-payment does not lead to a diplomatic crisis. The P5 shall continue to retain their veto power within the Security Council. However, veto power in matters outside the Security Council shall be subject to the following collective responsibility mechanism.
-
-**If any one of the P5 members fails to pay its assessed contribution by the agreed deadline, all P5 members shall collectively retain their Security Council veto powers, but the P5 as a whole shall have their veto powers in matters outside the Security Council suspended for one year.**
-
-During the suspension period, all matters outside the Security Council shall be decided by an **affirmative vote of at least 68% of the Semi-Permanent Members** until the following year.
 
 **50% of the additional contributions secured from the Semi-Permanent Members shall be mandatorily allocated to LDC and humanitarian program funds, and of the remaining funds up to 50% (based on the total additional contributions) may be used as the funding source for the contribution reductions of the existing P5 Permanent Members (depending on the UN's financial situation, the P5 contribution reduction shall be at least USD 750 million to a maximum of USD 2.38 billion per year). The rest shall be accumulated as a UN surplus (emergency fund).**
 
@@ -366,6 +354,8 @@ Through this, it seeks to enhance the representation and legitimacy of the inter
 
 The Semi-Permanent Members system is not a system for conferring privileges but a system of shared responsibility for Member States that voluntarily assume additional responsibilities and financial obligations for the sustainability of the international community. Accordingly, Semi-Permanent Members do not hold a legal status superior to that of ordinary Member States, and the principle of legal equality of all UN Member States is maintained as it is.
 
+---
+
 ## Administrative Oversight for Humanitarian Programs, Including Support for Least Developed Countries (LDCs) and Refugee Relief
 
 **A total of 22 countries shall each appoint Continental Inspectors across the world's seven continents. The role of each Continental Inspector is to audit whether budgets are administered transparently and, if funds are found to have been diverted to improper purposes such as criminal proceeds, to initiate prosecution under international law. The Inspectors shall not interfere with how humanitarian programs, including assistance for Least Developed Countries (LDCs) and refugee relief, are carried out, but they shall oversee whether the allocated budgets are being used properly. Each Inspector shall serve a one-year term, with appointments rotating in sequence. The order of rotation shall be determined by the amount of assessed contributions paid, with the highest contributing countries serving first. Even countries making the lowest contributions shall still serve as Inspectors, although later in the rotation.**
@@ -385,3 +375,52 @@ The Semi-Permanent Members system is not a system for conferring privileges but 
 **Reason for Indefinite Waiting Status Even After Being Cleared:**
 
 **A final acquittal is sincerely welcomed. However, becoming entangled in such a serious controversy has already caused significant damage to the reputation of the United Nations and wasted valuable administrative resources. The consequence is indefinite Observer status. If, in the future, another Member State loses its membership due to Moral Bankruptcy, the Observer State may once again become eligible for Semi-Permanent Membership.**
+
+---
+
+## Exception Clause: Exercise of the Right of Self-Defense by Semi-Permanent Members Outside the Security Council
+
+**If any of the 22 Semi-Permanent Members becomes involved in a war as a victim of aggression rather than as an aggressor state, its assessed contributions shall be suspended indefinitely, and payment shall be deferred for five years following the end of the conflict. Its status as a Semi-Permanent Member and its voting rights shall remain unchanged. Semi-Permanent Members shall deal exclusively with matters outside the jurisdiction of the Security Council. Immediately upon the outbreak of war, unlimited civilian humanitarian supplies shall be provided free of charge and without conditions to the victim of aggression. Such assistance shall receive the highest priority and may be funded up to 50% of the UN Emergency Fund, which is financed through the additional assessed contributions of the Semi-Permanent Members. Upon request by the victim of aggression, unarmed civilian volunteer teams may be dispatched to assist with wartime recovery and post-war reconstruction. The Non-Security Council may also adopt resolutions strongly condemning the aggressor state and imposing economic and trade sanctions. In addition, it shall urge the P5 to convene the Security Council without delay.**
+
+**Whether the state concerned qualifies as a "genuine victim of aggression" that did not initiate hostilities shall, in the first instance, be determined by the five-member Mediation Committee. Where appropriate, Nobel Peace Prize laureates and internationally respected humanitarian figures, including former United Nations High Commissioners for Human Rights, may be invited to convene a peace conference in Vatican City. A state claiming to be a genuine victim of aggression may appoint representatives and dispatch a delegation to Vatican City. Upon the outbreak of war, the five small-state Mediation Committee shall, on the basis of objective data analysis, immediately grant provisional "Victim of Aggression" status within 48 hours in order to begin emergency assistance. The final and permanent determination of victim-of-aggression status, as well as the formal condemnation of the aggressor state, shall be decided through the Vatican Peace Conference.**
+
+### Article 1. Automatic Trigger of the Right of Collective Defense Without a Vote
+
+Upon the commencement of a **clear armed attack or military invasion** against the territory or sovereignty of a Semi-Permanent Member, this clause shall enter into force immediately and automatically without requiring authorization by the Security Council or any additional political vote by the 22 Semi-Permanent Members. This mechanism constitutes the highest-priority and absolute exercise of the collective right of defense by the Semi-Permanent Members and shall not be delayed by diplomatic lobbying or the exercise of the P5 veto.
+
+### Article 2. Immediate Asset Freeze and Economic Shutdown by the Alliance of 22 States
+
+Immediately upon activation of this clause, the 22 Semi-Permanent Members shall impose a comprehensive trade embargo, including a complete prohibition on imports and exports, against the aggressor state and disconnect it from international financial settlement systems. They shall also immediately freeze and seize all assets under their jurisdiction belonging to the aggressor state's government, central bank, sovereign wealth funds, and related institutions.
+
+### Article 3. Declaration of Moral Bankruptcy and Mandatory Conversion of Debts into Escrow
+
+An act of aggression shall constitute a serious violation of international law and shall be recognized as an act of **Moral Bankruptcy**. Accordingly, all payments of principal, interest, sovereign debt obligations, and trade receivables owed by the governments and private enterprises of the 22 Semi-Permanent Members to the aggressor state shall be suspended permanently.
+
+However, this measure shall not constitute a default. Rather, it shall serve as a lawful mechanism for offsetting war reparations. All amounts otherwise payable shall instead be compulsorily deposited into a **UN-designated Escrow Account dedicated exclusively to compensation for the victim of aggression.**
+
+### Article 4. Principle of "Compensation First, Debt Settlement Second" Under the Hague Conventions
+
+Until the aggressor state has fully paid war reparations to the victim of aggression and fulfilled its obligations for post-war peace and reconstruction in accordance with the **Hague Conventions** and other applicable rules of international law, all capital and debt payments held in escrow shall be compulsorily allocated to finance the victim state's military defense, humanitarian relief supplies provided free of charge, and post-war national reconstruction.
+
+Only after the aggressor state has completely fulfilled its reparations obligations to the victim of aggression and withdrawn its military forces may the remaining frozen assets be released and normal debt repayment procedures resume.
+
+### Article 5. Inviolability of Sovereignty and the Perpetual Preservation of Statehood
+
+**Section 1. Non-Recognition of the Extinction of Statehood Through Physical Annexation**
+
+Even if a Member State that has obtained Semi-Permanent Member status temporarily loses control of its territory or is physically annexed as a result of an unlawful armed attack or military occupation by another state, the legal sovereignty of that state and its status as a Semi-Permanent Member under international law and this Resolution shall never be extinguished.
+
+**Section 2. Full Preservation of Authority and Succession by the Government-in-Exile**
+
+The legitimate government-in-exile or any lawful authority acting on behalf of the victim of aggression shall permanently succeed to and exercise, without even a 1% reduction or suspension, all diplomatic rights, privileges, status, seats, and benefits guaranteed under this Resolution, including the inherent voting rights of a Semi-Permanent Member.
+
+**Section 3. Full Waiver of Financial Obligations Until the Restoration of Sovereignty**
+
+In recognition of the extraordinary financial circumstances of a Member State whose territory has been unlawfully seized, the victim of aggression shall be granted a full and indefinite waiver of all annual UN assessed contributions and all additional Semi-Permanent Member contributions (+α) until its territory and sovereignty have been fully restored and normal governmental functions have resumed.
+
+This waiver shall remain in effect until five years after the official declaration confirming the complete restoration of the state's sovereignty.
+
+In recognition of the extraordinary financial circumstances of a Member State whose territory has been unlawfully seized, the victim of aggression shall be granted a full and indefinite waiver of all annual UN assessed contributions and all additional Semi-Permanent Member contributions (+α) until its territory and sovereignty have been fully restored and normal governmental functions have resumed.
+
+This waiver shall remain in effect until five years after the official declaration confirming the complete restoration of the state's sovereignty.
+
