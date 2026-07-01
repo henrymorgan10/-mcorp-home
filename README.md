@@ -147,6 +147,18 @@ As a principle, the reduced funds shall be supplemented through the additional c
 | 🇫🇷 France | Approx. USD 0.4 billion | Reduction of approx. USD 0.15 billion | Pays approx. USD 0.25 billion |
 | 🇷🇺 Russia | Approx. USD 0.2 billion | Reduction of approx. USD 0.1 billion | Pays approx. USD 0.1 billion |
 
+### Reduction of P5 Assessed Contributions
+
+Following the implementation of the Semi-Permanent Member system, the assessed contributions of the P5 shall be substantially and structurally reduced within six years. It is recommended that the annual assessed contributions of the P5 be adjusted to approximately **USD 1 billion for the United States, USD 1 billion for China, USD 200 million for the United Kingdom, USD 200 million for France, and USD 100 million for Russia**.
+
+The total assessed contributions collected from the P5 shall be adjusted to approximately **USD 2.5 billion** and then frozen for a period of **10 years**. After the expiration of the 10-year period, the assessed contributions of the P5 shall be subject to renegotiation.
+
+While substantially reducing the assessed contributions of the P5, stricter rules shall be adopted to ensure that non-payment does not lead to a diplomatic crisis. The P5 shall continue to retain their veto power within the Security Council. However, veto power in matters outside the Security Council shall be subject to the following collective responsibility mechanism.
+
+**If any one of the P5 members fails to pay its assessed contribution by the agreed deadline, all P5 members shall collectively retain their Security Council veto powers, but the P5 as a whole shall have their veto powers in matters outside the Security Council suspended for one year.**
+
+During the suspension period, all matters outside the Security Council shall be decided by an **affirmative vote of at least 68% of the Semi-Permanent Members** until the following year.
+
 **50% of the additional contributions secured from the Semi-Permanent Members shall be mandatorily allocated to LDC and humanitarian program funds, and of the remaining funds up to 50% (based on the total additional contributions) may be used as the funding source for the contribution reductions of the existing P5 Permanent Members (depending on the UN's financial situation, the P5 contribution reduction shall be at least USD 750 million to a maximum of USD 2.38 billion per year). The rest shall be accumulated as a UN surplus (emergency fund).**
 
 **Stage 1 ── Relief for vulnerable populations worldwide (mandatory allocation of 50%)**
