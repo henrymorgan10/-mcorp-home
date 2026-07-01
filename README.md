@@ -1,6 +1,6 @@
 **True creation always begins outside the boundaries of the established. — Morgan J.**
 
-I am an [offline AI architect]([https://mcorpai.org/](https://zenodo.org/records/20319524)) dedicated to developing AI systems that remain operational even under the most severe disaster scenarios, including situations where communications, networks, and critical infrastructure have been completely shut down.
+I am an [[offline AI architect]([https://mcorpai.org/](https://zenodo.org/records/20319524))](https://zenodo.org/records/20319524) dedicated to developing AI systems that remain operational even under the most severe disaster scenarios, including situations where communications, networks, and critical infrastructure have been completely shut down.
 
 My vision is to build sovereign AI that is accessible to everyone, especially people living in the world's least developed and underserved communities. By operating entirely offline, this technology can provide resilient, privacy-preserving, and sustainable AI capabilities without requiring cloud services or continuous internet connectivity.
 
