@@ -6,6 +6,8 @@ I am an [offline AI architect](https://mcorpai.org/) dedicated to developing AI 
 
 **Sometimes the world is shaped by unknown architects, because they act without selfish motives.**
 
+**I have a proposal that may help address some of the challenges facing the United Nations. Feel free to read it if you're curious. Whenever you have a tea break, I'd greatly appreciate it if you could take a moment to read it. ☕**
+
 My vision is to build sovereign AI that is accessible to everyone, especially people living in the world's least developed and underserved communities. By operating entirely offline, this technology can provide resilient, privacy-preserving, and sustainable AI capabilities without requiring cloud services or continuous internet connectivity.
 
 I hope to collaborate with the United Nations to make offline AI freely available to people in the world's poorest countries, helping expand equitable access to AI while strengthening resilience, digital inclusion, and humanitarian response in regions where conventional online AI services are often unavailable or unreliable.
