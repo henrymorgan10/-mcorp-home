@@ -6,7 +6,15 @@ I am an [offline AI architect](https://mcorpai.org/) dedicated to developing AI 
 
 **Sometimes the world is shaped by unknown architects, because they act without selfish motives.**
 
-**I have a proposal that may help address some of the challenges facing the United Nations. Feel free to read it if you're curious. Whenever you have a tea break, I'd greatly appreciate it if you could take a moment to read it. ☕ I have strong design and systems-thinking skills. Let me show you what I mean in just five minutes.**
+**I have a proposal that may help address some of the challenges facing the United Nations. Feel free to read it if you're curious. Whenever you have a tea break, I'd greatly appreciate it if you could take a moment to read it. I have strong design and systems-thinking skills. Let me show you what I mean in just five minutes.**
+
+If you are a think tank researcher, I sincerely hope you will take the time to examine my proposal for reforming the United Nations in detail.
+
+The proposal presents an approach that could reduce the risk of war in Northeast Asia, including on the Korean Peninsula, while allowing the United States to maintain its influence within the UN and reduce its financial contributions by nearly 60%.
+
+The United States currently contributes billions of dollars to the UN each year. My proposal aims to strengthen the UN while significantly lowering the U.S. financial burden.
+
+**Most importantly, it offers a path by which the United States could help promote peace while reducing government spending—without requiring additional expenditure.**
 
 My vision is to build sovereign AI that is accessible to everyone, especially people living in the world's least developed and underserved communities. By operating entirely offline, this technology can provide resilient, privacy-preserving, and sustainable AI capabilities without requiring cloud services or continuous internet connectivity.
 
