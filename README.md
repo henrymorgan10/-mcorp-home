@@ -472,5 +472,5 @@ Some may initially view the name as bold or even reminiscent of science fiction.
 
 The name THOR-22 is intended not to symbolize military power, but to represent strength in protecting peace, responsibility, and international cooperation.
 
-Like many successful international initiatives, the framework is designed to be easily recognizable and adaptable. Through white-label implementation, individual organizations or regional institutions may adopt the framework while tailoring its presentation to their own cultural and operational contexts, without changing its core principles.
+**Like many successful international initiatives, the framework is designed to be easily recognizable and adaptable. Through white-label implementation, individual organizations or regional institutions may adopt the framework while tailoring its presentation to their own cultural and operational contexts, without changing its core principles**
 
