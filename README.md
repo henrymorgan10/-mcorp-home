@@ -522,3 +522,7 @@ The name THOR-22 is intended not to symbolize military power, but to represent s
 * **Israel** 
 * **Iran** 
 * **Türkiye** 
+
+---
+
+**UN Semi-Permanent Members Proposal — By Morgan J., Architect (UN ver 13.8)**
