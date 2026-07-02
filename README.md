@@ -8,7 +8,7 @@ I am an [offline AI architect](https://mcorpai.org/) dedicated to developing AI 
 
 **I have a proposal that may help address some of the challenges facing the United Nations. Feel free to read it if you're curious. Whenever you have a tea break, I'd greatly appreciate it if you could take a moment to read it. I have strong design and systems-thinking skills. Let me show you what I mean in just five minutes.**
 
-If you are a think tank researcher, I sincerely hope you will take the time to examine my proposal for reforming the United Nations in detail.
+### If you are a think tank researcher, I sincerely hope you will take the time to examine my proposal for reforming the United Nations in detail.
 
 The proposal presents an approach that could reduce the risk of war in Northeast Asia, including on the Korean Peninsula, while allowing the United States to maintain its influence within the UN and reduce its financial contributions by nearly 60%.
 
