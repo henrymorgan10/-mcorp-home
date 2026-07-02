@@ -28,7 +28,7 @@ The United Nations has, at times, faced operational and financial challenges due
 
 **Presenting the 'UN V13.8' Architectural Blueprint, aimed at restructuring the UN's outdated framework that has remained unchanged since 1945.**
 
-**The United Nations currently finds itself in a chronic crisis due to outstanding assessed contributions from key Member States. Furthermore, even routine administrative functions outside the Security Council frequently stall due to recurring veto bottlenecks. This reform proposal serves as a system reset to empower the UN with fiscal stability and decisive administrative execution.**
+The United Nations currently finds itself in a chronic crisis due to outstanding assessed contributions from key Member States. Furthermore, even routine administrative functions outside the Security Council frequently stall due to recurring veto bottlenecks. This reform proposal serves as a system reset to empower the UN with fiscal stability and decisive administrative execution.
 
 I welcome your rigorous critiques and collaborative "patch" ideas to further fortify this architecture.
 
