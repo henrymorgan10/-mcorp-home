@@ -4,9 +4,10 @@
 
 ## Partnerships: [mcorpai.org](https://mcorpai.org/) — This will be our most successful partnership.
 
+### Discover What I Stand For
 **Showing respect begins with taking the time to understand your potential partner. It takes no more than 10 minutes to browse their website, yet those 10 minutes can lay the foundation for one of the strongest and most productive partnerships we will ever build.**
 
-### For partnership and collaboration inquiries:
+## For partnership and collaboration inquiries:
 
 [M-Corp AI Contact Page](https://mcorpai.org/#contact)
 
