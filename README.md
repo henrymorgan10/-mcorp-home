@@ -28,8 +28,6 @@ I would like to share a proposal that I believe could contribute to building a s
 
 This proposal is offered as a public resource. Anyone is welcome to use, share, adapt, and distribute it free of charge for the benefit of the international community.
 
-**Freedom of the human spirit and freedom of expression are the greatest strengths of a strong United Nations.**
-
 **A strong United Nations is the foundation of lasting peace. It should never be held back by financial uncertainty.**
 
 <img width="168" height="119" alt="1" src="https://raw.githubusercontent.com/henrymorgan10/mcorpai-org/main/UN.PNG" />
