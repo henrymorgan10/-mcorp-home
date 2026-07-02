@@ -12,10 +12,6 @@ I have a proposal that may help address some of the challenges facing the United
 
 The proposal presents an approach that could reduce the risk of war in Northeast Asia, including on the Korean Peninsula, while allowing the United States to maintain its influence within the UN and reduce its financial contributions by nearly 60%.
 
-The United States currently contributes billions of dollars to the UN each year. My proposal aims to strengthen the UN while significantly lowering the U.S. financial burden.
-
-**Most importantly, it offers a path by which the United States could help promote peace while reducing government spending—without requiring additional expenditure.**
-
 ## Why I Became Interested in the United Nations
 
 My vision is to build sovereign AI that is accessible to everyone, especially people living in the world's least developed and underserved communities. By operating entirely offline, this technology can provide resilient, privacy-preserving, and sustainable AI capabilities without requiring cloud services or continuous internet connectivity.
