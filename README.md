@@ -525,4 +525,6 @@ The name THOR-22 is intended not to symbolize military power, but to represent s
 
 ---
 
+**A UN Reform Plan That Satisfies Every Country 70% — The First in History**
+
 **UN Semi-Permanent Members Proposal — By Morgan J., Architect (UN ver 13.8)**
