@@ -455,6 +455,6 @@ This waiver shall remain in effect until five years after the official declarati
 # THOR-22 Framework
 ## Transparency, Humanitarian Oversight and Responsibility
 
-<img width="330" height="343" alt="Thor" src="https://github.com/user-attachments/assets/1d35c134-b887-40f2-9131-2f47d2a821e3" />
+<img width="198" height="205" alt="Thor" src="https://github.com/user-attachments/assets/1d35c134-b887-40f2-9131-2f47d2a821e3" />
 
 
