@@ -452,3 +452,9 @@ In recognition of the extraordinary financial circumstances of a Member State wh
 
 This waiver shall remain in effect until five years after the official declaration confirming the complete restoration of the state's sovereignty.
 
+# THOR-22 Framework
+## Transparency, Humanitarian Oversight and Responsibility
+
+<img width="330" height="343" alt="Thor" src="https://github.com/user-attachments/assets/1d35c134-b887-40f2-9131-2f47d2a821e3" />
+
+
