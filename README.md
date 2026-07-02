@@ -30,7 +30,7 @@ The United Nations has, at times, faced operational and financial challenges due
 
 The United Nations currently finds itself in a chronic crisis due to outstanding assessed contributions from key Member States. Furthermore, even routine administrative functions outside the Security Council frequently stall due to recurring veto bottlenecks. This reform proposal serves as a system reset to empower the UN with fiscal stability and decisive administrative execution.
 
-I welcome your rigorous critiques and collaborative "patch" ideas to further fortify this architecture.
+### I welcome your rigorous critiques and collaborative "patch" ideas to further fortify this architecture.
 
 Semi-Permanent Member status does not signify a position superior to that of ordinary Member States.
 Semi-Permanent Members are "Responsible Member States" that assume additional obligations in order to more actively share the UN's financial stability and international responsibilities, and they are granted correspondingly limited participation rights.
