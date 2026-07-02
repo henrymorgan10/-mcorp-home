@@ -479,7 +479,7 @@ The name THOR-22 is intended not to symbolize military power, but to represent s
 
 
 ## Nicknamed "THOR-22" (Can Be White-Labeled)
-### Transparency, Humanitarian Oversight and Responsibility
+### Transparency, Humanitarian Oversight and Responsibility — 22 Nations
 
 ### North America 
 
