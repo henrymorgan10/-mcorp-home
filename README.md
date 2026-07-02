@@ -465,6 +465,8 @@ If the new consultative body were simply named after its institutional status, s
 
 For this reason, I propose a distinct identity:
 
+### THOR-22 Framework (Transparency, Humanitarian Oversight and Responsibility)
+
 Rather than emphasizing institutional hierarchy, this name highlights the values and responsibilities that define the new framework: transparency, humanitarian commitment, effective oversight, and shared responsibility.
 
 Some may initially view the name as bold or even reminiscent of science fiction. However, every successful international initiative has benefited from a memorable identity. Strong branding helps people understand, remember, and support an idea. A framework that inspires public interest is also more likely to attract broader international participation, stronger political support, and greater financial commitment from Member States.
