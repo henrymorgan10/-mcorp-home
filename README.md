@@ -1,4 +1,4 @@
-# A UN Reform Plan That Satisfies Every Country 70% — The First in History
+## A UN Reform Plan That Satisfies Every Country 70% — The First in History
 
 Today, the United Nations is facing more than simple administrative difficulties; it is experiencing a structural crisis. One of the most serious problems is the imbalance between financial responsibility and decision-making power. While each member state’s contribution to the UN regular budget is determined based on its economic capacity and ability to pay, actual decision-making power remains concentrated in the hands of the permanent members of the Security Council. As a result, countries such as the United States and China, which shoulder a large share of the financial burden, demand greater influence over the direction of UN operations. At the same time, major contributors such as Japan and Germany have long expressed dissatisfaction with the fact that, despite their significant financial contributions, they still do not hold permanent seats on the Security Council.
 
