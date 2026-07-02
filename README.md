@@ -34,7 +34,7 @@ This proposal is offered as a public resource. Anyone is welcome to use, share, 
 
 <img width="168" height="119" alt="1" src="https://raw.githubusercontent.com/henrymorgan10/mcorpai-org/main/UN.PNG" />
 
-# For a Stronger United Nations
+# This is a rough draft for a stronger United Nations.
 ## UN Semi-Permanent Members Proposal — By Morgan J., Architect (ROK)
 ### Proposal Background: A Stronger United Nations Begins with a Stable and Responsible Financial Foundation.
 
