@@ -466,7 +466,7 @@ If the new consultative body were simply named after its institutional status, s
 For this reason, I propose a distinct identity:
 
 **THOR-22 Framework**
-**Transparency, Humanitarian Oversight and Responsibility**
+**It is simply a symbolic image, and the noble principles it represents should not be judged or diminished because of its appearance.**
 
 Rather than emphasizing institutional hierarchy, this name highlights the values and responsibilities that define the new framework: transparency, humanitarian commitment, effective oversight, and shared responsibility.
 
