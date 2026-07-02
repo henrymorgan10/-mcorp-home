@@ -38,6 +38,12 @@ This proposal is offered as a public resource. Anyone is welcome to use, share, 
 ## UN Semi-Permanent Members Proposal — By Morgan J., Architect (UN ver 13.8)
 ### Proposal Background: A Stronger United Nations Begins with a Stable and Responsible Financial Foundation.
 
+**Presenting the 'UN V13.8' Architectural Blueprint, aimed at restructuring the UN's outdated framework that has remained unchanged since 1945.**
+
+**The United Nations currently finds itself in a chronic crisis due to outstanding assessed contributions from key Member States. Furthermore, even routine administrative functions outside the Security Council frequently stall due to recurring veto bottlenecks. This reform proposal serves as a system reset to empower the UN with fiscal stability and decisive administrative execution.**
+
+I welcome your rigorous critiques and collaborative "patch" ideas to further fortify this architecture.
+
 Semi-Permanent Member status does not signify a position superior to that of ordinary Member States.
 Semi-Permanent Members are "Responsible Member States" that assume additional obligations in order to more actively share the UN's financial stability and international responsibilities, and they are granted correspondingly limited participation rights.
 The principle of legal equality of all UN Member States is maintained as it is.
