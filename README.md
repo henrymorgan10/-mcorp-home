@@ -457,4 +457,20 @@ This waiver shall remain in effect until five years after the official declarati
 
 <img width="198" height="205" alt="Thor" src="https://raw.githubusercontent.com/henrymorgan10/mcorpai-org/main/Thor.PNG" />
 
+The official name of the existing UN Security Council body is the Permanent Members, commonly known by the abbreviation P5.
+
+If the new consultative body were simply named after its institutional status, such as Semi-Permanent Members (SP-22), it would inevitably be perceived as merely a subordinate extension of the existing P5 structure.
+
+For this reason, I propose a distinct identity:
+
+**THOR-22 Framework**
+**Transparency, Humanitarian Oversight and Responsibility**
+
+Rather than emphasizing institutional hierarchy, this name highlights the values and responsibilities that define the new framework: transparency, humanitarian commitment, effective oversight, and shared responsibility.
+
+Some may initially view the name as bold or even reminiscent of science fiction. However, every successful international initiative has benefited from a memorable identity. Strong branding helps people understand, remember, and support an idea. A framework that inspires public interest is also more likely to attract broader international participation, stronger political support, and greater financial commitment from Member States.
+
+The name THOR-22 is intended not to symbolize military power, but to represent strength in protecting peace, responsibility, and international cooperation.
+
+Like many successful international initiatives, the framework is designed to be easily recognizable and adaptable. Through white-label implementation, individual organizations or regional institutions may adopt the framework while tailoring its presentation to their own cultural and operational contexts, without changing its core principles.
 
