@@ -506,7 +506,7 @@ The name THOR-22 is intended not to symbolize military power, but to represent s
 
 ### Oceania
 
-* **Australia** (If Australia refuses to participate as a Semi-Permanent Member, New Zealand.)
+* **Australia**
 
 ### Africa 
 
