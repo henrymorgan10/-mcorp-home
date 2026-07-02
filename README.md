@@ -476,3 +476,45 @@ The name THOR-22 is intended not to symbolize military power, but to represent s
 
 **Like many successful international initiatives, the framework is designed to be easily recognizable and adaptable. Through white-label implementation, individual organizations or regional institutions may adopt the framework while tailoring its presentation to their own cultural and operational contexts, without changing its core principles**
 
+
+## North America 
+
+* **Canada** 
+
+## Europe 
+
+* **Germany** 
+* **Italy** 
+* **Spain** 
+
+## Asia 
+
+* **India** 
+* **Japan** 
+* **Republic of Korea** 
+* **Pakistan** 
+* **Indonesia** 
+* **2 Southeast Asian states** (Candidate pool: Vietnam, Malaysia, Thailand, the Philippines.)
+
+## South America 
+
+* **Brazil** 
+* **Mexico** 
+* **Argentina** 
+
+## Oceania
+
+* **Australia** (If Australia refuses to participate as a Semi-Permanent Member, New Zealand.)
+
+## Africa 
+
+* **Republic of South Africa**
+* **Egypt** 
+* **Nigeria** 
+
+## Middle East (Can be white-labeled.)
+
+* **Saudi Arabia** 
+* **Israel** 
+* **Iran** 
+* **Türkiye** 
