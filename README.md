@@ -18,10 +18,6 @@ I hope to collaborate with the United Nations to make offline AI freely availabl
 
 The United Nations has, at times, faced operational and financial challenges due to outstanding assessed contributions from some Member States. As an architect, my strength lies in designing practical and sustainable solutions.
 
-I would like to share a proposal that I believe could contribute to building a stronger, more resilient, and financially sustainable United Nations. My hope is to work alongside the United Nations and other international organizations in support of the world's poorest and most vulnerable communities.
-
-This proposal is offered as a public resource. Anyone is welcome to use, share, adapt, and distribute it free of charge for the benefit of the international community.
-
 **A strong United Nations is the foundation of lasting peace. It should never be held back by financial uncertainty.**
 
 <img width="168" height="119" alt="1" src="https://raw.githubusercontent.com/henrymorgan10/mcorpai-org/main/UN.PNG" />
