@@ -2,6 +2,15 @@
 
 [![OTF Security Lab Audited](https://img.shields.io/badge/OTF_Security_Lab-Audited-blue?style=for-the-badge&logo=shield&logoColor=white)](https://www.opentech.fund/)
 
+**Do you actually know who I am?** If not, I'm curious why you would consider sponsoring or collaborating with me.
+
+I am a citizen of the Republic of Korea (South Korea). As you may know, the Korean Peninsula is divided into North and South Korea, and there have been cases where North Koreans have impersonated South Koreans or attempted to establish relationships under false identities.
+
+If you would like to know who I am, I recommend that you first visit **[mcorpai.org](https://mcorpai.org/)**. Please verify that I am not affiliated with North Korea before contacting me.
+
+I am a South Korean citizen. Can you trust that claim? Rather than taking my word for it, I encourage you to verify my background by reviewing the information available on **[mcorpai.org](https://mcorpai.org/)**. You can also perform a WHOIS lookup for the domain to see who manages and owns it. I believe this is a reasonable and responsible verification process before initiating any sponsorship or collaboration.
+
+
 ## Partnerships: [mcorpai.org](https://mcorpai.org/) — This will be our most successful partnership.
 
 ### Discover What I Stand For
