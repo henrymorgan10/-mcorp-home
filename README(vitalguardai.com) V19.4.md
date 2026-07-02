@@ -1,4 +1,4 @@
-**The OTF is currently being reviewed. This note is for reference only.**
+### The OTF is currently being reviewed. This note is for reference only.
 
 [![OTF Security Lab Audited](https://img.shields.io/badge/OTF_Security_Lab-Audited-blue?style=for-the-badge&logo=shield&logoColor=white)](https://www.opentech.fund/)
 
