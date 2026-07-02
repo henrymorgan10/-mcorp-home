@@ -457,16 +457,13 @@ This waiver shall remain in effect until five years after the official declarati
 
 <img width="198" height="205" alt="Thor" src="https://raw.githubusercontent.com/henrymorgan10/mcorpai-org/main/Thor.PNG" />
 
-**It is only a symbolic image. The noble values it represents should never be diminished.**
+**It is simply a symbolic image, and the noble principles it represents should not be judged or diminished because of its appearance.**
 
 The official name of the existing UN Security Council body is the Permanent Members, commonly known by the abbreviation P5.
 
 If the new consultative body were simply named after its institutional status, such as Semi-Permanent Members (SP-22), it would inevitably be perceived as merely a subordinate extension of the existing P5 structure.
 
 For this reason, I propose a distinct identity:
-
-**THOR-22 Framework**
-**It is simply a symbolic image, and the noble principles it represents should not be judged or diminished because of its appearance.**
 
 Rather than emphasizing institutional hierarchy, this name highlights the values and responsibilities that define the new framework: transparency, humanitarian commitment, effective oversight, and shared responsibility.
 
