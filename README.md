@@ -14,8 +14,6 @@ The proposal presents an approach that could reduce the risk of war in Northeast
 
 ## Why I Became Interested in the United Nations
 
-My vision is to build sovereign AI that is accessible to everyone, especially people living in the world's least developed and underserved communities. By operating entirely offline, this technology can provide resilient, privacy-preserving, and sustainable AI capabilities without requiring cloud services or continuous internet connectivity.
-
 I hope to collaborate with the United Nations to make offline AI freely available to people in the world's poorest countries, helping expand equitable access to AI while strengthening resilience, digital inclusion, and humanitarian response in regions where conventional online AI services are often unavailable or unreliable.
 
 The United Nations has, at times, faced operational and financial challenges due to outstanding assessed contributions from some Member States. As an architect, my strength lies in designing practical and sustainable solutions.
