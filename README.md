@@ -176,7 +176,7 @@ As a principle, the reduced funds shall be supplemented through the additional c
 | 🇷🇺 Russia | Approx. USD 0.2 billion | Reduction of approx. USD 0.1 billion | Pays approx. USD 0.1 billion | **USD 0.1 billion** |
 | **Total** | — | — | — | **USD 2.1 billion** |
 
-## The final target is to be achieved within 10 years of the implementation of the Semi-Permanent Member system.
+### The final target is to be achieved within 10 years of the implementation of the Semi-Permanent Member system.
 
 **50% of the additional contributions secured from the Semi-Permanent Members shall be mandatorily allocated to LDC and humanitarian program funds, and of the remaining funds up to 50% (based on the total additional contributions) may be used as the funding source for the contribution reductions of the existing P5 Permanent Members (depending on the UN's financial situation, the P5 contribution reduction shall be at least USD 750 million to a maximum of USD 2.38 billion per year). The rest shall be accumulated as a UN surplus (emergency fund).**
 
