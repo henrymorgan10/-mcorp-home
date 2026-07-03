@@ -167,13 +167,14 @@ As a principle, the reduced funds shall be supplemented through the additional c
 ## Core principle: the more you pay, the greater the reduction.
 ### Examples of the Scope of Reduction
 
-| State | Existing Contribution (example) | Scope of Reduction (example) | Final Contribution (example) |
-|:-----|------------:|----------------:|------------------:|
-| 🇺🇸 United States | Approx. USD 2.2–2.3 billion | Reduction of approx. USD 0.5–1.1 billion | Pays approx. USD 1.8 billion – 1.1 billion |
-| 🇨🇳 China | Approx. USD 1.7 billion | Reduction of approx. USD 0.3–0.9 billion | Pays approx. USD 1.4 billion – 0.8 billion |
-| 🇬🇧 United Kingdom | Approx. USD 0.4 billion | Reduction of approx. USD 0.15 billion | Pays approx. USD 0.25 billion |
-| 🇫🇷 France | Approx. USD 0.4 billion | Reduction of approx. USD 0.15 billion | Pays approx. USD 0.25 billion |
-| 🇷🇺 Russia | Approx. USD 0.2 billion | Reduction of approx. USD 0.1 billion | Pays approx. USD 0.1 billion |
+| State | Existing Contribution (example) | Scope of Reduction (example) | Final Contribution (example) | Final Target |
+|:-----|------------:|----------------:|------------------:|----------------:|
+| 🇺🇸 United States | Approx. USD 2.2–2.3 billion | Reduction of approx. USD 0.5–1.1 billion | Pays approx. USD 1.8 billion – 1.1 billion | **USD 0.9 billion** |
+| 🇨🇳 China | Approx. USD 1.7 billion | Reduction of approx. USD 0.3–0.9 billion | Pays approx. USD 1.4 billion – 0.8 billion | **USD 0.8 billion** |
+| 🇬🇧 United Kingdom | Approx. USD 0.4 billion | Reduction of approx. USD 0.15 billion | Pays approx. USD 0.25 billion | **USD 0.15 billion** |
+| 🇫🇷 France | Approx. USD 0.4 billion | Reduction of approx. USD 0.15 billion | Pays approx. USD 0.25 billion | **USD 0.15 billion** |
+| 🇷🇺 Russia | Approx. USD 0.2 billion | Reduction of approx. USD 0.1 billion | Pays approx. USD 0.1 billion | **USD 0.1 billion** |
+| **Total** | — | — | — | **USD 2.1 billion** |
 
 **50% of the additional contributions secured from the Semi-Permanent Members shall be mandatorily allocated to LDC and humanitarian program funds, and of the remaining funds up to 50% (based on the total additional contributions) may be used as the funding source for the contribution reductions of the existing P5 Permanent Members (depending on the UN's financial situation, the P5 contribution reduction shall be at least USD 750 million to a maximum of USD 2.38 billion per year). The rest shall be accumulated as a UN surplus (emergency fund).**
 
