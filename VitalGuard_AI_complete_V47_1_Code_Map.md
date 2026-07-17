@@ -7,26 +7,6 @@ Copyright (c) 2026 Morgan J. (Gyu-min Jeon) — Licensed under the Apache Licens
 
 ---
 
-## 0. Release identity
-
-| Property | Final value |
-|---|---|
-| File size | **612,237 bytes** |
-| Lines | **11,582** |
-| Whole-file SHA-256 | `650b2cf89f029f36ba1e8e728178efda4c17e4cb1d0b9fd985119806013319c7` |
-| Early hardening script SHA-256, base64 | `UR7KMZpyZYRVtvDg538WL5H+lw2WF1fu9rRUU2N4hPA=` |
-| Main application script SHA-256, base64 | `h58tQjNaPPzOCv520VVG6dBmTBbNGYqhx0s4sqqsaDk=` |
-| Stylesheet SHA-256, base64 | `4L8r+PuvQvTXiLjEyR/lOlpjl+aUSyJJCFZp4ff/T1A=` |
-| `APP_VERSION` | `4.7.1` |
-| Database compatibility name | `VitalGuardAI_V41` |
-| Database version | `2` |
-| Local-storage compatibility prefix | `vg41_` |
-| License | Apache-2.0; embedded Project Nayuki QR generator retains its MIT notice |
-
-All inline-resource hashes were recalculated from the exact final bytes, written into both applicable CSP directives, then independently recalculated after the completed file was written. The detached whole-file hash must be distributed through an independent trusted channel; it is not a digital signature.
-
----
-
 ## 1. Release policy — version-relabel remap (no logic change)
 
 V4.7.1 is a **version-relabel and documentation remap** of the **V4.6.9** audited baseline. All security control logic, defenses, ordering, and runtime behavior are **byte-for-byte identical to V4.6.9 inside every executable block except for displayed version strings**. Nothing was added, removed, weakened, or reordered.
