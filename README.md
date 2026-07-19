@@ -1,6 +1,306 @@
-## A UN Reform Plan That Satisfies Every Country 70% — The First in History
+### My Creativity and Freedom of Expression
 
-### A UN reform plan that satisfies everyone 100% does not exist in the real world. 
+**Many international organizations rely heavily on the United Nations. When the UN struggles, they also struggle, making it difficult to respond effectively to global challenges such as climate change, support for children with disabilities, and refugee crises.**
+
+**Major powers often face conflicting interests when pursuing UN reform. An independent citizen, however, can propose creative and neutral reform ideas without being constrained by geopolitical interests.**
+
+**Sometimes, a creative individual may have ideas that could contribute to solving the challenges of UN reform.**
+
+# The Most Viable UN Reform Proposal
+## This proposal is approximately 10 A4 pages long.
+
+**To clearly explain why the United Nations is necessary, we need a story. What matters most is humanism.**
+
+**What earned me recognition from OTF was a combination of bold originality and fearless, unconventional thinking. I have also been recognized by the United States for my abilities. If we work together, I believe we can build a better world by seeing possibilities that others often overlook.**
+
+![Internet Freedom](https://img.shields.io/badge/Internet%20Freedom-2e7d32?style=for-the-badge&logo=liberty&logoColor=white)
+[![Open Technology Fund Security Lab Audited](https://img.shields.io/static/v1?label=Independent%20U.S.%20Federal%20Agency&message=Open%20Technology%20Fund%20Security%20Lab%20Audited&color=1a365d&style=for-the-badge&logo=shield&logoColor=white)](https://mcorpai.kr/)
+
+**I mention it simply to illustrate my approach to solving complex global challenges through creativity.**
+
+I believe that creative thinking is one of the most powerful ways to improve the lives of refugees, people living in poverty, and other vulnerable communities around the world.
+
+Whether through technology, public policy, or international cooperation, the ultimate purpose of innovation is to serve humanity.
+
+### Koreans are known for creative problem-solving, and I hope my ideas will be evaluated on their merits.
+
+### As an offline AI developer, I also need to make a living.
+
+If someone looks at my proposal and thinks, "This person is too unconventional—I don't want to work with him," then I believe that kind of mindset makes it difficult for any institution to grow. Many transformative innovators were once considered unconventional. Elon Musk, for example, was often seen as a visionary eccentric because he insisted that humanity should go to Mars.
+
+At the same time, my long-term goal is to develop offline AI based on the principles of Sovereign AI and make it freely available to all of humanity.
+
+**Compared with sending humans to Mars, proposing practical reforms for the United Nations is arguably a far more achievable goal.**
+
+<img width="369" height="297" alt="EL" src="https://raw.githubusercontent.com/henrymorgan10/mcorpai-org/main/EL.PNG" />
+
+**We cannot recreate humanity's greatest gift—the United Nations—on Mars.**
+
+**Mars has only one year of oxygen remaining, and just ten humans are left alive. Who should survive? Who should make that decision? And what principles would you establish to determine the future of humanity?** 
+
+**This is a question that goes beyond SpaceX. It is about the future of humanity.**
+
+**Mr. Musk, I have just one question for you—assuming you are reading this. In an extreme crisis, which one would make the right call: Big Tech AI or offline AI? Big Tech AI is capable of thinking like a human, whereas offline AI makes precise decisions based strictly on hardcoded ethical rules.**
+
+**If that question is too difficult, let me put it this way: Will people worldwide trust a black-box AI whose inner workings are hidden? Or will they trust a completely transparent AI where everything is visible? The core of my point relies on a truly extreme scenario. Imagine you are on Mars with only a one-year supply of oxygen left. There are 10 humans, but resources can only sustain two. Who gets to survive?**
+
+**In an environment as desperate as Mars, ethical principles become the highest priority. Can anyone truly guarantee that a black-box AI will always follow those principles? Our own planet also faces moments of extreme crisis, and in those moments, trust and transparency matter more than ever.**
+
+Elon Musk may be an eccentric, but he is also deeply respected. If people refuse to collaborate with someone recognized by the Open Technology Fund simply because he proposes a reform of the United Nations, humanity could miss an opportunity to make meaningful progress.
+
+Offline AI does not exploit user data because it does not collect it in the first place.
+
+It has the potential to be accessible to everyone on equal terms. Since it does not rely on collecting massive amounts of data, it does not require large-scale data centers for that purpose.
+
+If the world reaches a point where privacy and human rights become even greater priorities, there may come a time when offline AI is widely embraced.
+
+Rather than replacing every human role, offline AI also has the potential to create new opportunities for people by enabling new kinds of human-centered jobs and industries.
+
+### This is a comedy skit. Humor has been free speech since the Stone Age.
+
+**UN Secretary-General:** "Please pay your membership dues... Otherwise, the UN could actually collapse."
+
+**Permanent Member:** "Here we go again."
+
+**UN Secretary-General:** "No, I mean it this time. The UN could really go bankrupt."
+
+**Permanent Member:** "Would one dollar do?"
+
+**UN Secretary-General:** "No, that's not what I meant..."
+
+**Permanent Member:** "What? Isn't one dollar still money?"
+
+**UN Secretary-General:** "I'm serious! The UN is in real financial trouble!"
+
+**Permanent Member:** "Alright then... How about ten dollars?"
+
+**UN Secretary-General:** "How can this conversation possibly be happening?"
+
+**Permanent Member:** "Sorry, sorry... Would one thousand dollars do?"
+
+**UN Secretary-General:** "Seriously? Do we have to wait for World War III before anyone starts taking this seriously?"
+
+**Permanent Member:** "Haha, you must be joking."
+
+<img width="128" height="182" alt="h" src="https://raw.githubusercontent.com/henrymorgan10/mcorpai-org/main/h.PNG" />
+
+### Hitler says, I wanted to live as an artist. 
+### "Thank you." I can't believe you've given me an opportunity like this...
+### 🎅 Ho Ho Ho! Who should get the first gift? 🎁
+
+# Why is Rudolph's nose so red? 🦌
+
+<img width="223" height="179" alt="ha" src="https://raw.githubusercontent.com/henrymorgan10/mcorpai-org/main/ha.PNG" />
+
+## Only those who've been hit know.
+
+<img width="369" height="248" alt="oops" src="https://raw.githubusercontent.com/henrymorgan10/mcorpai-org/main/oops.gif" />
+
+# 🕊️ Peace is never cheap.
+### How is the UN being treated worse than a three-Michelin-star restaurant?
+
+<img width="196" height="204" alt="HAHA" src="https://raw.githubusercontent.com/henrymorgan10/mcorpai-org/main/HAHA.PNG" />
+
+### HA HA. For the record, I like Germans. This is just a joke.
+
+# A UN Reform Plan That Satisfies Every Country 70% 
+# — The First in History
+
+**Diplomats are rarely in a position to exercise the wisdom of Solomon. Their responsibility is to advance and protect the interests of their own countries through diplomacy. When negotiations are conducted solely from the perspective of national interests, reaching meaningful agreements with major powers becomes inherently difficult.**
+
+These are the kinds of responses diplomats give all over the world. They are almost universal.
+
+1. "We'll discuss it with the relevant departments and review your proposal."
+2. "It's an excellent proposal, but unfortunately, we don't have the budget."
+3. "We're extremely busy at the moment, so we can't give it the attention it deserves."
+
+**When it comes to invitations to VVIP events, diplomats are often quick to respond—after all, ceremonial prestige and protocol are difficult to resist.**
+
+# One day, human rights will matter more than AI.
+## In the future, a larger workforce will be key to achieving high ESG scores.
+
+<img width="213" height="203" alt="HAHA1" src="https://raw.githubusercontent.com/henrymorgan10/mcorpai-org/main/HAHA1.PNG" />
+
+# Protocol should never take precedence over world peace.
+
+**Diplomatic protocol should not take precedence over UN reform. If the United Nations is weakened or allowed to fail, many international organizations—including UNICEF—could also face serious difficulties. The United Nations is more important than diplomatic protocol.**
+
+I strongly encourage you to read my proposal for UN reform.
+
+I jokingly call myself a genius, but I might actually be one.
+
+My UN reform proposal may be close to impossible to implement. However, the ESG-based idea could be realistic.
+
+In other words, instead of reforming the UN itself, I propose creating [**M-Corp**](https://mcorpai.org/)—a UN-led certification system inspired by the U.S.-based **B Corp** model.
+
+I created the M-Corp concept as a way to help keep the United Nations financially sustainable.
+
+Under this proposal, companies that demonstrate strong ethical and moral standards would be awarded the [**M-Corp**](https://mcorpai.org/) certification. When certified companies make sponsorship contributions, 80% of those funds would go directly to the UN, while the remaining 20% would be used to operate and maintain the M-Corp program.
+
+Such a system could provide the UN with a much-needed and sustainable source of funding. At the very least, the people who work for the United Nations should be able to receive their salaries on time.
+
+**Cutting the UN's budget while laying off its staff at the same time could become a major disaster for the organization in the future.**
+
+**The UN's workforce consists of some of the world's most talented professionals. If the UN is to fulfill its mission of maintaining international peace, it should be recruiting and retaining more top-tier talent—not reducing it.**
+
+**The UN should strengthen its human resources, not weaken them.**
+
+**The United Nations must be able to carry out its mission of promoting peace independently, free from interference by any nation or external actor.**
+
+## M-Corp and the Global Sustainable Finance Ecosystem
+
+**Please do not reduce the UN workforce. Doing so could have serious long-term consequences for the Organization. The UN Secretary-General serves a five-year term and has a responsibility to leave the United Nations stronger than it was before.**
+
+If M-Corp is established as a global certification system that complements existing ESG frameworks, it could participate in—or collaborate with—a vast and rapidly growing global sustainability finance ecosystem.
+
+The scale of this ecosystem is substantial:
+
+| Sector | Estimated Size |
+|--------|---------------:|
+| **ESG investment market** | **USD 30–34 trillion** |
+| **Sustainable investment funds** | **Approximately USD 4.1 trillion** |
+| **Green bonds** | **Multi-trillion-dollar market** |
+| **Sustainability-linked loans** | **Hundreds of billions to several trillion dollars** |
+| **Impact investing** | **USD 1.57 trillion** |
+
+---
+
+## Evidence from the B Corp Model
+
+The success of the B Corp model also demonstrates that certification systems can generate sustainable revenue. According to publicly available data for 2024, B Lab Company reported:
+
+| Revenue Source | Amount |
+|---------------|-------:|
+| **Total revenue** | **Approximately USD 32 million** |
+| **Program service revenue** | **Approximately USD 28 million** |
+| **Contributions, grants, and sponsorships** | **Approximately USD 1.7 million** |
+| **Major confirmed foundation grants** | **Approximately USD 0.8 million** |
+
+These figures suggest that a well-designed certification system can become financially sustainable primarily through its own services rather than relying on donations.
+
+---
+
+## Long-Term Potential for the United Nations
+
+If M-Corp gains international credibility as a complementary certification framework for ESG, it could eventually connect the United Nations with a global financial ecosystem involving tens of trillions of dollars in sustainable finance. While this does not mean that such capital would flow directly to the United Nations, it demonstrates the significant long-term potential for creating sustainable revenue streams through certification, partnerships, and related programs.
+
+Financial independence is essential if the United Nations is to work freely and effectively to promote global peace without undue external influence.
+
+### To make that possible, the United Nations must achieve financial independence.
+
+---
+
+# A Brief Introduction to My ESG Vision
+
+I would like to briefly introduce my vision for ESG under the M-Corp framework.
+
+## Environment
+
+One practical example is supporting the **Great Green Wall** initiative in Africa through green finance, including Green Bonds.
+
+The greatest challenge is not technology—it is sustainable employment. With stable funding for local wages, the project can continue for decades.
+
+African communities are often community-oriented rather than individually focused. Therefore, success is not achieved by paying a few people exceptionally high salaries. Instead, the objective should be to create employment opportunities for entire villages.
+
+For example, local workers could receive approximately **USD 30 per month**, while village chiefs could receive approximately **USD 100 per month**. Excessive wage disparities may create unnecessary conflict or jealousy within the community, reducing the project's long-term sustainability.
+
+The priority is to build and maintain the Great Green Wall using locally appropriate methods while creating stable employment for local communities.
+
+## Social
+
+I strongly support **White-Box AI**—AI systems whose decision-making processes can be understood and explained.
+
+Companies that actively promote explainable, transparent, and human-centered AI should be recognized positively.
+
+Explainable AI is not designed to replace people. Instead, it enables humans and AI to work together through transparency, accountability, and trust.
+
+My advocacy for White-Box AI has already received strong recognition from the **Open Technology Fund (OTF)**.
+
+# Why the Social Pillar Matters Most
+
+The **Social** pillar is the foundation of long-term ESG success. Environmental projects can be funded for a few years, but they can only endure for generations when local communities have a meaningful reason to protect them.
+
+One remarkable example is **Sadiman** from Wonogiri, Central Java, Indonesia. Over more than twenty years, he planted trees almost entirely by himself and transformed a barren, fire-damaged hillside into a thriving forest. His story demonstrates how a single person's long-term commitment can inspire environmental restoration on a much larger scale.
+
+The Great Green Wall deserves not only financial investment, but also a human story that future generations will remember.
+
+---
+
+# A Community-Based Employment Model for the Great Green Wall
+
+I believe the **Great Green Wall** can be sustained for 100 years if it is built through long-term community participation.
+
+Rather than hiring only a limited number of workers, the project should empower the entire village. When every family has a stake in protecting the forest, the forest becomes the community's shared responsibility.
+
+Tree planting should remain a community-driven effort. Local knowledge, local ownership, and long-term participation are the keys to lasting success.
+
+---
+
+# Illustrative Community Support Model
+
+The following figures are **illustrative examples**, designed to demonstrate one possible community-based support structure. The actual level of financial support should always be determined in consultation with local governments, community leaders, and local economic conditions.
+
+| Group | Illustrative Monthly Support | Purpose |
+|------|-----------------------------:|---------|
+| Adult Green Workers | **USD 30** | Basic livelihood support and participation incentive for planting and maintaining trees. |
+| People with disabilities and adults aged 50 or older | **USD 15** | Inclusive community support, allowing everyone to contribute according to their abilities. |
+| Children's Education Support | **USD 10** | Educational assistance for the next generation. This is **not** a wage for labor, but an investment in children, schools, and future environmental stewardship. |
+| Childbirth Grant | **USD 100 (one-time payment)** | Community support celebrating the birth of a new generation. |
+| Village Chief | **USD 100** | Leadership, coordination, transparency, and project supervision. |
+
+Employing 10,000 Indigenous people in Africa would cost approximately **US$10 million per year**.
+
+What could 10,000 people accomplish?
+
+Human determination and collective will can achieve things that AI alone never can. You may witness what seems like a miracle.
+
+At the heart of ESG is not only measurable impact, but also a compelling human story. Humanism has the power to strengthen the United Nations and inspire greater global support for its mission.
+
+---
+
+In rural, low-income areas of the Sahel, **USD 30 per month** is intended as **basic livelihood support and an incentive for participation**, rather than a full living wage.
+
+According to the World Bank, approximately **67% of the world's extremely poor population** lives in Sub-Saharan Africa, where access to stable cash income remains limited in many rural communities.
+
+Although **USD 30 per month** is not a full living wage, it can still provide meaningful supplementary income that encourages long-term participation in environmental restoration projects.
+
+The **USD 10 per month** allocated for children is **not a payment for labor**. Instead, it is intended to support education, school attendance, and future opportunities, helping today's children become tomorrow's environmental stewards.
+
+---
+
+# Community First
+
+The objective is not simply to plant millions of trees.
+
+The objective is to build communities that will continue protecting those trees for generations.
+
+Whenever possible, the benefits of the project should be shared across the community rather than concentrated among a small number of individuals.
+
+Where culturally appropriate, performance incentives may include food assistance, essential medicines, school supplies, agricultural tools, or other locally determined necessities instead of additional cash payments. Such decisions should always be made in consultation with local communities.
+
+---
+
+# A Forest Protected by People
+
+The success of the Great Green Wall will ultimately depend not only on planting trees, but on empowering the communities that protect them.
+
+When local people become partners rather than beneficiaries, environmental restoration becomes self-sustaining.
+
+Protecting forests begins by empowering the people who call them home.
+
+
+## Governance
+
+Supporting and strengthening the United Nations itself is an important element of good governance.
+
+The United Nations works alongside numerous international organizations and agencies, including UNICEF, to promote peace, sustainable development, humanitarian assistance, and international cooperation.
+
+Therefore, organizations that actively support the mission and values of the United Nations should also be recognized as contributing to strong governance.
+
+Together, these three pillars—Environment, Social, and Governance—could help create a practical, globally recognized certification system that supports both sustainable development and the long-term financial independence of the United Nations.
+
+
+## A UN reform plan that satisfies everyone 100% does not exist in the real world. 
 
 **"True Solomonic wisdom lies in creating a solution where no one is defeated. I can say with confidence that there is no better path for UN reform than this."**
 
@@ -41,6 +341,25 @@ The United Nations has, at times, faced operational and financial challenges due
 <img width="168" height="119" alt="1" src="https://raw.githubusercontent.com/henrymorgan10/mcorpai-org/main/UN.PNG" />
 
 # This is a rough draft for a stronger United Nations.
+
+**I have great respect for the UN Secretary-General because I believe he is a true champion of world peace.**
+
+The UN Secretary-General has warned the world that the United Nations could genuinely face bankruptcy. Yet, despite this unprecedented financial crisis, the Secretary-General has little in the way of diplomatic bargaining leverage.
+
+A concrete UN reform proposal, even if it cannot be implemented immediately, can itself serve as a powerful diplomatic bargaining chip.
+
+Consider the difference: Which message is more likely to influence the permanent members of the Security Council?
+
+"The United Nations may go bankrupt."
+
+or
+
+"Here is a concrete UN reform proposal that offers a realistic path toward strengthening the Organization while addressing the concerns and interests of Member States."
+
+The first is an appeal for help. The second is an invitation to negotiate. In diplomacy, concrete proposals often create opportunities that warnings alone cannot.
+
+**The strongest diplomatic bargaining chip is a UN reform proposal presented in its purest form by an independent architect who is not bound by any national diplomatic interests.**
+
 ## UN Semi-Permanent Members Proposal — By Morgan J., Architect (UN ver 13.8)
 ### Proposal Background: A Stronger United Nations Begins with a Stable and Responsible Financial Foundation.
 
