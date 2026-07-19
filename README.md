@@ -903,6 +903,10 @@ The name THOR-22 is intended not to symbolize military power, but to represent s
 ## Nicknamed "THOR-22" (Can Be White-Labeled)
 ### Transparency, Humanitarian Oversight and Responsibility — 22 Nations
 
+**The chairmanship of THOR-22 rotates on a one-year term, following the order of member states from the lowest to the highest GDP among the 22 participating countries.**
+
+**The Chairing State is exempt from membership contributions for the duration of its one-year term.**
+
 ### North America 
 
 * **Canada** 
@@ -943,10 +947,29 @@ The name THOR-22 is intended not to symbolize military power, but to represent s
 * **Saudi Arabia** 
 * **Israel** 
 * **Iran** 
-* **Türkiye** 
+* **Türkiye**
+
+### Neutral Microstates (UNICEF Mediation Committee)
+
+* Luxembourg
+* Monaco
+* Liechtenstein
+* Vatican City
+* San Marino
 
 ---
 
-A UN Reform Plan That Satisfies Every Country by 70%: A Proposal for UN Semi-Permanent Members — By Morgan J., Architect (Version 13.8)
+**A UN Reform Plan That Satisfies Every Country by 70%: A Proposal for UN Semi-Permanent Members**
 
-### Pursuing a perfect victory is expensive. Achieving 70% of the objective is often enough.
+**— By Morgan J., Architect (Version 13.8)**
+
+## Pursuing a perfect victory is expensive. Achieving 70% of the objective is often enough.
+
+# The 70% Rule of Diplomacy
+
+**When engaging in diplomacy with any nation, we should follow the **70% Rule**. Nothing in this world can be achieved with absolute perfection. Seeking 100% of what we want often leads to conflict. In many cases, the use of military force is an attempt to obtain everything, yet it can ultimately result in losing everything.**
+
+**Effective diplomacy begins by protecting what the other side values most—their **sovereignty** and **national dignity**. If international relations are based solely on the logic of strong powers dominating weaker ones, conflict will never truly end.**
+
+**The **70% Rule** means pursuing agreements that respect the other country's dignity and sovereignty while advancing our own interests. Lasting peace and cooperation are built not on total victory, but on mutual respect and reasonable compromise.**
+
