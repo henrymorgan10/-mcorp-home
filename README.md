@@ -1,4 +1,19 @@
-### My Creativity and Freedom of Expression
+**President Trump is seeking to revitalize the United States through tariffs. However, restoring America’s diplomatic strength could also help revive the country and bring significant benefits to the American people.**
+
+**I sincerely urge everyone around the world who cherishes freedom to read my paper:**
+
+## [Must read] https://zenodo.org/records/20319524
+
+
+# I passed the OTF all by myself. Is that level sufficient for EB-1A?
+![Internet Freedom](https://img.shields.io/badge/Internet%20Freedom-2e7d32?style=for-the-badge&logo=liberty&logoColor=white)
+[![Open Technology Fund Security Lab Audited](https://img.shields.io/static/v1?label=Independent%20U.S.%20Federal%20Agency&message=Open%20Technology%20Fund%20Security%20Lab%20Audited&color=1a365d&style=for-the-badge&logo=shield&logoColor=white)](https://mcorpai.kr/)
+
+**I passed OTF completely on my own—with zero dollars spent and no help from anyone.** 
+
+**Would something like this be enough to qualify for an EB-1A?**
+
+## My Creativity and Freedom of Expression
 
 **Many international organizations rely heavily on the United Nations. When the UN struggles, they also struggle, making it difficult to respond effectively to global challenges such as climate change, support for children with disabilities, and refugee crises.**
 
@@ -6,10 +21,87 @@
 
 **Sometimes, a creative individual may have ideas that could contribute to solving the challenges of UN reform.**
 
-# The Most Viable UN Reform Proposal
-## This proposal is approximately 10 A4 pages long.
+**Even after leaving the United Nations, its staff receive generous pensions. This is entirely appropriate because they are themselves instruments of diplomacy. Treating UN personnel with respect reflects a nation’s dignity—and dignity itself is a form of diplomatic power.**
 
-**To clearly explain why the United Nations is necessary, we need a story. What matters most is humanism.**
+**Let me ask a question. Do former UN employees receive salaries of one million dollars a year after they retire? Of course they do not.**
+
+### "The United Nations is not a business enterprise."
+
+---
+
+# The Most Viable UN Reform Proposal
+## This proposal is approximately 20 A4 pages long.
+## Diplomatic strength is built on dignity and respectful treatment.
+
+**I intend to submit my UN reform proposal as supporting evidence in my EB-1A petition to the U.S. immigration authorities.**
+
+**President Donald Trump of the United States may not like this article. He has already created Trump's Board of Peace together with his son-in-law. Everyone except Donald Trump, please read this UN reform proposal to the end. I intend to become a Nobel Peace Prize nominee through this UN reform proposal.**
+
+## My goal in obtaining an EB-1A visa is to secure research funding for offline AI.
+
+**Big Tech AI is designed to generate profits. Offline AI is designed to empower the world.**
+
+**Offline AI represents true freedom because anyone can use it free of charge, even in places with no digital infrastructure. It works without relying on the cloud or constant internet connectivity.**
+
+**Offline AI also does not collect users' data. As a result, its purpose is not to replace people by harvesting their data for commercial gain. Instead, it is built to be accessible and fair to everyone.**
+
+**When AI is truly accessible to everyone, it can also create new opportunities—including local manufacturing and production hubs that support refugee self-reliance.**
+
+### If the United States does not truly protect free expression, I can simply pursue a Canadian visa instead.
+
+**If an aspiring EB-1A applicant is viewed negatively simply for criticizing or satirizing the President of the United States, that would undermine the very principle of freedom of expression. Freedom of expression matters because creativity is one of the foundations for building a better world.**
+
+**If the United States is not the right place for me, I will instead pursue a visa in a country such as Canada or Norway, where I believe freedom of expression is strongly protected.**
+
+---
+
+### Running the United States like a corporation would ultimately lead to its downfall.
+### The American people are not employees of the government; they are the sovereign.
+## Freedom is not a business.
+# I hate authoritarianism. Long Live Freedom! 
+
+<img width="150" height="214" alt="Donald Trump" src="https://raw.githubusercontent.com/henrymorgan10/mcorpai-org/main/Donald Trump.PNG" />
+
+# Donald Trump's son-in-law is a skilled strategist.
+
+### It was the Prime Minister of Israel who nominated Donald Trump for the Nobel Peace Prize.
+
+<img width="126" height="236" alt="simpsons" src="https://github.com/user-attachments/assets/06e7c823-c110-4d77-a9b2-857877e140af" />
+
+# His son-in-law is as smart as Homer Simpson.
+
+<img width="213" height="203" alt="HAHA1" src="https://raw.githubusercontent.com/henrymorgan10/mcorpai-org/main/HAHA1.PNG" />
+
+# After all, I can always immigrate to Canada instead.
+
+**If I were ever nominated for the Nobel Peace Prize, I would be far more honored to be nominated by scholars than by the Prime Minister of Israel. I can provide scholars with topics for academic research.**
+
+## You cannot persuade the entire world through military force alone. Military power is costly.
+## USAID and USAGM are important means of conducting diplomacy. 
+### Investing in diplomacy through institutions like USAID and USAGM costs far less than relying on military power.
+
+**Military power can still fail even after spending $100 billion. Diplomacy, however, can succeed with just $1 billion because it builds trust in the United States among the people and governments of other countries.**
+
+# Is America wealthy?
+## If $1 billion can achieve the goal, why spend $100 billion?
+
+<img width="126" height="236" alt="simpsons" src="https://github.com/user-attachments/assets/06e7c823-c110-4d77-a9b2-857877e140af" />
+
+# Businesspeople do not necessarily know how to conduct diplomacy.
+
+### USAID and USAGM are not targets for restructuring; they are vital instruments of American diplomacy.
+
+### The greatness of the American people lies in their commitment to freedom and diplomacy.
+### The best reform proposals are not necessarily made by Harvard professors.
+### They can also come from people who approach the issue with complete neutrality.
+
+### To clearly explain why the United Nations is necessary, we need a story. What matters most is humanism.
+
+---
+
+# Long live freedom!
+## The stronger a country's commitment to freedom, the stronger its diplomacy becomes.
+## Diplomatic strength translates into national strength.
 
 **What earned me recognition from OTF was a combination of bold originality and fearless, unconventional thinking. I have also been recognized by the United States for my abilities. If we work together, I believe we can build a better world by seeing possibilities that others often overlook.**
 
@@ -23,6 +115,8 @@ I believe that creative thinking is one of the most powerful ways to improve the
 Whether through technology, public policy, or international cooperation, the ultimate purpose of innovation is to serve humanity.
 
 ### Koreans are known for creative problem-solving, and I hope my ideas will be evaluated on their merits.
+
+---
 
 ### As an offline AI developer, I also need to make a living.
 
@@ -55,6 +149,8 @@ It has the potential to be accessible to everyone on equal terms. Since it does 
 If the world reaches a point where privacy and human rights become even greater priorities, there may come a time when offline AI is widely embraced.
 
 Rather than replacing every human role, offline AI also has the potential to create new opportunities for people by enabling new kinds of human-centered jobs and industries.
+
+---
 
 ### This is a comedy skit. Humor has been free speech since the Stone Age.
 
@@ -103,8 +199,12 @@ Rather than replacing every human role, offline AI also has the potential to cre
 
 ### HA HA. For the record, I like Germans. This is just a joke.
 
+---
+
 # A UN Reform Plan That Satisfies Every Country 70% 
 # — The First in History
+
+### Pursuing a perfect victory is expensive. Achieving 70% of the objective is often enough.
 
 **Diplomats are rarely in a position to exercise the wisdom of Solomon. Their responsibility is to advance and protect the interests of their own countries through diplomacy. When negotiations are conducted solely from the perspective of national interests, reaching meaningful agreements with major powers becomes inherently difficult.**
 
@@ -848,3 +948,5 @@ The name THOR-22 is intended not to symbolize military power, but to represent s
 ---
 
 A UN Reform Plan That Satisfies Every Country by 70%: A Proposal for UN Semi-Permanent Members — By Morgan J., Architect (Version 13.8)
+
+### Pursuing a perfect victory is expensive. Achieving 70% of the objective is often enough.
