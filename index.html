@@ -211,8 +211,7 @@
 <!-- ===================================================================
   마음 진정 · 충동 다루기  V2.0
   © 2026 Morgan J. (Gyu-min Jeon) | M-Corp Ethical AI
-  M-Corp 윤리적 AI 라이선스 (Hippocratic 3.0 파생 라이선스)
-  오직 민간·농업·인도주의 목적에 한해 사용 가능.
+  Licensed under the Apache License, Version 2.0
 
   붙여넣기 방법:
    1) 아래 <style> 블록 전체를 기존 index.html의 </style> 바로 위에 붙여넣거나,
@@ -729,6 +728,139 @@
     $('mcCompNext').textContent = (compIdx >= compLines.length) ? '처음부터' : '다음 줄 →';
   });
 
+})();
+</script>
+
+<!-- ===================================================================
+  충동 대응 요약 카드(원문)  V1.0
+  아래 카드의 문구는 원본 자료(README) 그대로이며 한 글자도 수정하지 않았습니다.
+  마크다운(**굵게**, * 목록)을 같은 뜻의 HTML(<strong>, <li>)로만 옮겼습니다.
+  외부 라이브러리·서버·API 없음. 100% 오프라인 동작.
+==================================================================== -->
+<style>
+  .rm-enter-btn{
+    display:flex; align-items:center; justify-content:center; gap:8px;
+    width:100%; background:#2a2d35; color:#fff; border:1px solid #444;
+    text-align:center; padding:15px; border-radius:12px;
+    font-size:1.02rem; font-weight:900; letter-spacing:1px;
+    cursor:pointer; margin-bottom:16px;
+    font-family:inherit; transition:background .2s;
+  }
+  .rm-enter-btn:hover{ background:#363a44; }
+  .rm-enter-btn .rm-arrow{ font-size:1.1rem; transition:transform .25s; }
+  .rm-enter-btn.rm-open .rm-arrow{ transform:rotate(180deg); }
+
+  .rm-panel{ display:none; margin-bottom:16px; }
+  .rm-panel.rm-show{ display:block; }
+
+  .rm-intro{
+    background:#14201a; border-left:3px solid #52c97a;
+    border-radius:0 10px 10px 0; padding:13px 14px; margin-bottom:14px;
+    font-size:1.15rem; line-height:1.7; color:#ddd;
+  }
+
+  .rm-card{
+    background:#1c1f27; border:1.5px solid #3a3d47;
+    border-radius:12px; padding:15px 16px; margin-bottom:13px;
+  }
+  .rm-card-title{
+    font-size:1.05rem; font-weight:800; margin-bottom:6px; color:#fff;
+  }
+  .rm-card-sub{ font-size:1.05rem; color:#999; margin-bottom:10px; line-height:1.55; }
+  .rm-list{
+    list-style:none; display:flex; flex-direction:column; gap:8px;
+  }
+  .rm-list li{
+    font-size:1.05rem; line-height:1.6; color:#e8e8e8;
+    padding-left:14px; position:relative;
+  }
+  .rm-list li::before{
+    content:"•"; position:absolute; left:0; color:#52c97a;
+  }
+  .rm-list strong{ color:#f0c040; }
+
+  .rm-disclaimer{
+    text-align:center; font-size:1.03rem; color:#666;
+    line-height:1.7; padding:6px 0 2px; margin-top:4px;
+  }
+</style>
+
+<!-- ====== 상단 진입 버튼 ====== -->
+<button type="button" class="rm-enter-btn" id="rmEnterBtn">
+  📑 충동 대응 요약 5가지 (원문) <span class="rm-arrow">▾</span>
+</button>
+
+<!-- ====== 충동 대응 요약 패널 ====== -->
+<div class="rm-panel" id="rmPanel">
+
+  <div class="rm-intro">
+    파괴적인 충동과 잡념이 밀려올 때 정신의학적으로 가장 효과적인 대응법은 '생각의 스팸화(이름 붙이기)'와 '신체 감각 접지(Grounding)'입니다.
+  </div>
+
+  <div class="rm-card">
+    <div class="rm-card-title">1. 3자 시점으로 이름 붙이기 (인지적 탈융합)</div>
+    <ul class="rm-list">
+      <li><strong>실행</strong>: "내가 나쁜 짓을 하고 싶다" 대신 "내 뇌가 또 스팸 팝업을 띄웠네"라고 거리를 둡니다.</li>
+      <li><strong>원리</strong>: 생각을 나 자신과 동일시하지 않고, 뇌가 생리학적으로 뿜어낸 일종의 '노이즈'로 규정하면 전두엽이 오신호에 반응하는 것을 막을 수 있습니다.</li>
+    </ul>
+  </div>
+
+  <div class="rm-card">
+    <div class="rm-card-title">2. 5-4-3-2-1 신체 접지 (Grounding)</div>
+    <div class="rm-card-sub">충동으로 뇌가 과열되었을 때, 주의를 외부 오감으로 강제로 돌려 전두엽을 깨우는 가장 빠른 기법입니다.</div>
+    <ul class="rm-list">
+      <li><strong>5</strong>: 눈에 보이는 물건 5개 이름을 속으로 말하기</li>
+      <li><strong>4</strong>: 피부에 닿는 감각 4가지 느끼기 (옷감, 의자 감촉 등)</li>
+      <li><strong>3</strong>: 주변에서 들리는 소리 3가지에 집중하기</li>
+      <li><strong>2</strong>: 냄새 2가지 맡아보기</li>
+      <li><strong>1</strong>: 입안의 맛 1가지 느끼기 (또는 차가운 물 한 모금 마시기)</li>
+    </ul>
+  </div>
+
+  <div class="rm-card">
+    <div class="rm-card-title">3. 90초 반응 보류 (충동 파도타기)</div>
+    <ul class="rm-list">
+      <li><strong>실행</strong>: 생각을 없애려 애쓰지 말고, 오직 <strong>'행동'만 딱 90초간 유예</strong>합니다.</li>
+      <li><strong>원리</strong>: 10부터 1까지 거꾸로 세거나 깊은 호흡을 내쉬며 뇌 속 아드레날린 피크가 자연 분해되는 90초의 생물학적 시간을 흘려보냅니다.</li>
+    </ul>
+  </div>
+
+  <div class="rm-card">
+    <div class="rm-card-title">4. 물리적 환경의 즉각적 전환 (20분 타임아웃)</div>
+    <ul class="rm-list">
+      <li><strong>실행</strong>: 잡념이나 유혹이 거세질 때는 그 자리에서 고민하지 말고 <strong>즉시 장소를 이동</strong>합니다.</li>
+      <li><strong>원리</strong>: 자리를 털고 일어나 산책을 하거나, 차가운 물로 손을 씻는 등의 신체적 위치 변화는 과열된 편도체 회로를 리셋하는 단전 스위치 역할을 합니다.</li>
+    </ul>
+  </div>
+
+  <div class="rm-card">
+    <div class="rm-card-title">5. 약물 치료를 통한 기본 파도 높이 낮추기</div>
+    <ul class="rm-list">
+      <li>충동의 파도가 100미터 높이로 밀려와 위의 대처법을 시도할 여유조차 없다면, 정신과 약물(SSRI, 항불안제)의 도움을 받는 것이 가장 확실합니다.</li>
+      <li>약물은 과열된 변연계의 볼륨을 줄여주어, 충동을 잔파도 수준으로 가라앉혀 줍니다.</li>
+    </ul>
+  </div>
+
+  <div class="rm-disclaimer">
+    위 내용은 원본 자료를 그대로 옮긴 참고용 공익 정보이며 전문적인 진단·치료를 대체하지 않습니다.<br>
+    [mcorpai.org 공익 정보 제공]
+  </div>
+
+</div>
+
+<script>
+(function(){
+  "use strict";
+  var rmBtn = document.getElementById('rmEnterBtn'), rmPanel = document.getElementById('rmPanel');
+  if(rmBtn && rmPanel){
+    rmBtn.addEventListener('click', function(){
+      var open = rmPanel.classList.toggle('rm-show');
+      rmBtn.classList.toggle('rm-open', open);
+      if(open){
+        setTimeout(function(){ rmPanel.scrollIntoView({behavior:'smooth', block:'start'}); }, 60);
+      }
+    });
+  }
 })();
 </script>
 
